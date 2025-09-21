@@ -44,6 +44,7 @@
     hellwal
     inputs.matugen.packages.${pkgs.system}.default
     zoom-us
+		seahorse
 
 		# CLI
 		brightnessctl

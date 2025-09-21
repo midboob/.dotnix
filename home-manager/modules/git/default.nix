@@ -8,7 +8,7 @@
 
     extraConfig = {
 
-      credential.helper = "libsecret";
+      credential.helper = "${pkgs.git.override { withLibsecret = true; }}/bin/git-credential-libsecret";
 
       core = {
         compression = 9;
