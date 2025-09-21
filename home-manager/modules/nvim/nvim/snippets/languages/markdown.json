@@ -1,0 +1,93 @@
+{
+  "caution (callout)": {
+    "body": [
+      "> [!CAUTION]",
+      "> $0"
+    ],
+    "description": "caution callout",
+    "prefix": "caution (callout)"
+  },
+  "centerdiv": {
+    "body": "<div style=\"text-align: center;\">$0</div>",
+    "description": "centered div block",
+    "prefix": "centerdiv"
+  },
+  "details & summary": {
+    "body": [
+      "<details>",
+      "<summary>${1:Text}</summary>",
+      "$0",
+      "</details>"
+    ],
+    "description": "expandable section",
+    "prefix": "details & summary"
+  },
+  "div": {
+    "body": "<div>$0</div>",
+    "description": "basic div block",
+    "prefix": "div"
+  },
+  "important (callout)": {
+    "body": [
+      "> [!IMPORTANT]",
+      "> $0"
+    ],
+    "description": "important callout",
+    "prefix": "important (callout)"
+  },
+  "note (callout)": {
+    "body": [
+      "> [!NOTE]",
+      "> $0"
+    ],
+    "description": "note callout",
+    "prefix": "note (callout)"
+  },
+  "tip (callout)": {
+    "body": [
+      "> [!TIP]",
+      "> $0"
+    ],
+    "description": "tip callout",
+    "prefix": "tip (callout)"
+  },
+  "warning (callout)": {
+    "body": [
+      "> [!WARNING]",
+      "> $0"
+    ],
+    "description": "warning callout",
+    "prefix": "warning (callout)"
+  },
+  "math (inline)": {
+    "body": [
+      "$${0:math}$"
+    ],
+    "description": "inline math",
+    "prefix": "im"
+  },
+  "math (display)": {
+    "body": [
+      "$$",
+      "${0:math}",
+      "$$"
+    ],
+    "description": "display math",
+    "prefix": "dm"
+  },
+  "fraction (math)": {
+    "body": [
+      "\\frac{${1:numerator}}{${2:denominator}} $0"
+    ],
+    "description": "fraction",
+    "prefix": "//"
+  },  "python": {
+    "body": [
+      "``` python",
+      "$0",
+      "```"
+    ],
+    "description": "python code block",
+    "prefix": "python"
+  }
+}

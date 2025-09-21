@@ -1,0 +1,188 @@
+
+{
+  "template": {
+    "body": [
+      "\\documentclass[a4paper]{article}",
+      "",
+      "\\usepackage[utf8]{inputenc}",
+      "\\usepackage[T1]{fontenc}",
+      "\\usepackage{textcomp}",
+      "\\usepackage[dutch]{babel}",
+      "\\usepackage{amsmath, amssymb}",
+      "",
+      "% figure support",
+      "\\usepackage{import}",
+      "\\usepackage{xifthen}",
+      "\\pdfminorversion=7",
+      "\\usepackage{pdfpages}",
+      "\\usepackage{transparent}",
+      "\\newcommand{\\incfig}[1]{%",
+      "\t\\def\\svgwidth{\\columnwidth}",
+      "\t\\import{./figures/}{#1.pdf_tex}",
+      "}",
+      "",
+      "\\pdfsuppresswarningpagegroup=1",
+      "",
+      "\\begin{document}",
+      "\t$0",
+      "\\end{document}"
+    ],
+    "description": "LaTeX template",
+    "prefix": "template"
+  },
+  "beg": {
+    "body": [
+      "\\begin{${1:env}}",
+      "\t$0",
+      "\\end{${1:env}}"
+    ],
+    "description": "begin/end environment",
+    "prefix": "beg"
+  },
+  "table": {
+    "body": [
+      "\\begin{table}[${1:htpb}]",
+      "\t\\centering",
+      "\t\\caption{${2:caption}}",
+      "\t\\label{tab:${3:label}}",
+      "\t\\begin{tabular}{${4:c}}",
+      "\t$0",
+      "\t\\end{tabular}",
+      "\\end{table}"
+    ],
+    "description": "table environment",
+    "prefix": "table"
+  },
+  "fig": {
+    "body": [
+      "\\begin{figure}[${1:htpb}]",
+      "\t\\centering",
+      "\t${2:\\includegraphics[width=0.8\\textwidth]{${3:path}}}",
+      "\t\\caption{${4:$3}}",
+      "\t\\label{fig:${5:${3/\\W+/-/g}}}",
+      "\\end{figure}"
+    ],
+    "description": "figure environment",
+    "prefix": "fig"
+  },
+  "enum": {
+    "body": [
+      "\\begin{enumerate}",
+      "\t\\item $0",
+      "\\end{enumerate}"
+    ],
+    "description": "enumerate list",
+    "prefix": "enum"
+  },
+  "item": {
+    "body": [
+      "\\begin{itemize}",
+      "\t\\item $0",
+      "\\end{itemize}"
+    ],
+    "description": "itemize list",
+    "prefix": "item"
+  },
+  "desc": {
+    "body": [
+      "\\begin{description}",
+      "\t\\item[${1:key}] $0",
+      "\\end{description}"
+    ],
+    "description": "description list",
+    "prefix": "desc"
+  },
+  "pac": {
+    "body": [
+      "\\usepackage[${1:options}]{${2:package}}$0"
+    ],
+    "description": "usepackage line",
+    "prefix": "pac"
+  },
+  "//": {
+    "body": [
+      "\\frac{${1:numerator}}{${2:denominator}}$0"
+    ],
+    "description": "math fraction",
+    "prefix": "//"
+  },
+  "im": {
+    "body": [
+      "$$1$ $0"
+    ],
+    "description": "inline math",
+    "prefix": "im"
+  },
+  "dm": {
+    "body": [
+      "\[
+      $1
+      .\] $0"
+    ],
+    "description": "display math",
+    "prefix": "dm"
+  },
+  "subscript": {
+    "body": [
+      "${1:var}_{${2:digit}}$0"
+    ],
+    "description": "subscript",
+    "prefix": "sub"
+  },
+  "superscripts": {
+    "body": [
+      "${1:var}^{${2:exp}}$0"
+    ],
+    "description": "superscript",
+    "prefix": "sup"
+  },
+  "hat": {
+    "body": [
+      "\hat{$1}$0"
+    ],
+    "description": "hat",
+    "prefix": "hat"
+  },
+  "bar": {
+    "body": [
+      "\overline{$1}$0"
+    ],
+    "description": "bar",
+    "prefix": "bar"
+  },
+  "im": {
+    "body": [
+      "$$1$ $0"
+    ],
+    "description": "inline math",
+    "prefix": "im"
+  },
+  "vec": {
+    "body": [
+      "\vec{$1{} $0"
+    ],
+    "description": "vector",
+    "prefix": "vec"
+  },
+  "lim": {
+    "body": [
+      "\lim_{$1}^{$2}$0"
+    ],
+    "description": "limit",
+    "prefix": "lim"
+  },
+  "sum": {
+    "body": [
+      "\sum_{n /to $1}^{\infty}$0"
+    ],
+    "description": "sum",
+    "prefix": "sum"
+  },
+  "inf": {
+    "body": [
+      "\infty"
+    ],
+    "description": "infinity",
+    "prefix": "inf"
+  },
+}

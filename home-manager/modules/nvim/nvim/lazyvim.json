@@ -1,0 +1,30 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.coding.luasnip",
+    "lazyvim.plugins.extras.lang.tex",
+    "lazyvim.plugins.extras.ui.smear-cursor",
+    "plugins.extras.coding.blink-extended",
+    "plugins.extras.coding.friendly-snippets",
+    "plugins.extras.coding.luasnip-extended",
+    "plugins.extras.editor.bullets",
+    "plugins.extras.editor.markdown-preview",
+    "plugins.extras.editor.markdowny",
+    "plugins.extras.editor.obsidian-nvim",
+    "plugins.extras.editor.org-list",
+    "plugins.extras.editor.render-markdown",
+    "plugins.extras.editor.typst-preview",
+    "plugins.extras.lsp.lspconfig-extended",
+    "plugins.extras.ui.bg",
+    "plugins.extras.ui.lualine-extended",
+    "plugins.extras.ui.neopywal",
+    "plugins.extras.ui.which-key-extended",
+    "plugins.extras.util.snacks-extended",
+    "plugins.extras.util.vim-be-better",
+    "plugins.extras.util.yazi"
+  ],
+  "install_version": 8,
+  "news": {
+    "NEWS.md": "10960"
+  },
+  "version": 8
+}
