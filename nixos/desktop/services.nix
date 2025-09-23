@@ -22,4 +22,4 @@
       ConditionPathExists = "%h/.config/OpenRGB/white.orp";
     };
   };
-};
+}
