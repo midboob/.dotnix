@@ -17,6 +17,7 @@
 				bashls.enable = true; # Bash
 				jsonls.enable = true; # Json
 				markdown_oxide.enable = true; # Markdown
+				tinymist.enable = true; # Typst
 			};
 		};
 	};

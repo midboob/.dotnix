@@ -32,5 +32,6 @@
 		./modules/fastfetch
 		./modules/matugen
 		./modules/ghostty
+		./modules/zathura
 	];
 }
