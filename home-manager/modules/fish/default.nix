@@ -84,6 +84,9 @@
 
 			# ani-cli
 			ani = "ani-cli";
+
+			# shut down
+			die = "sudo shutdown now";
 		};
 
 			interactiveShellInit = ''

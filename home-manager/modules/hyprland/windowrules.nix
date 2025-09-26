@@ -66,6 +66,9 @@
 			"float, center, class:^(heroic)$"
 			"float, center, class:^(nwg-look)$"
 			"float, center, class:^(org.pulseaudio.pavucontrol)$"
+
+			# Opacity
+			# "opacity 0.9 0.8, class:^(org.pwmt.zathura)$"
     ];
 
 		layerrule = [

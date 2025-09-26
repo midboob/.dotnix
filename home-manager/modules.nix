@@ -33,5 +33,6 @@
 		./modules/matugen
 		./modules/ghostty
 		./modules/zathura
+		./modules/anki
 	];
 }
