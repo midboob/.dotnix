@@ -79,7 +79,7 @@
 		lua
 		gh
 		sl
-    spotify-player
+		chntpw
 
 		# Other
 		gcc
