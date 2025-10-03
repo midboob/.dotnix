@@ -80,6 +80,7 @@
 		gh
 		sl
 		chntpw
+		gnome-network-displays
 
 		# Other
 		gcc

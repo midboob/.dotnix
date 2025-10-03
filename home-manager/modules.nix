@@ -34,5 +34,8 @@
 		./modules/ghostty
 		./modules/zathura
 		./modules/anki
+		./modules/wlogout
+		./modules/hyprlock
+		./modules/obsidian
 	];
 }
