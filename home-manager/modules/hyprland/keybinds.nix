@@ -7,7 +7,8 @@
 		"$colorPicker" = "${pkgs.hyprpicker}/bin/hyprpicker -a";
 		"$noti-center" = "${pkgs.swaynotificationcenter}/bin/swaync-client -t -sw";
 
-    "$terminal" = "${pkgs.ghostty}/bin/ghostty";
+    # "$terminal" = "${pkgs.ghostty}/bin/ghostty";
+    "$terminal" = "${pkgs.kitty}/bin/kitty";
     "$browser" = "${pkgs.brave}/bin/brave";
 		"$explorer1" = "$terminal -e ${pkgs.yazi}/bin/yazi";
 		"$explorer2" = "${pkgs.nautilus}/bin/nautilus";

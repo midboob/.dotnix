@@ -10,7 +10,7 @@
     };
 
     settings = {
-      bold_font                  = "auto";
+      bold_font                  = "false";
       italic_font                = "auto";
       bold_italic_font           = "auto";
       remember_window_size       = "no";

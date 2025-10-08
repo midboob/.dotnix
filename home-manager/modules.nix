@@ -35,7 +35,8 @@
 		./modules/zathura
 		./modules/anki
 		./modules/wlogout
-		./modules/hyprlock
+		# ./modules/hyprlock
 		./modules/obsidian
+		# ./modules/chromium
 	];
 }

@@ -21,11 +21,6 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		nvf = {
-			url = "github:notashelf/nvf";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-
 		nixcord = {
 			url = "github:kaylorben/nixcord";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -38,7 +33,6 @@
 
     matugen = {
       url = "github:InioX/matugen";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 	};
 
@@ -50,7 +44,6 @@
 		nixcord,
 		spicetify-nix,
     matugen,
-		nvf,
 		... }: let
 			system = "x86_64-linux";
 
@@ -85,7 +78,6 @@
 						nixvim.homeModules.nixvim
 						nixcord.homeModules.nixcord
 						inputs.spicetify-nix.homeManagerModules.default
-		 				nvf.homeManagerModules.default
 					];
 				};
 			};
