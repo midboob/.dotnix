@@ -30,10 +30,6 @@
 			url = "github:Gerg-L/spicetify-nix";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
-
-    matugen = {
-      url = "github:InioX/matugen";
-    };
 	};
 
 	outputs = inputs@{ 
@@ -43,7 +39,6 @@
 		nixvim,
 		nixcord,
 		spicetify-nix,
-    matugen,
 		... }: let
 			system = "x86_64-linux";
 

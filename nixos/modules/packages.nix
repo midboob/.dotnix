@@ -3,7 +3,7 @@
 	environment.systemPackages = with pkgs; [
 
     # Wayland
-		ghostty
+		kitty
 
 		hyprpicker
 		grim
@@ -33,7 +33,6 @@
 		zathura
 		mpv
 		qbittorrent
-		kitty
 		brave
 		rofi
 		nautilus
@@ -42,7 +41,7 @@
 		localsend
 		openrgb
     hellwal
-    inputs.matugen.packages.${pkgs.system}.default
+		matugen
     zoom-us
 		seahorse
 
@@ -80,7 +79,7 @@
 		gh
 		sl
 		chntpw
-		gnome-network-displays
+		spotdl
 
 		# Other
 		gcc
