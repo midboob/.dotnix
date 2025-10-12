@@ -21,6 +21,11 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		nvf = {
+			url = "github:notashelf/nvf";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+
 		nixcord = {
 			url = "github:kaylorben/nixcord";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -37,6 +42,7 @@
 		home-manager,
 		stylix,
 		nixvim,
+		nvf,
 		nixcord,
 		spicetify-nix,
 		... }: let
@@ -71,6 +77,7 @@
 						./home-manager/home.nix
 						stylix.homeModules.stylix
 						nixvim.homeModules.nixvim
+						nvf.homeManagerModules.default
 						nixcord.homeModules.nixcord
 						inputs.spicetify-nix.homeManagerModules.default
 					];

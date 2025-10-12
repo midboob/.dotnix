@@ -20,16 +20,23 @@
 				options.silent = true;
 			} {
 
-			# Neo-tree
-				action = "<cmd>Neotree focus toggle<CR>";
-				key = "<space>e";
+			# # Neo-tree
+			# 	action = "<cmd>Neotree focus toggle<CR>";
+			# 	key = "<space>e";
+			# 	mode = ["n"];
+			# 	options.silent = true;
+			# } {
+			#
+			# Sourcing file
+				action = "<cmd>source %<CR>";
+				key = "<space>r";
 				mode = ["n"];
 				options.silent = true;
 			} {
 
-			# Sourcing file
-				action = "<cmd>source %<CR>";
-				key = "<space>r";
+			# yazi
+				action = "<cmd>yazi <CR>";
+				key = "<space>e";
 				mode = ["n"];
 				options.silent = true;
 			}

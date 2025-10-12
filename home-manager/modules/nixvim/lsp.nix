@@ -7,7 +7,7 @@
 
 				lua_ls = { # Lua
 					enable = true;
-					settings.telemetry.enable = false;
+					config.telemetry.enable = false;
 				};
 
 				clangd.enable = true; # C/C++

@@ -16,9 +16,9 @@
 		./modules/cli
 		# ./modules/firefox
 
-		./modules/nixvim
+		# ./modules/nixvim
 		# ./modules/nvim
-		# ./modules/nvf
+		./modules/nvf
 
 		./modules/nixcord
 		./modules/spicetify
