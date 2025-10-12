@@ -22,7 +22,6 @@
 		NIXOS_OZONE_WL = "1";
 	};
 
-  services.gnome.gnome-keyring.enable = true;
   security.pam.services.ly.enableGnomeKeyring = true;
 
 
@@ -39,12 +38,5 @@
 				xdg-desktop-portal-gtk
 			];
 		};
-	};
-
-	xdg.mime.defaultApplications = {
-		"text/html" = "brave-browser.desktop";
-		"image/*" = "eog.desktop";
-		"video/*" = "mpv.desktop";
-		"inode/directory" = "org.gnome.Nautilus.desktop";
 	};
 }

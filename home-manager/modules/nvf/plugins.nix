@@ -3,13 +3,16 @@
   programs.nvf = {
     enable = true;
     settings = {
-      utility = {
+      vim.utility = {
+
         snacks-nvim = {
           enable = true;
           setupOpts = {
             bigfile.enable = true;
+            indent = true;
+            notifier.enable = true;
             picker.enable = true;
-            dashboard.enable = true;
+            image.enable = true;
           };
         };
         

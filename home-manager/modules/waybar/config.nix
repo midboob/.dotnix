@@ -91,7 +91,7 @@
       };
     };
 
-		# Hyprland modules
+		# Hyprland Workspaces
     "hyprland/workspaces" = {
       all-outputs = true;
       format = "{name}";
@@ -101,7 +101,7 @@
       active-only = false;
     };
 
-		# Base modules
+		# Clock
 		"clock" = {
 			interval = 60;
 			format = "{:%m/%d %I:%M}";
