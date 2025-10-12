@@ -4,6 +4,7 @@
     ./plugins.nix
     ./lsp.nix
     ./keybinds.nix
+    ./autocomplete.nix
   ];
 
   programs.nvf = {
