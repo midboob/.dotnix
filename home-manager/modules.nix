@@ -22,9 +22,7 @@
 		./modules/spicetify
 		./modules/yazi
 
-
 		./modules/startpage
-		# ./modules/openrgb
 		./modules/mpv
 		./modules/ohmyposh
 		./modules/fastfetch
@@ -36,5 +34,6 @@
 		# ./modules/hyprlock
 		./modules/obsidian
 		# ./modules/chromium
+		./modules/ssh
 	];
 }
