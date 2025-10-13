@@ -33,9 +33,15 @@
     };
 
     power-profiles-daemon.enable = false;
-    logind.lidSwitch = "suspend-then-hibernate";
-    logind.powerKey = "hibernate";
-    logind.powerKeyLongPress = "poweroff";
+    logind = {
+      settings = {
+        Login = {
+          HandleLidSwitch = "suspend-then-hibernate";
+          HandlePowerKeyLongPress = "hibernate";
+          HandlePowerKey = "poweroff";
+        };
+      };
+    };
   };
   boot.kernelParams = ["mem_sleep_default=deep"];
 

@@ -40,8 +40,6 @@
 		switcheroo
 		localsend
 		openrgb
-    hellwal
-		matugen
     zoom-us
 		seahorse
 
@@ -80,6 +78,9 @@
 		sl
 		chntpw
 		spotdl
+    hellwal
+		matugen
+    nix-prefetch-git
 
 		# Other
 		gcc

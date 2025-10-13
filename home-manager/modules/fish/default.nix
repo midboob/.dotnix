@@ -94,8 +94,4 @@
         fastfetch
 				'';
 	};
-
-	home.packages = with pkgs; [
-		eza
-	];
 }

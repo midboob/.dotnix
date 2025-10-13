@@ -16,11 +16,6 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		nixvim = {
-			url = "github:nix-community/nixvim";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-
 		nvf = {
 			url = "github:notashelf/nvf";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -35,16 +30,22 @@
 			url = "github:Gerg-L/spicetify-nix";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+    bunny-yazi = {
+      url = "github:stelcodes/bunny.yazi";
+      flake = false;
+    };
+
 	};
 
 	outputs = inputs@{ 
 		nixpkgs,
 		home-manager,
 		stylix,
-		nixvim,
 		nvf,
 		nixcord,
 		spicetify-nix,
+    bunny-yazi,
 		... }: let
 			system = "x86_64-linux";
 
@@ -76,7 +77,6 @@
 					modules = [
 						./home-manager/home.nix
 						stylix.homeModules.stylix
-						nixvim.homeModules.nixvim
 						nvf.homeManagerModules.default
 						nixcord.homeModules.nixcord
 						inputs.spicetify-nix.homeManagerModules.default
