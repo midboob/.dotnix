@@ -5,6 +5,7 @@
     ./lsp.nix
     ./keybinds.nix
     ./autocomplete.nix
+    ./obsisian.nix
   ];
 
   home.sessionVariables = {
@@ -21,6 +22,11 @@
         
         viAlias = false;
         vimAlias = true;
+
+        spellcheck = {
+          enable = true;
+          languages = [ "en" ];
+        };
 
         theme = {
           enable = true;
