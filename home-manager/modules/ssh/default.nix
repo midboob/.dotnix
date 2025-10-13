@@ -1,17 +1,20 @@
-{ pkgs, lib, config, ...}: {
-
+{ pkgs, lib, config, ... }: {
   services.ssh-agent.enable = true;
 
   programs.ssh = {
     enable = true;
-    addKeysToAgent = "yes";          
+
+    enableDefaultConfig = false;
+
     matchBlocks = {
       "github.com" = {
-        hostname = "github.com";
+        host = "github.com";
         user = "git";
-        identityFile = "~/.ssh/id_ed25519";
+        identityFile = [ "~/.ssh/id_ed25519" ];
+        addKeysToAgent = "yes";
+        # optionally:
+        identitiesOnly = true;
       };
     };
   };
-
 }
