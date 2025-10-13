@@ -4,6 +4,11 @@
     enable = true;
     settings = {
       vim = {
+
+        visuals = {
+          nvim-web-devicons.enable = true;
+        };
+
         utility = {
 
           snacks-nvim = {

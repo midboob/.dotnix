@@ -5,7 +5,7 @@
     ./lsp.nix
     ./keybinds.nix
     ./autocomplete.nix
-    ./obsisian.nix
+    # ./obsidian.nix
   ];
 
   home.sessionVariables = {
