@@ -1,105 +1,108 @@
-{ pkgs, inputs,... }: {
-
-	environment.systemPackages = with pkgs; [
-
+{
+  pkgs,
+  inputs,
+  ...
+}: {
+  environment.systemPackages = with pkgs; [
     # Wayland
-		kitty
+    kitty
 
-		hyprpicker
-		grim
-		slurp
+    hyprpicker
+    grim
+    slurp
     hyprlock
-		swaynotificationcenter
-		waypaper
-		waybar
+    swaynotificationcenter
+    waypaper
+    waybar
     swww
 
-		gnome-keyring
-		cliphist
-		wl-clipboard
+    gnome-keyring
+    cliphist
+    wl-clipboard
 
-		xdg-desktop-portal
-		xdg-desktop-portal-gtk
-		xdg-desktop-portal-hyprland
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-hyprland
 
-		# Desktop apps
-		obs-studio
-		pavucontrol
-		anki-bin
-		bleachbit
-		gimp
-		obsidian
-		zathura
-		mpv
-		qbittorrent
-		brave
-		rofi
-		nautilus
-		networkmanagerapplet
-		switcheroo
-		localsend
-		openrgb
+    # Desktop apps
+    obs-studio
+    pavucontrol
+    anki-bin
+    bleachbit
+    gimp
+    obsidian
+    zathura
+    mpv
+    qbittorrent
+    brave
+    rofi
+    nautilus
+    networkmanagerapplet
+    switcheroo
+    localsend
+    openrgb
     zoom-us
-		seahorse
+    seahorse
 
-		# CLI
-		brightnessctl
-		ani-cli
-		bluetui
-		oh-my-posh
-		eza
-		yazi
+    # CLI
+    brightnessctl
+    ani-cli
+    bluetui
+    oh-my-posh
+    eza
+    yazi
     neovim
-		bluez
-		bat
-		btop
-		curl
-		fastfetch
-		ffmpeg
-		file
-		fzf
-		git
-		killall
-		lazydocker
-		lazygit
-		ncdu
-		ntfs3g
-		progress
-		ripgrep
-		tmux
-		tree
-		unzip
-		watch
-		wget
-		zip
-		lua
-		gh
-		sl
-		chntpw
-		spotdl
+    bluez
+    bat
+    btop
+    curl
+    fastfetch
+    ffmpeg
+    file
+    fzf
+    git
+    killall
+    lazydocker
+    lazygit
+    ncdu
+    ntfs3g
+    progress
+    ripgrep
+    tmux
+    tree
+    unzip
+    watch
+    wget
+    zip
+    lua
+    gh
+    sl
+    chntpw
+    spotdl
     hellwal
-		matugen
+    matugen
     nix-prefetch-git
     yt-dlp
+    nix-ld
 
-		# Other
-		gcc
-		clang
-		zig
-		home-manager
-	];
+    # Other
+    gcc
+    clang
+    zig
+    home-manager
+  ];
 
-	fonts.packages = with pkgs; [
-		dina-font
-		fira-code
-		fira-code-symbols
-		liberation_ttf
-		mplus-outline-fonts.githubRelease
-		nerd-fonts.fira-code
-		nerd-fonts.symbols-only
-		noto-fonts
-		noto-fonts-cjk-sans
-		noto-fonts-emoji
-		proggyfonts
-	];
+  fonts.packages = with pkgs; [
+    dina-font
+    fira-code
+    fira-code-symbols
+    liberation_ttf
+    mplus-outline-fonts.githubRelease
+    nerd-fonts.fira-code
+    nerd-fonts.symbols-only
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-emoji
+    proggyfonts
+  ];
 }
