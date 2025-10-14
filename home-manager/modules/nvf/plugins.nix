@@ -1,35 +1,40 @@
-{ lib, config, ...}: {
-
+{
+  lib,
+  config,
+  ...
+}: {
   programs.nvf = {
     enable = true;
     settings = {
       vim = {
-
         visuals = {
           nvim-web-devicons.enable = true;
         };
 
         utility = {
-
           snacks-nvim = {
             enable = true;
             setupOpts = {
-              animate = {
+              animate.enable = true;
+              dashboard = {
                 enable = true;
-                easing = "linear";
-                fps = 60;
+                example = "github";
               };
-              dashboard.enable = true;
               bigfile.enabled = true;
               picker.enabled = true;
               notifier.enabled = true;
               image.enabled = true;
-              toggle.enabled = true;
+              toggle.enable = true;
+              input = {
+                enable = true;
+                position = "float";
+                border = "rounded";
+              };
             };
           };
-          
+
           yazi-nvim = {
-            enable = true;  
+            enable = true;
             mappings = {
               openYazi = "<space>e";
               openYaziDir = "<space>E";
@@ -41,7 +46,6 @@
           pairs.enable = true;
           surround.enable = true;
         };
-
       };
     };
   };

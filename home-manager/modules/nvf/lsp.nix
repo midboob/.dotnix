@@ -1,14 +1,22 @@
-{ lib, config, ...}: {
-
+{
+  lib,
+  config,
+  ...
+}: {
   programs.nvf = {
     enable = true;
-    formatOnSave = true;
-    lspconfig = {
-      enable = true;
-    };
     settings = {
       vim = {
-        lsp.enable = true;
+        lsp = {
+          enable = true;
+          formatOnSave = true;
+          lspconfig = {
+            enable = true;
+          };
+          # servers = {
+          #   nixd.settings.nil.nix.autoArchive = true;
+          # };
+        };
         languages = {
           enableTreesitter = true;
 
@@ -22,7 +30,10 @@
           nix = {
             enable = true;
             format.enable = true;
-            lsp.enable = true;
+            lsp = {
+              enable = true;
+              server = "nixd";
+            };
             treesitter.enable = true;
           };
 
@@ -31,8 +42,8 @@
             extensions.render-markdown-nvim = {
               enable = true;
               setupOpts = {
-                file_types = [ "markdown" ];
-                
+                file_types = ["markdown"];
+
                 checkbox = {
                   enabled = true;
                   custom = {
@@ -98,7 +109,6 @@
             };
             treesitter.enable = true;
           };
-
         };
       };
     };

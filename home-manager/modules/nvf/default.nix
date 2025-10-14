@@ -1,5 +1,8 @@
-{ pkgs, lib, ...}: {
-
+{
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     ./plugins.nix
     ./lsp.nix
@@ -19,26 +22,27 @@
     settings = {
       vim = {
         enableLuaLoader = true;
-        
+
         viAlias = false;
         vimAlias = true;
 
         spellcheck = {
           enable = true;
-          languages = [ "en" ];
+          languages = ["en"];
         };
 
         theme = {
           enable = true;
           name = "rose-pine";
           style = "main";
+          transparent = true;
         };
 
         options = {
           tabstop = 2;
           shiftwidth = 2;
-			    signcolumn = "no";
-			    autoindent = true;
+          signcolumn = "no";
+          autoindent = true;
           termguicolors = true;
           wrap = true;
         };
@@ -47,7 +51,6 @@
           enable = true;
           registers = "unnamedplus";
         };
-
       };
     };
   };
