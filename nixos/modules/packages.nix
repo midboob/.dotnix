@@ -25,7 +25,6 @@
 		# Desktop apps
 		obs-studio
 		pavucontrol
-		overskride
 		anki-bin
 		bleachbit
 		gimp
@@ -81,6 +80,7 @@
     hellwal
 		matugen
     nix-prefetch-git
+    yt-dlp
 
 		# Other
 		gcc

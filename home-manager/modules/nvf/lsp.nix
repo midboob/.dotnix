@@ -2,6 +2,10 @@
 
   programs.nvf = {
     enable = true;
+    formatOnSave = true;
+    lspconfig = {
+      enable = true;
+    };
     settings = {
       vim = {
         lsp.enable = true;
