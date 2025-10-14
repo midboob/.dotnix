@@ -14,7 +14,7 @@
     "$explorer2" = "${pkgs.nautilus}/bin/nautilus";
     "$notes" = "${pkgs.obsidian}/bin/obsidian";
     "$emoji" = "${pkgs.bemoji}/bin/bemoji";
-    "$bluetooth" = "${pkgs.overskride}/bin/overskride";
+    "$bluetooth" = "$terminal -e ${pkgs.bluetui}/bin/bluetui";
     "$editor" = "$terminal -e nvim";
 
     "$mod" = "SUPER";
@@ -40,7 +40,7 @@
         "$mod SHIFT, N, exec, $noti-center"
 
         "$mod, Z, exec, $colorPicker"
-        "$mod SHIFT, W, exec, $wallpaper"
+        "$mod SHIFT, W, exec, rofi-wallpaper"
 
         # Screenshot(grim + slurp)
         "$mod SHIFT, S, exec, ${./screenshot.sh}"

@@ -1,6 +1,9 @@
-
-{ config, pkgs, ... }: {
-
+{
+  config,
+  pkgs,
+  ...
+}: {
+  fonts.fontconfig.enable = true;
   programs.wlogout = {
     enable = true;
 
@@ -46,7 +49,7 @@
 
     # CSS theme for wlogout
     style = ''
-      @import "./theme.css";
+      @import "../../.config/waybar/themes/matugen-waybar.css";
     '';
   };
 }

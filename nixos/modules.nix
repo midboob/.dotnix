@@ -10,8 +10,7 @@
     ./modules/shell.nix
     ./modules/user.nix
     ./modules/gnomeapps.nix
-    # ./modules/homelab.nix
+    ./modules/homelab.nix
     ./modules/games.nix
-    ./modules/nix-ld.nix
   ];
 }

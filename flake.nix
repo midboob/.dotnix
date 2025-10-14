@@ -23,7 +23,6 @@
 
     nixcats = {
       url = "github:BirdeeHub/nixCats-nvim";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixcord = {
@@ -40,6 +39,11 @@
       url = "github:stelcodes/bunny.yazi";
       flake = false;
     };
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -51,6 +55,7 @@
     nixcord,
     spicetify-nix,
     bunny-yazi,
+    zen-browser,
     ...
   }: let
     system = "x86_64-linux";
@@ -87,6 +92,7 @@
           nixcord.homeModules.nixcord
           inputs.spicetify-nix.homeManagerModules.default
           inputs.nixcats.homeModules.default
+          inputs.zen-browser.homeModules.beta
         ];
       };
     };

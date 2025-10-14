@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 wallpapers_dir="$HOME/Pictures/wallpapers/"
 
@@ -10,7 +10,7 @@ build_theme() {
   echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:${icon_size}.0000em;}listview{lines:${rows};columns:${cols};}"
 }
 
-theme="$HOME/.config/rofi/scripts/wallpaper/style.rasi"
+theme="$HOME/.dotnix/home-manager/modules/rofi/wallpaper/style.rasi"
 
 rofi_cmd="rofi -dmenu -i -show-icons -theme-str $(build_theme 4 3 12) -theme ${theme}"
 

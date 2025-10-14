@@ -109,6 +109,13 @@
             };
             treesitter.enable = true;
           };
+
+          bash = {
+            enable = true;
+            format.enable = true;
+            lsp.enable = true;
+            treesitter.enable = true;
+          };
         };
       };
     };

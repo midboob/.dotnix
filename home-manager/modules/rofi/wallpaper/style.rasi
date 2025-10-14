@@ -1,7 +1,7 @@
-@theme "~/.config/rofi/style.rasi"
+@theme "~/.config/rofi/config.rasi"
 
 // Window
 window {
   width:                       900px;
-  height:                      700px;
+  height:                      547px;
 }

@@ -1,4 +1,4 @@
-@import "theme"
+@import "~/.config/rofi/theme.rasi"
 
 window {
     background-color: @background;
