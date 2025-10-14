@@ -22,7 +22,7 @@
         settings = {
           # Give your nvim a launch name and optional aliases.
           # Aliases must not collide with other Neovim builds in your profile.
-          aliases = ["nvim"];
+          aliases = ["ncat"];
           wrapRc = true;
           configDirName = "nixcats"; # just a label used by nixCats
         };
@@ -37,14 +37,9 @@
           lspDebugMode = false;
 
           # Pick any packaged colorscheme; 'onedark' is a common default.
-          colorscheme = "onedark";
+          colorscheme = "blue";
         };
       };
     };
   };
-
-  # (Optional) make it your default editor using nixCats’ exposed package:
-  home.sessionVariables.EDITOR = let
-    nvimpkg = config.nixCats.out.packages."nixCats";
-  in "${nvimpkg}/bin/${nvimpkg.nixCats_packageName}";
 }
