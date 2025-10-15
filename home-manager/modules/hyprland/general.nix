@@ -14,7 +14,7 @@
       # "${pkgs.waybar}/bin/waybar"
       # "${pkgs.swaynotificationcenter}/bin/swaync"
       # "${pkgs.waypaper}/bin/waypaper --restore"
-      "${pkgs.swww}/bin/swww"
+      "swww-daemon"
       "${pkgs.openrgb}/bin/openrgb --profile ~/.config/OpenRGB/white.orp"
 
       # Set volume to #100%

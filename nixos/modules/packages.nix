@@ -83,7 +83,6 @@
     matugen
     nix-prefetch-git
     yt-dlp
-    nix-ld
 
     # Other
     gcc

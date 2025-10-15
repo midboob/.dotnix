@@ -11,6 +11,7 @@
     ./modules/kitty
     ./modules/tmux
     ./modules/fish
+    ./modules/zsh
 
     ./modules/git
     ./modules/cli
@@ -34,7 +35,8 @@
     ./modules/wlogout
     # ./modules/hyprlock
     ./modules/obsidian
-    # ./modules/chromium
+    ./modules/chromium
     ./modules/ssh
+    ./modules/zen-browser
   ];
 }

@@ -38,6 +38,7 @@
         "$mod, N, exec, $editor"
         "$mod SHIFT, B, exec, $bluetooth"
         "$mod SHIFT, N, exec, $noti-center"
+        "$mod, ESCAPE, exec, wlogout"
 
         "$mod, Z, exec, $colorPicker"
         "$mod SHIFT, W, exec, rofi-wallpaper"

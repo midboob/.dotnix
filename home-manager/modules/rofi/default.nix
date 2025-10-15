@@ -12,8 +12,9 @@
   };
 
   home.file.".config/rofi/scripts/powermenu.sh" = {
-    source = ./powermenu.sh;   # <-- your repo path
+    source = ./powermenu.sh; # <-- your repo path
     executable = true;
+  };
 
   home.file.".config/rofi/theme.rasi".text = ''    * { 
            highlight: bold italic;
@@ -64,14 +65,13 @@
         exec "${config.xdg.configHome}/rofi/scripts/wallpaper.sh"
       '';
     })
-  ];
 
-  home.packages = [
     (pkgs.writeShellApplication {
       name = "rofi-power";
       runtimeInputs = with pkgs; [
-        rofi  # or rofi on X11
-        coreutils bash
+        rofi # or rofi on X11
+        coreutils
+        bash
         # optional: hyprlock swaylock i3lock libnotify (if you use them)
       ];
       text = ''
@@ -80,8 +80,4 @@
       '';
     })
   ];
-
-
-
-
 }
