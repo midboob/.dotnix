@@ -84,6 +84,7 @@
     nix-prefetch-git
     yt-dlp
     upower
+    tlp
 
     # Other
     gcc

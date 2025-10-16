@@ -26,8 +26,8 @@
         # CPU_MAX_PERF_ON_BAT = 80;
         CPU_BOOST_ON_AC = 1;
         CPU_BOOST_ON_BAT = 0;
-        START_CHARGE_THRESH_BAT0 = 10;
         STOP_CHARGE_THRESH_BAT0 = 90;
+        START_CHARGE_THRESH_BAT0 = 0;
 
       };
     };

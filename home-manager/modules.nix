@@ -17,7 +17,7 @@
     ./modules/cli
     # ./modules/firefox
 
-    ./modules/nvf
+    # ./modules/nvf
     # ./modules/nixcats
 
     ./modules/nixcord

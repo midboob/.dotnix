@@ -1,10 +1,10 @@
 {pkgs, ...}: {
-  environment.shells = with pkgs; [bashInteractive zsh];
+  environment.shells = with pkgs; [bashInteractive fish];
 
-  programs.zsh.enable = true;
+  programs.fish.enable = true;
 
   users = {
-    users.edward.shell = pkgs.zsh;
-    defaultUserShell = pkgs.zsh;
+    users.edward.shell = pkgs.fish;
+    defaultUserShell = pkgs.fish;
   };
 }
