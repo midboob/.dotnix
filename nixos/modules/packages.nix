@@ -83,6 +83,7 @@
     matugen
     nix-prefetch-git
     yt-dlp
+    upower
 
     # Other
     gcc

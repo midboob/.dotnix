@@ -1,5 +1,5 @@
 {
-  pkg,
+  pkgs,
   lib,
   config,
   ...
@@ -8,6 +8,7 @@
 
   programs.chromium = {
     enable = true;
+    package = pkgs.brave;
     extensions = [
       {id = "cndibmoanboadcifjkjbdpjgfedanolh";} # better canvas
       {id = "fcjmgeodgobggcppooncdagfkogfffdm";} # imagus reborn
