@@ -12,5 +12,6 @@
     ./modules/gnomeapps.nix
     ./modules/homelab.nix
     ./modules/games.nix
+    ./modules/services.nix
   ];
 }
