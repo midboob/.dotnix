@@ -6,6 +6,7 @@
 }: {
   stylix.targets.obsidian = {
     enable = true;
+    vaultNames = ["notes"];
   };
   programs.obsidian = {
     enable = true;
@@ -28,6 +29,9 @@
           };
           cssSnippets = [
             ./snippets/DV-Button.css
+            ./snippets/Hide-Properties-Class.css
+            ./snippets/mathjax-font.css
+            ./snippets/Tags-Edit.css
           ];
         };
       };
