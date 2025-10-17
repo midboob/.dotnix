@@ -9,7 +9,7 @@
     vaultNames = ["notes"];
   };
   programs.obsidian = {
-    enable = true;
+    enable = false;
     vaults = {
       notes = {
         enable = true;
@@ -32,6 +32,29 @@
             ./snippets/Hide-Properties-Class.css
             ./snippets/mathjax-font.css
             ./snippets/Tags-Edit.css
+          ];
+          communityPlugins = [
+            "obsidian-git"
+            "obsidian-relative-line-numbers"
+            "templater-obsidian"
+            "table-editor-obsidian"
+            "homepage"
+            "dataview"
+            "obsidian-hider"
+            "obsidian-style-settings"
+            "settings-search"
+            "obsidian-vimrc-support"
+            "obsidian-scroll-offset"
+            "obsidian-icon-folder"
+            "oz-clear-unused-images"
+            "multi-properties"
+            "obsidian-tasks-plugin"
+            "calendar"
+            "home-tab"
+            "new-tab-default-page"
+            "editor-width-slider"
+            "contribution-graph"
+            "simple-banner"
           ];
         };
       };
