@@ -34,7 +34,6 @@ in
         scrolloff = 5;
         mouse_events = [ "click" "scroll" ];
         title_format = "Yazi: {cwd}";
-        
       };
 
       preview = {
@@ -57,9 +56,44 @@ in
     };
 
     keymap = {
-      mgr.prepend_keymap = [
-        { run = "plugin bunny"; on = [ ";" ]; desc = "Start bunny.yazi"; }
-      ];
+  mgr.prepend_keymap = [
+    { run = "plugin bunny"; on = [ ";" ]; desc = "Start bunny.yazi"; }
+
+    { run = [ "hidden toggle" "plugin pref-by-location -- save" ];
+      on  = [ "." ];
+      desc = "Toggle the visibility of hidden files";
+    }
+
+    # Linemode
+    { on = [ "m" "s" ]; run = [ "linemode size"        "plugin pref-by-location -- save" ]; desc = "Linemode: size"; }
+    { on = [ "m" "p" ]; run = [ "linemode permissions" "plugin pref-by-location -- save" ]; desc = "Linemode: permissions"; }
+    { on = [ "m" "b" ]; run = [ "linemode btime"       "plugin pref-by-location -- save" ]; desc = "Linemode: btime"; }
+    { on = [ "m" "m" ]; run = [ "linemode mtime"       "plugin pref-by-location -- save" ]; desc = "Linemode: mtime"; }
+    { on = [ "m" "o" ]; run = [ "linemode owner"       "plugin pref-by-location -- save" ]; desc = "Linemode: owner"; }
+    { on = [ "m" "n" ]; run = [ "linemode none"        "plugin pref-by-location -- save" ]; desc = "Linemode: none"; }
+    # Custom size_and_mtime linemode
+    # { on = [ "u" "S" ]; run = [ "linemode size_and_mtime" "plugin pref-by-location -- save" ]; desc = "Show Size and Modified time"; }
+
+    # Sorting / pref-by-location controls
+    { on = [ "," "t" ]; run = "plugin pref-by-location -- toggle";                                                desc = "Toggle auto-save preferences"; }
+    { on = [ "," "d" ]; run = "plugin pref-by-location -- disable";                                               desc = "Disable auto-save preferences"; }
+    { on = [ "," "R" ]; run = [ "plugin pref-by-location -- reset" ];                                             desc = "Reset preference of cwd"; }
+    { on = [ "," "m" ]; run = [ "sort mtime --reverse=no" "linemode mtime" "plugin pref-by-location -- save" ];   desc = "Sort by modified time"; }
+    { on = [ "," "M" ]; run = [ "sort mtime --reverse"    "linemode mtime" "plugin pref-by-location -- save" ];   desc = "Sort by modified time (reverse)"; }
+    { on = [ "," "b" ]; run = [ "sort btime --reverse=no" "linemode btime" "plugin pref-by-location -- save" ];   desc = "Sort by birth time"; }
+    { on = [ "," "B" ]; run = [ "sort btime --reverse"    "linemode btime" "plugin pref-by-location -- save" ];   desc = "Sort by birth time (reverse)"; }
+    { on = [ "," "e" ]; run = [ "sort extension --reverse=no" "plugin pref-by-location -- save" ];                desc = "Sort by extension"; }
+    { on = [ "," "E" ]; run = [ "sort extension --reverse"    "plugin pref-by-location -- save" ];                desc = "Sort by extension (reverse)"; }
+    { on = [ "," "a" ]; run = [ "sort alphabetical --reverse=no" "plugin pref-by-location -- save" ];             desc = "Sort alphabetically"; }
+    { on = [ "," "A" ]; run = [ "sort alphabetical --reverse"    "plugin pref-by-location -- save" ];             desc = "Sort alphabetically (reverse)"; }
+    { on = [ "," "n" ]; run = [ "sort natural --reverse=no" "plugin pref-by-location -- save" ];                  desc = "Sort naturally"; }
+    { on = [ "," "N" ]; run = [ "sort natural --reverse"    "plugin pref-by-location -- save" ];                  desc = "Sort naturally (reverse)"; }
+    # --sensitive=no or --sensitive
+    # { on = [ "," "N" ]; run = [ "sort natural --reverse=no --sensitive" "plugin pref-by-location -- save" ];    desc = "Sort naturally"; }
+    { on = [ "," "s" ]; run = [ "sort size --reverse=no" "linemode size" "plugin pref-by-location -- save" ];     desc = "Sort by size"; }
+    { on = [ "," "S" ]; run = [ "sort size --reverse"    "linemode size" "plugin pref-by-location -- save" ];     desc = "Sort by size (reverse)"; }
+    { on = [ "," "r" ]; run = [ "sort random --reverse=no" "plugin pref-by-location -- save" ];                   desc = "Sort randomly"; }
+  ];
     };
 
     plugins = {

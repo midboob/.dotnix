@@ -9,6 +9,11 @@
   programs.chromium = {
     enable = true;
     package = pkgs.brave;
+    commandLineArgs = [
+      "--enable-features=UseOzonePlatform"
+      "--ozone-platform=wayland"
+      "--disable-features=WaylandFractionalScaleV1"
+    ];
     extensions = [
       {id = "cndibmoanboadcifjkjbdpjgfedanolh";} # better canvas
       {id = "fcjmgeodgobggcppooncdagfkogfffdm";} # imagus reborn
