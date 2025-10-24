@@ -1,7 +1,7 @@
 {
   imports = [
-    # ./desktop
-    ./laptop
+    ./desktop
+    # ./laptop
 
     ./modules/packages.nix
     ./modules/wayland.nix
@@ -13,5 +13,6 @@
     ./modules/homelab.nix
     ./modules/games.nix
     ./modules/services.nix
+    ./modules/chromium.nix
   ];
 }

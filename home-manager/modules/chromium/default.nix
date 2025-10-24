@@ -4,7 +4,7 @@
   config,
   ...
 }: {
-  # stylix.targets.chromium.enable = true;
+  stylix.targets.chromium.enable = true;
 
   programs.chromium = {
     enable = true;
@@ -26,6 +26,5 @@
       {id = "dbepggeogbaibhgnhhndojpepiihcmeb";} # vimium
       {id = "oldceeleldhonbafppcapldpdifcinji";} # ai grammer checker
     ];
-    # homepageLocation = "file:///home/edward/.config/startpage/index.html";
   };
 }
