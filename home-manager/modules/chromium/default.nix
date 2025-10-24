@@ -4,8 +4,6 @@
   config,
   ...
 }: {
-  stylix.targets.chromium.enable = true;
-
   programs.chromium = {
     enable = true;
     package = pkgs.brave;

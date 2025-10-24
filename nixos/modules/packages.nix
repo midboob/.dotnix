@@ -13,7 +13,6 @@
     slurp
     hyprlock
     swaynotificationcenter
-    waypaper
     waybar
     swww
 

@@ -1,9 +1,4 @@
 {
-  pkgs,
-  lib,
-  config,
-  ...
-}: {
   stylix.targets.chromium.enable = true;
 
   programs.chromium = {
@@ -14,4 +9,14 @@
       "SpellcheckLanguage" = ["en-US"];
     };
   };
+  environment.etc."/brave/policies/managed/GroupPolicy.json".text = ''
+    {
+      "BraveRewardsDisabled": true,
+      "BraveWalletDisabled": true,
+      "TorDisabled": true,
+      "BraveVPNDisabled": 1,
+      "BraveAIChatEnabled": 0,
+      "BraveNewsDisabled": 1
+    }
+  '';
 }
