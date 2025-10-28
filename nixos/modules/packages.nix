@@ -43,7 +43,6 @@
     openrgb
     zoom-us
     seahorse
-    gnome-disk-utility
 
     # CLI
     brightnessctl
@@ -94,19 +93,20 @@
     home-manager
   ];
 
-  fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
-
-  # fonts.packages = with pkgs; [
-  #   dina-font
-  #   fira-code
-  #   fira-code-symbols
-  #   liberation_ttf
-  #   mplus-outline-fonts.githubRelease
-  #   nerd-fonts.fira-code
-  #   nerd-fonts.symbols-only
-  #   noto-fonts
-  #   noto-fonts-cjk-sans
-  #   noto-fonts-emoji
-  #   proggyfonts
-  # ];
+  fonts.packages =
+    (builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts))
+    ++ (with pkgs; [
+      vista-fonts
+      dina-font
+      fira-code
+      fira-code-symbols
+      liberation_ttf
+      mplus-outline-fonts.githubRelease
+      mplus-outline-fonts.githubRelease
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-emoji
+      proggyfonts
+      corefonts
+    ]);
 }
