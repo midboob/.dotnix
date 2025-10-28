@@ -71,6 +71,7 @@
         modules = [
           ./nixos/configuration.nix
           home-manager.nixosModules.home-manager
+          stylix.nixosModules.stylix
         ];
 
         specialArgs = {

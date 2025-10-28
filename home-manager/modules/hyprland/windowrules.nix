@@ -1,7 +1,6 @@
 {
   wayland.windowManager.hyprland.settings = {
-
-		# workspace = "1, monitor:DP-6";
+    # workspace = "1, monitor:DP-6";
 
     windowrule = [
       # Picture-in-Picture PART 1
@@ -38,7 +37,7 @@
       # Calculator PART 2
       "size 400 600, class:^(org.gnome.Calculator)$"
 
-      # windowrule - float popups and dialogue 
+      # windowrule - float popups and dialogue
       "float, title:^(Authentication Required)$"
       "center, title:^(Authentication Required)$"
       "center, title:^(Open File)(.*)$"
@@ -56,24 +55,24 @@
       "float, title:^(Library)(.*)$"
       "float, title:^(File Upload)(.*)$"
 
-			# Always float
-			"float, center, class:^(waypaper)$"
-			"float, center, class:^(steam|Steam)$"
-			"float, center, class:^(io.github.kaii_lb.Overskride)$"
-			"float, center, class:^(nm-connection-editor)$"
-			"float, center, class:^(org.gnome.Calculator)$"
-			"float, center, class:^(openrgb)$"
-			"float, center, class:^(heroic)$"
-			"float, center, class:^(nwg-look)$"
-			"float, center, class:^(org.pulseaudio.pavucontrol)$"
+      # Always float
+      "float, center, class:^(waypaper)$"
+      "float, center, class:^(steam|Steam)$"
+      "float, center, class:^(io.github.kaii_lb.Overskride)$"
+      "float, center, class:^(nm-connection-editor)$"
+      "float, center, class:^(org.gnome.Calculator)$"
+      "float, center, class:^(openrgb)$"
+      "float, center, class:^(heroic)$"
+      "float, center, class:^(nwg-look)$"
+      "float, center, class:^(org.pulseaudio.pavucontrol)$"
 
-			# Opacity
-			# "opacity 0.9 0.8, class:^(org.pwmt.zathura)$"
+      # Opacity
+      # "opacity 0.9 0.8, class:^(org.pwmt.zathura)$"
     ];
 
-		layerrule = [
-    "animation slide, rofi"
-    "dimaround, rofi"
+    layerrule = [
+      "animation slide, rofi"
+      "dimaround, rofi"
     ];
   };
 }

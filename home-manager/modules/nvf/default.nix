@@ -16,6 +16,12 @@
     VISUAL = "nvim";
   };
 
+  stylix.targets.nvf = {
+    enable = true;
+    plugin = "base16";
+    transparentBackground = true;
+  };
+
   programs.nvf = {
     enable = true;
 
@@ -31,12 +37,12 @@
           languages = ["en"];
         };
 
-        theme = {
-          enable = true;
-          name = "rose-pine";
-          style = "main";
-          transparent = true;
-        };
+        # theme = {
+        #   enable = true;
+        #   name = "rose-pine";
+        #   style = "main";
+        #   transparent = true;
+        # };
 
         options = {
           tabstop = 2;

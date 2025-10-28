@@ -9,7 +9,7 @@
     settings = {
       vim.statusline.lualine = {
         enable = true;
-        theme = "auto";
+        # theme = "auto";
       };
     };
   };

@@ -11,11 +11,8 @@
     ];
 
     exec-once = [
-      # "${pkgs.waybar}/bin/waybar"
-      # "${pkgs.swaynotificationcenter}/bin/swaync"
-      # "${pkgs.waypaper}/bin/waypaper --restore"
       "swww-daemon"
-      "${pkgs.openrgb}/bin/openrgb --profile ~/.config/OpenRGB/white.orp"
+      "${pkgs.openrgb}/bin/openrgb --profile ~/.config/OpenRGB/black.orp"
 
       # Set volume to #100%
       "sleep 4 && ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 1"
