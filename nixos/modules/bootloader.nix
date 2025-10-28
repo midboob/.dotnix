@@ -1,12 +1,12 @@
-{ config, ... }:
+{config, ...}: {
+  stylix.targets.grub.enable = true;
 
-{
-	boot = {
+  boot = {
     loader = {
       efi.canTouchEfiVariables = true;
       grub = {
         enable = true;
-        devices = [ "nodev" ];
+        devices = ["nodev"];
         efiSupport = true;
         useOSProber = true;
       };
