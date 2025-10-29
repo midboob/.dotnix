@@ -43,6 +43,7 @@
     openrgb
     zoom-us
     seahorse
+    gnome-clocks
 
     # CLI
     brightnessctl

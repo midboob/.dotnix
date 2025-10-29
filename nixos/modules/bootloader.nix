@@ -1,5 +1,8 @@
 {config, ...}: {
-  stylix.targets.grub.enable = true;
+  stylix.targets.grub = {
+    enable = true;
+    useWallpaper = true;
+  };
 
   boot = {
     loader = {

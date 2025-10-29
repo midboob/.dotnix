@@ -11,10 +11,10 @@
       options = ["rw" "uid=1000" "gid=100" "dmask=022" "fmask=133" "exec"];
     };
 
-    # "/mnt/Windows" = {
-    #   device = "/dev/disk/by-uuid/01DC3DED727A8D90";
-    #   fsType = "ntfs-3g";
-    #   options = ["rw" "uid=1000" "gid=100" "dmask=022" "fmask=133"];
-    # };
+    "/mnt/Windows" = {
+      device = "/dev/disk/by-uuid/01DC4262B6A13A40";
+      fsType = "ntfs-3g";
+      options = ["rw" "uid=1000" "gid=100" "dmask=022" "fmask=133"];
+    };
   };
 }
