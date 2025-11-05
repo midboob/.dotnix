@@ -64,6 +64,7 @@
     git
     killall
     lazydocker
+    docker
     lazygit
     ncdu
     ntfs3g
@@ -84,6 +85,7 @@
     matugen
     nix-prefetch-git
     yt-dlp
+    usbmuxd
     upower
     tlp
 
