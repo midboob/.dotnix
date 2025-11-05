@@ -34,7 +34,7 @@
     ./modules/anki
     ./modules/wlogout
     # ./modules/hyprlock
-    ./modules/obsidian
+    # ./modules/obsidian
     ./modules/chromium
     ./modules/ssh
     ./modules/zen-browser
