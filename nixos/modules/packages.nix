@@ -10,6 +10,7 @@
 
     hyprpicker
     grim
+    grimblast
     slurp
     hyprlock
     swaynotificationcenter
@@ -88,6 +89,7 @@
     usbmuxd
     upower
     tlp
+    libnotify
 
     # Other
     gcc

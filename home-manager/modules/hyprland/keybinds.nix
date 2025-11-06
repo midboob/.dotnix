@@ -1,14 +1,14 @@
 {pkgs, ...}: {
   wayland.windowManager.hyprland.settings = {
     # Apps
-    "$wallpaper" = "${pkgs.waypaper}/bin/waypaper";
-    "$lock" = "${pkgs.swaylock}/bin/swaylock";
+    # "$wallpaper" = "${pkgs.waypaper}/bin/waypaper";
+    # "$lock" = "${pkgs.swaylock}/bin/swaylock";
     "$menu" = "${pkgs.rofi}/bin/rofi";
     "$colorPicker" = "${pkgs.hyprpicker}/bin/hyprpicker -a";
     "$noti-center" = "${pkgs.swaynotificationcenter}/bin/swaync-client -t -sw";
 
-    # "$terminal" = "${pkgs.ghostty}/bin/ghostty";
-    "$terminal" = "${pkgs.kitty}/bin/kitty";
+    "$terminal" = "${pkgs.ghostty}/bin/ghostty";
+    # "$terminal" = "${pkgs.kitty}/bin/kitty";
     "$browser" = "${pkgs.brave}/bin/brave";
     "$explorer1" = "$terminal -e ${pkgs.yazi}/bin/yazi";
     "$explorer2" = "${pkgs.nautilus}/bin/nautilus";
