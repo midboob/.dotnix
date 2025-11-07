@@ -1,0 +1,24 @@
+local nc = rawget(_G, 'nixCats') or require('nixCats')
+
+
+-- Ensure handlers are registered first
+require('plugins.handlers')
+
+
+local specs = {}
+local function extend(list)
+for _, x in ipairs(list) do table.insert(specs, x) end
+end
+
+
+extend(require('plugins.specs.ui'))
+extend(require('plugins.specs.treesitter'))
+extend(require('plugins.specs.cmp'))
+extend(require('plugins.specs.git'))
+extend(require('plugins.specs.misc'))
+extend(require('plugins.specs.lint_fmt'))
+extend(require('plugins.specs.dap'))
+extend(require('plugins.lsp.servers'))
+
+
+require('lze').load(specs)
