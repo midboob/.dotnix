@@ -56,6 +56,9 @@ in {
             go-tools
             go
           ];
+          typst = with pkgs; [
+            tinymist
+          ];
         };
 
         # This is for plugins that will load at startup without using packadd:
@@ -66,8 +69,8 @@ in {
             lze
             lzextras
             snacks-nvim
-            onedark-nvim
             vim-sleuth
+            rose-pine
           ];
         };
 
@@ -95,6 +98,7 @@ in {
             nvim-dap
             nvim-dap-ui
             nvim-dap-virtual-text
+            yazi-nvim
           ];
         };
 
@@ -155,6 +159,7 @@ in {
             lua = true;
             nix = true;
             go = false;
+            typst = true;
           };
           # anything else to pass and grab in lua with `nixCats.extra`
           extra = {
