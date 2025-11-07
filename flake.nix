@@ -21,7 +21,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixcats = {
+    nixCats = {
       url = "github:BirdeeHub/nixCats-nvim";
     };
 
@@ -51,7 +51,7 @@
     home-manager,
     stylix,
     nvf,
-    nixcats,
+    nixCats,
     nixcord,
     spicetify-nix,
     bunny-yazi,
@@ -92,7 +92,6 @@
           nvf.homeManagerModules.default
           nixcord.homeModules.nixcord
           inputs.spicetify-nix.homeManagerModules.default
-          inputs.nixcats.homeModules.default
           inputs.zen-browser.homeModules.beta
         ];
       };

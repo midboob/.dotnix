@@ -71,6 +71,7 @@ in {
             snacks-nvim
             vim-sleuth
             rose-pine
+            transparent-nvim
           ];
         };
 
@@ -99,6 +100,12 @@ in {
             nvim-dap-ui
             nvim-dap-virtual-text
             yazi-nvim
+          ];
+          markdown = with pkgs.vimPlugins; [
+            obsidian-nvim
+            render-markdown-nvim
+            typst-preview-nvim
+            markdown-preview-nvim
           ];
         };
 
@@ -156,6 +163,7 @@ in {
           # and a set of categories that you want
           categories = {
             general = true;
+            markdown = true;
             lua = true;
             nix = true;
             go = false;

@@ -9,24 +9,17 @@ return {
 			local Snacks = require("snacks")
 			Snacks.setup({
 				animate = { enabled = true },
-				dashboard = {
-					enabled = true,
-					preset = {
-						header = [[
-																														                       
-											████ ██████           █████      ██                    
-										 ███████████             █████                            
-										 █████████ ███████████████████ ███   ███████████  
-										█████████  ███    █████████████ █████ ██████████████  
-									 █████████ ██████████ █████████ █████ █████ ████ █████  
-								 ███████████ ███    ███ █████████ █████ █████ ████ █████ 
-								██████  █████████████████████ ████ █████ █████ ████ ██████
-						]],
-					},
-				},
+				dashboard = { enabled = false },
 				explorer = { enabled = false },
 				picker = {},
-				bigfile = {},
+				bigfile = { enabled = true },
+				input = {
+					enabled = true,
+					backdrop = false,
+					position = "float",
+					border = true,
+					title_pos = "center",
+				},
 				image = {
 					enabled = true,
 					resolve = function(file, src)
@@ -92,12 +85,19 @@ return {
 				indent = {},
 				gitbrowse = {},
 				scope = {},
-				toggle = { enabled = true },
+				styles = {
+					input = {
+						position = "float",
+						backdrop = false,
+						border = true,
+						title_pos = "center",
+					},
+				},
 			})
 			-- Keymaps for Snacks features
-			vim.keymap.set("n", "<leader>e", function()
-				Snacks.explorer.open()
-			end, { desc = "Snacks Explorer" })
+			-- vim.keymap.set("n", "<leader>e", function()
+			-- 	Snacks.explorer.open()
+			-- end, { desc = "Snacks Explorer" })
 			vim.keymap.set("n", "<C-\\>", function()
 				Snacks.terminal.open()
 			end, { desc = "Snacks Terminal" })

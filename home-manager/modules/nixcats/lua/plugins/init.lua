@@ -21,6 +21,7 @@ extend(require('plugins.specs.dap'))
 extend(require('plugins.lsp.servers'))
 extend(require('plugins.specs.snacks'))
 extend(require('plugins.specs.yazi'))
+extend(require('plugins.specs.render-markdown'))
 
 
 require('lze').load(specs)
