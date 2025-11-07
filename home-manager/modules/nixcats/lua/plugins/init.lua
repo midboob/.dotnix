@@ -22,6 +22,9 @@ extend(require('plugins.lsp.servers'))
 extend(require('plugins.specs.snacks'))
 extend(require('plugins.specs.yazi'))
 extend(require('plugins.specs.render-markdown'))
+extend(require('plugins.specs.obsidian'))
+extend(require('plugins.specs.markdown-preview'))
+extend(require('plugins.specs.typst-preview'))
 
 
 require('lze').load(specs)
