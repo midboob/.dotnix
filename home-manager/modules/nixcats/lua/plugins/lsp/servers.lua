@@ -65,7 +65,7 @@ return {
 
 	{
 		"tinymist",
-		enabled = nc("nix") or false,
+		enabled = nc("typst") or false,
 		lsp = {
 			filetypes = { "typst" },
 			settings = {

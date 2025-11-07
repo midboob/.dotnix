@@ -23,6 +23,7 @@ return {
 	{
 		"conform.nvim",
 		enabled = nc("general") or false,
+		event = "BufReadPre",
 		keys = { { "<leader>FF", desc = "[F]ormat [F]ile" } },
 		after = function()
 			local conform = require("conform")
