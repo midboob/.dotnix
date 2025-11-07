@@ -19,6 +19,7 @@ extend(require('plugins.specs.misc'))
 extend(require('plugins.specs.lint_fmt'))
 extend(require('plugins.specs.dap'))
 extend(require('plugins.lsp.servers'))
+extend(require('plugins.specs.snacks'))
 
 
 require('lze').load(specs)
