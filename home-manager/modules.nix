@@ -17,8 +17,8 @@
     ./modules/cli
     # ./modules/firefox
 
-    ./modules/nvf
-    # ./modules/nixcats
+    # ./modules/nvf
+    ./modules/nixcats
 
     ./modules/nixcord
     ./modules/spicetify

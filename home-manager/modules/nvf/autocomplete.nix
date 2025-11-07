@@ -9,6 +9,7 @@
             friendly-snippets.enable = true;
             setupOpts = {
               cmdline.keymap.preset = "super-tab";
+              fuzzy.implementation = "lua";
             };
           };
         };

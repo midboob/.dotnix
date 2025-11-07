@@ -15,19 +15,16 @@
           snacks-nvim = {
             enable = true;
             setupOpts = {
-              animate.enable = true;
-              dashboard = {
-                enable = true;
-                example = "github";
-              };
-              bigfile.enabled = true;
-              picker.enabled = true;
-              notifier.enabled = true;
-              image.enabled = true;
-              toggle.enable = true;
+              animate = {enabled = true;};
+              dashboard = {enabled = false;};
+              :q
+              bigfile = {enabled = true;};
+              notifier = {enabled = true;};
+              image = {enabled = true;};
+              toggle = {enabled = true;};
               input = {
-                enable = true;
-                position = "float";
+                enabled = true;
+                position = "float"; # works via Snacks' window config
                 border = "rounded";
               };
             };
