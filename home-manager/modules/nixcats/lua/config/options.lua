@@ -1,42 +1,49 @@
 -- [[ Options ]]
-vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+local opt = vim.opt
+
+opt.list = true
+opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 vim.g.snacks_animate = true
 
-vim.opt.hlsearch = true
+opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+opt.inccommand = 'split'
+opt.scrolloff = 10
 
-vim.opt.inccommand = 'split'
-vim.opt.scrolloff = 10
+-- window-local defaults (applies to current win + future wins)
+opt.number = true
+opt.relativenumber = true
+opt.signcolumn = 'yes'
+opt.cursorline = true
 
+opt.mouse = 'a'
 
-vim.wo.number = true
-vim.wo.relativenumber = true
+-- You likely meant shortmess (hide intro) instead of cpoptions
+opt.shortmess:append('I')
 
+opt.expandtab = true
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.softtabstop = 2
 
-vim.o.mouse = 'a'
-vim.opt.cpoptions:append('I')
-vim.o.expandtab = true
-vim.o.cursorline = true
+opt.breakindent = true
+opt.undofile = true
+opt.ignorecase = true
+opt.smartcase = true
 
-vim.o.clipboard = vim.env.SSH_CONNECTION and "" or "unnamedplus"
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
+opt.updatetime = 250
+opt.timeoutlen = 300
+opt.completeopt = { 'menu', 'preview', 'noselect' }
+opt.termguicolors = true
 
-vim.o.breakindent = true
-vim.o.undofile = true
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.wo.signcolumn = 'yes'
+-- Clipboard: disable under SSH, else use system clipboard
+if vim.env.SSH_CONNECTION then
+  opt.clipboard = ''
+else
+  opt.clipboard = 'unnamedplus'
+end
 
-
-vim.o.updatetime = 250
-vim.o.timeoutlen = 300
-vim.o.completeopt = 'menu,preview,noselect'
-vim.o.termguicolors = true
-
-
--- Colorscheme (set early so UIs can pick it up)
-vim.cmd.colorscheme('rose-pine')
+-- Colorscheme (guard in case it's missing)
+pcall(vim.cmd.colorscheme, 'rose-pine')

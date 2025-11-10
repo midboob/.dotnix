@@ -31,6 +31,7 @@ return {
 				formatters_by_ft = {
 					lua = nc("lua") and { "stylua" } or nil,
 					go = nc("go") and { "gofmt", "golint" } or nil,
+					nix = nc("nix") and { "alejandra" } or nil,
 				},
 			})
 			vim.keymap.set({ "n", "v" }, "<leader>FF", function()

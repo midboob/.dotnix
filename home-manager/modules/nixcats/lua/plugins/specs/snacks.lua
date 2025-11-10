@@ -95,9 +95,9 @@ return {
 				},
 			})
 			-- Keymaps for Snacks features
-			-- vim.keymap.set("n", "<leader>e", function()
-			-- 	Snacks.explorer.open()
-			-- end, { desc = "Snacks Explorer" })
+			vim.keymap.set("n", "<leader>n", function()
+				Snacks.picker.notifications()
+			end, { desc = "Notifications" })
 			vim.keymap.set("n", "<C-\\>", function()
 				Snacks.terminal.open()
 			end, { desc = "Snacks Terminal" })

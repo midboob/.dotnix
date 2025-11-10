@@ -46,6 +46,7 @@ in {
           nix = with pkgs; [
             nixd
             alejandra
+            nixfmt
           ];
           go = with pkgs; [
             gopls

@@ -26,6 +26,7 @@ extend(require('plugins.specs.obsidian'))
 extend(require('plugins.specs.markdown-preview'))
 extend(require('plugins.specs.typst-preview'))
 extend(require('plugins.specs.mini'))
+extend(require('plugins.specs.fidget'))
 
 
 require('lze').load(specs)

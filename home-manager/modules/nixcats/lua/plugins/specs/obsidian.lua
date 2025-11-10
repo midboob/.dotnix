@@ -31,22 +31,32 @@ return {
 
 		after = function()
 			require("obsidian").setup({
+				legacy_commands = false,
+
 				workspaces = {
-					-- {
-					--   name = "notes",
-					--   path = "~/vaults/personal",
-					-- },
-					{
-						name = "notes",
-						path = "/mnt/Storage/Documents/notes/",
-					},
+					{ name = "notes", path = "/mnt/Storage/Documents/notes/" },
 				},
 
 				callbacks = {
-					enter_note = function(_, note)
-						vim.keymap.set("n", "<leader>ch", "<cmd>Obsidian toggle_checkbox<cr>", {
+					enter_note = function(note)
+						local api = require("obsidian.api")
+
+						vim.keymap.set("n", "<leader>ch", function()
+							require("obsidian.api").toggle_checkbox()
+						end, { buffer = note.bufnr, desc = "Toggle checkbox" })
+
+						-- link navigation
+						vim.keymap.set("n", "<leader>on", function()
+							api.nav_link("next")
+						end, {
 							buffer = note.bufnr,
-							desc = "Toggle checkbox",
+							desc = "Next link",
+						})
+						vim.keymap.set("n", "<leader>oN", function()
+							api.nav_link("prev")
+						end, {
+							buffer = note.bufnr,
+							desc = "Previous link",
 						})
 					end,
 				},
@@ -54,22 +64,16 @@ return {
 				notes_subdir = "000 Index",
 				new_notes_location = "notes_subdir",
 
-				completion = {
-					nvim_cmp = false,
-					blink = true,
-					min_chars = 2,
-				},
+				-- Let the plugin auto-detect blink.cmp / nvim-cmp; no need to set defaults.
 
 				ui = {
-					enable = false,
+					enable = false, -- keep this explicit since the default is true
 				},
 
-				disable_frontmatter = false,
-
 				frontmatter = {
-					enabled = true,
-					func = require("obsidian.builtin").frontmatter,
-					sort = { "id", "aliases", "tags", "references", "links" },
+					enabled = true, -- replaces deprecated `disable_frontmatter`
+					func = require("obsidian.builtin").frontmatter, -- modern location
+					order = { "id", "aliases", "tags", "references", "links" }, -- key is `order` now
 				},
 
 				note_id_func = function(title)
@@ -80,39 +84,32 @@ return {
 				end,
 
 				picker = {
+					-- In this fork the enum name is "snacks.pick"
 					name = "snacks.pick",
-					note_mappings = {
-						new = "<C-x>",
-						insert_link = "<C-l>",
-					},
-					tag_mappings = {
-						tag_note = "<C-x>",
-						insert_tag = "<C-l>",
-					},
+					note_mappings = { new = "<C-x>", insert_link = "<C-l>" },
+					tag_mappings = { tag_note = "<C-x>", insert_tag = "<C-l>" },
 				},
 
 				templates = {
-					subdir = "000 Index/001 Templates/",
+					-- key is `folder` in this fork (not `subdir`)
+					folder = "000 Index/001 Templates/",
 					date_format = "%Y-%m-%d",
 					time_format = "%H:%M",
 				},
 
 				attachments = {
 					img_folder = "999 Images/",
-					img_text_func = function(client, path)
+					-- signature is `function(path)` (no `client`)
+					img_text_func = function(path)
 						return string.format("![[%s]]", path.name)
 					end,
 				},
 
-				footer = {
-					enabled = false,
-				},
-
 				checkbox = {
+					enabled = true,
+					create_new = true,
 					order = { " ", "x", "!", ">", "~" },
 				},
-
-				legacy_commands = false,
 
 				sort_by = "modified",
 				sort_reversed = true,
