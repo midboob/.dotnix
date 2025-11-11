@@ -3,7 +3,7 @@ local nc = rawget(_G, "nixCats") or require("nixCats")
 -- Component: show Conform/LSP formatter status
 local function formatter_component()
   local ok, conform = pcall(require, "conform")
-  if not ok then return nil end
+  if not ok then return "" end
 
   local lsp_format = require("conform.lsp_format")
 
@@ -21,7 +21,7 @@ local function formatter_component()
   end
 
   -- Return nil so lualine hides the component when empty
-  return nil
+  return ""
 end
 
 return {

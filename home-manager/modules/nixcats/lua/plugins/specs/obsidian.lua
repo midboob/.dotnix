@@ -45,19 +45,19 @@ return {
 							require("obsidian.api").toggle_checkbox()
 						end, { buffer = note.bufnr, desc = "Toggle checkbox" })
 
-						-- link navigation
-						vim.keymap.set("n", "<leader>on", function()
-							api.nav_link("next")
-						end, {
-							buffer = note.bufnr,
-							desc = "Next link",
-						})
-						vim.keymap.set("n", "<leader>oN", function()
-							api.nav_link("prev")
-						end, {
-							buffer = note.bufnr,
-							desc = "Previous link",
-						})
+						-- -- link navigation
+						-- vim.keymap.set("n", "<leader>on", function()
+						-- 	api.nav_link("next")
+						-- end, {
+						-- 	buffer = note.bufnr,
+						-- 	desc = "Next link",
+						-- })
+						-- vim.keymap.set("n", "<leader>oN", function()
+						-- 	api.nav_link("prev")
+						-- end, {
+						-- 	buffer = note.bufnr,
+						-- 	desc = "Previous link",
+						-- })
 					end,
 				},
 

@@ -87,7 +87,7 @@ in {
             lze
             lzextras
             snacks-nvim
-            vim-sleuth
+            # vim-sleuth
             rose-pine
             transparent-nvim
           ];

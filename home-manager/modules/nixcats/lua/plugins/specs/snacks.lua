@@ -9,9 +9,47 @@ return {
 			local Snacks = require("snacks")
 			Snacks.setup({
 				animate = { enabled = true },
-				dashboard = { enabled = false },
+				dashboard = {
+					enabled = true,
+					preset = {
+						header = [[
+                        @99o..                                        
+                        `99   o                                       
+                         99.aad9.                                     
+                  "bad9999999999P                                     
+                         99                                           
+                       od99o.                                         
+                      99 99 9o        .o                              
+                      `9999999     ,// `a                             
+                    .ooP`99P'   .o%    ,@9.                           
+                 .''       .oaadObooooa9999                           
+             . ~  .oad999999999999999999P'                            
+            "soo999999999999999P"'                                    
+                 ,.oaa99aooo.                                         
+               .  ,o9999999999.   o@@o                                
+               o o99'        `99   @@@                                
+               `99'       ,oda9'   "'                                 
+                         0   a999o.                                   
+                         `.ao" `999,                                  
+                                `999;          A Chinese character    
+                                 999           (means long life).     
+                   o            ,99'                                  
+                    `9a,       ,9F             Z. LIN  17 MARCH, 1994 
+                      "*bo. ,g9"                                      
+        ]],
+					},
+					sections = {
+						{ section = "header" },
+						{
+							padding = 2,
+							align = "center",
+							text = {
+								{ "Neovim :: Welcome back pɹɐʍpǝ", hl = "Title" },
+							},
+						},
+					},
+				},
 				explorer = { enabled = false },
-				picker = {},
 				bigfile = { enabled = true },
 				input = {
 					enabled = true,
@@ -78,19 +116,26 @@ return {
 						},
 					},
 				},
-				lazygit = {},
-				terminal = {},
-				rename = {},
-				notifier = {},
-				indent = {},
-				gitbrowse = {},
-				scope = {},
+				indent = {
+					enabled = true,
+					priority = 1,
+					char = "|",
+					animate = { enabled = true },
+				},
+				notifier = { enabled = true },
+				scope = { enabled = true },
+				scroll = { enabled = true },
+				words = { enabled = true },
 				styles = {
 					input = {
 						position = "float",
 						backdrop = false,
 						border = true,
 						title_pos = "center",
+					},
+					notification = {
+						border = true,
+						wo = { wrap = true },
 					},
 				},
 			})

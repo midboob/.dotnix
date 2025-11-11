@@ -1,49 +1,49 @@
 -- [[ Options ]]
-local opt = vim.opt
-
-opt.list = true
-opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.list = true
+-- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 vim.g.snacks_animate = true
+vim.g.markdown_recommended_style = 0
 
-opt.hlsearch = true
+vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
-opt.inccommand = 'split'
-opt.scrolloff = 10
 
--- window-local defaults (applies to current win + future wins)
-opt.number = true
-opt.relativenumber = true
-opt.signcolumn = 'yes'
-opt.cursorline = true
+vim.opt.inccommand = 'split'
+vim.opt.scrolloff = 10
+vim.opt.confirm = true
+vim.opt.linebreak = true
 
-opt.mouse = 'a'
+vim.opt.number = true
+vim.opt.relativenumber = true
 
--- You likely meant shortmess (hide intro) instead of cpoptions
-opt.shortmess:append('I')
 
-opt.expandtab = true
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.softtabstop = 2
+vim.opt.mouse = 'a'
+vim.opt.cpoptions:append('I')
+vim.opt.expandtab = true
+vim.opt.cursorline = true
 
-opt.breakindent = true
-opt.undofile = true
-opt.ignorecase = true
-opt.smartcase = true
+vim.opt.clipboard = vim.env.SSH_CONNECTION and "" or "unnamedplus"
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
 
-opt.updatetime = 250
-opt.timeoutlen = 300
-opt.completeopt = { 'menu', 'preview', 'noselect' }
-opt.termguicolors = true
+vim.opt.breakindent = true
+vim.opt.undofile = true
+vim.opt.undolevels = 10000
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.smartindent = true
+vim.opt.smoothscroll = true
+vim.opt.spelllang = {"en"}
+vim.opt.signcolumn = 'yes'
 
--- Clipboard: disable under SSH, else use system clipboard
-if vim.env.SSH_CONNECTION then
-  opt.clipboard = ''
-else
-  opt.clipboard = 'unnamedplus'
-end
 
--- Colorscheme (guard in case it's missing)
-pcall(vim.cmd.colorscheme, 'rose-pine')
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
+vim.opt.completeopt = 'menu,preview,noselect'
+vim.opt.termguicolors = true
+
+
+-- Colorscheme (set early so UIs can pick it up)
+vim.cmd.colorscheme('rose-pine')
