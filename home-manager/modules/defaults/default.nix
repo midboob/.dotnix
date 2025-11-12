@@ -1,12 +1,4 @@
 {pkgs, ...}: {
-  environment.variables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
-
-    BROWSER = "${pkgs.brave}/bin/brave";
-    DEFAULT_BROWSER = "${pkgs.brave}/bin/brave";
-  };
-
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {

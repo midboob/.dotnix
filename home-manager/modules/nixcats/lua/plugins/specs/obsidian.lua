@@ -76,9 +76,9 @@ return {
 					order = { "id", "aliases", "tags", "references", "links" },
 				},
 
-				-- note_id_func = function(title)
-				-- 	return title
-				-- end,
+				note_id_func = function(title)
+					return title
+				end,
 
 				picker = {
 					name = "snacks.pick",
