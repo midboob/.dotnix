@@ -97,10 +97,11 @@ return {
         #show math.equation.where(block: false): set text(top-edge: "bounds", bottom-edge: "bounds")
         #set text(size: 12pt, fill: rgb("${color}"))
         ${header}
-        ${content}]],
+        ${content}
+        ]],
 						},
 						latex = {
-							font_size = "Large", -- see https://www.sascha-frank.com/latex-font-size.html
+							font_size = "small", -- see https://www.sascha-frank.com/latex-font-size.html
 							-- for latex documents, the doc packages are included automatically,
 							-- but you can add more packages here. Useful for markdown documents.
 							packages = { "amsmath", "amssymb", "amsfonts", "amscd", "mathtools" },
@@ -112,7 +113,8 @@ return {
         { \${font_size} \selectfont
           \color[HTML]{${color}}
         ${content}}
-        \end{document}]],
+        \end{document}
+        ]],
 						},
 					},
 				},
@@ -126,6 +128,7 @@ return {
 				scope = { enabled = true },
 				scroll = { enabled = false },
 				words = { enabled = true },
+				toggle = { enabled = true },
 				styles = {
 					input = {
 						position = "float",

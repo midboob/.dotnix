@@ -129,6 +129,8 @@ return {
 
 				sort_by = "modified",
 				sort_reversed = true,
+
+				footer = { enabled = false },
 			})
 		end,
 	},

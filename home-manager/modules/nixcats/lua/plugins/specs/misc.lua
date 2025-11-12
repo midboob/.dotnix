@@ -8,7 +8,14 @@ return {
 		after = function()
 			local wk = require("which-key")
 			wk.setup({
-				preset = "modern",
+				preset = "helix",
+        win = {
+          title = false,
+          padding = { 1, 2 },
+        },
+        spelling = {
+          enabled = true,
+        }
 			})
 			wk.add({
 				{ "<leader><leader>", group = "buffer" },

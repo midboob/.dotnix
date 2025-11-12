@@ -124,6 +124,7 @@ in {
             render-markdown-nvim
             typst-preview-nvim
             markdown-preview-nvim
+            bullets-vim
           ];
         };
 

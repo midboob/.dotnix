@@ -45,6 +45,9 @@ return {
 					lsp = { enabled = true },
 					blink = { enabled = true },
 				},
+        pipe_table = {
+          enabled = true,
+        },
 			})
 		end,
 	},

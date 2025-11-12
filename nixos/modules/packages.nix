@@ -90,6 +90,10 @@
     upower
     tlp
     libnotify
+    imagemagick
+    tectonic-unwrapped
+    ghostscript
+    mermaid-cli
 
     # Other
     gcc

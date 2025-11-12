@@ -14,6 +14,8 @@ vim.opt.scrolloff = 10
 vim.opt.confirm = true
 vim.opt.linebreak = true
 
+vim.opt.swapfile = false
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 

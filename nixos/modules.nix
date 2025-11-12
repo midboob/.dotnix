@@ -1,7 +1,7 @@
 {
   imports = [
-    ./desktop
-    # ./laptop
+    # ./desktop
+    ./laptop
 
     ./modules/packages.nix
     ./modules/wayland.nix
