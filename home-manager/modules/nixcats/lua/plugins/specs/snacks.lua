@@ -124,7 +124,7 @@ return {
 				},
 				notifier = { enabled = true },
 				scope = { enabled = true },
-				scroll = { enabled = true },
+				scroll = { enabled = false },
 				words = { enabled = true },
 				styles = {
 					input = {
@@ -132,10 +132,6 @@ return {
 						backdrop = false,
 						border = true,
 						title_pos = "center",
-					},
-					notification = {
-						border = true,
-						wo = { wrap = true },
 					},
 				},
 			})

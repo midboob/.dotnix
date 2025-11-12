@@ -27,6 +27,7 @@ return {
 			{ prefix .. "r", "<cmd>Obsidian rename<CR>", desc = "Rename" },
 			{ prefix .. "i", "<cmd>Obsidian paste_img<CR>", desc = "Paste Image" },
 			{ prefix .. "p", "<cmd>MarkdownPreview<CR>", desc = "Preview File" },
+			{ prefix .. "D", "<cmd>Obsidian today<CR>", desc = "Daily Note" },
 		},
 
 		after = function()
@@ -35,6 +36,7 @@ return {
 
 				workspaces = {
 					{ name = "notes", path = "/mnt/Storage/Documents/notes/" },
+					{ name = "notes", path = "~/Documents/notes" },
 				},
 
 				callbacks = {
@@ -64,42 +66,56 @@ return {
 				notes_subdir = "000 Index",
 				new_notes_location = "notes_subdir",
 
-				-- Let the plugin auto-detect blink.cmp / nvim-cmp; no need to set defaults.
-
 				ui = {
-					enable = false, -- keep this explicit since the default is true
+					enable = false,
 				},
 
 				frontmatter = {
-					enabled = true, -- replaces deprecated `disable_frontmatter`
-					func = require("obsidian.builtin").frontmatter, -- modern location
-					order = { "id", "aliases", "tags", "references", "links" }, -- key is `order` now
+					enabled = true,
+					func = require("obsidian.builtin").frontmatter,
+					order = { "id", "aliases", "tags", "references", "links" },
 				},
 
-				note_id_func = function(title)
-					return title
-				end,
-				note_path_func = function(spec)
-					return spec.dir / (spec.title .. ".md")
-				end,
+				-- note_id_func = function(title)
+				-- 	return title
+				-- end,
 
 				picker = {
-					-- In this fork the enum name is "snacks.pick"
 					name = "snacks.pick",
 					note_mappings = { new = "<C-x>", insert_link = "<C-l>" },
 					tag_mappings = { tag_note = "<C-x>", insert_tag = "<C-l>" },
 				},
 
 				templates = {
-					-- key is `folder` in this fork (not `subdir`)
 					folder = "000 Index/001 Templates/",
 					date_format = "%Y-%m-%d",
 					time_format = "%H:%M",
+					substitutions = {
+						yday = function()
+							local fmt = "%Y-%m-%d"
+							return os.date(fmt, os.time() - 24 * 60 * 60)
+						end,
+						tmrw = function()
+							local fmt = "%Y-%m-%d"
+							return os.date(fmt, os.time() + 24 * 60 * 60)
+						end,
+						week_id = function()
+							-- ISO week, e.g. "2025-W11"
+							local fmt = "%G-W%V"
+							return os.date(fmt)
+						end,
+					},
+				},
+
+				daily_notes = {
+					folder = "300 Personal/Daily",
+					date_format = "%Y-%m-%d",
+					default_tags = { "daily" },
+					template = "Daily NVIM",
 				},
 
 				attachments = {
 					img_folder = "999 Images/",
-					-- signature is `function(path)` (no `client`)
 					img_text_func = function(path)
 						return string.format("![[%s]]", path.name)
 					end,

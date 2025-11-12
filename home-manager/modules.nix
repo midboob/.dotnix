@@ -38,5 +38,6 @@
     ./modules/chromium
     ./modules/ssh
     ./modules/zen-browser
+    ./modules/defaults
   ];
 }
