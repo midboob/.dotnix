@@ -6,9 +6,13 @@
   # Graphic Settings
   hardware.nvidia = {
     modesetting.enable = true;
+    powerManagement = {
+      enable = false;
+      finegrained = false;
+      };
     nvidiaSettings = true;
-    open = false;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    open = true;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 
   services.xserver.videoDrivers = ["nvidia"];

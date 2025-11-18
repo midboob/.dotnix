@@ -9,8 +9,10 @@
       "XDG_SESSION_DESKTOP,Hyprland"
       "XCURSOR_SIZE,24"
       "QT_QPA_PLATFORM,wayland"
+      # "LIBVA_DRIVER_NAME,nvidia"
+      # "__GLX_VENDOR_LIBRARY_NAME,nvidia"
     ];
-    
+
     xwayland = {
       "force_zero_scaling" = true;
       env = [

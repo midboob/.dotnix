@@ -6,8 +6,10 @@
 }: {
   wayland.windowManager.hyprland.settings = {
     monitor = [
-      ",highrr,0x0,1"
+      # ",highrr,0x0,1"
+      "HDMI-A-2,1920x1080@60,0x0,1"
       # "HDMI-A-2,1920x1080@70,1920x0,1"
+      # "Unknown-1,disabled"
     ];
 
     exec-once = [

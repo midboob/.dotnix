@@ -5,7 +5,6 @@
     ./graphics.nix
     ./optimizations.nix
     ./polkit.nix
-    ./optimizations.nix
 		./services.nix
   ];
 }

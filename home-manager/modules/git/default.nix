@@ -1,14 +1,15 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.git = {
     enable = true;
-    package = pkgs.git.override { withLibsecret = true; };
+    package = pkgs.git.override {withLibsecret = true;};
 
-    userName = "midboob";
-    userEmail = "edwarddan72@gmail.com";
+    settings = {
+      user = {
+        name = "midboob";
+        email = "edwarddan72@gmail.com";
+      };
 
-    extraConfig = {
-
-      credential.helper = "${pkgs.git.override { withLibsecret = true; }}/bin/git-credential-libsecret";
+      credential.helper = "${pkgs.git.override {withLibsecret = true;}}/bin/git-credential-libsecret";
 
       core = {
         compression = 9;
@@ -52,7 +53,7 @@
     enable = true;
     gitCredentialHelper = {
       enable = true;
-      hosts = [ "https://github.com" "https://gist.github.com" ];
+      hosts = ["https://github.com" "https://gist.github.com"];
     };
   };
 }
