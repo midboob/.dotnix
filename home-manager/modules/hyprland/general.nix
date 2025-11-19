@@ -6,10 +6,8 @@
 }: {
   wayland.windowManager.hyprland.settings = {
     monitor = [
-      # ",highrr,0x0,1"
-      "HDMI-A-2,1920x1080@60,0x0,1"
+      ",highrr,0x0,1"
       # "HDMI-A-2,1920x1080@70,1920x0,1"
-      # "Unknown-1,disabled"
     ];
 
     exec-once = [
@@ -104,6 +102,11 @@
       "disable_hyprland_logo" = false;
       "disable_splash_rendering" = true;
       "initial_workspace_tracking" = 1;
+    };
+
+    ecosystem = {
+      "no_update_news" = true;
+      "no_donation_nag" = true;
     };
 
     input = {
