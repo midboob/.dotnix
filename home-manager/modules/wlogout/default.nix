@@ -49,7 +49,7 @@
 
     # CSS theme for wlogout
     style = ''
-      @import "../../.config/waybar/themes/matugen-waybar.css";
+      @import "./theme.css";
     '';
   };
 }
