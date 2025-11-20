@@ -72,8 +72,17 @@ return {
 
 				frontmatter = {
 					enabled = true,
-					func = require("obsidian.builtin").frontmatter,
-					order = { "id", "aliases", "tags", "references", "links" },
+					sort = {"aliases", "tags", "references", "links" },
+					func = function(note)
+						local meta = note.metadata or {}
+						return {
+							-- id = note.id,
+							aliases = note.aliases,
+							tags = note.tags,
+							references = meta.references or {},
+							links = meta.links or {},
+						}
+					end,
 				},
 
 				note_id_func = function(title)
