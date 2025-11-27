@@ -72,19 +72,21 @@ return {
 
 				frontmatter = {
 					enabled = true,
-					sort = {"aliases", "tags", "references", "links" },
+					sort = { "aliases", "tags", "references", "links" },
 					func = function(note)
+						-- Only keep aliases that already exist in the note's frontmatter.
+						-- For new notes, this will be an empty YAML list: aliases: []
 						local meta = note.metadata or {}
+						local aliases = meta.aliases or {} -- <- do NOT use note.aliases
+
 						return {
-							-- id = note.id,
-							aliases = note.aliases,
+							aliases = aliases,
 							tags = note.tags,
 							references = meta.references or {},
 							links = meta.links or {},
 						}
 					end,
 				},
-
 				note_id_func = function(title)
 					return title
 				end,

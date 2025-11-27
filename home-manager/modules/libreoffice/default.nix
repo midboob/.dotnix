@@ -1,0 +1,12 @@
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}: {
+  home.packages = with pkgs; [
+    libreoffice
+    hunspell
+    hunspellDicts.en_US
+  ];
+}

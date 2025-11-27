@@ -39,5 +39,6 @@
     ./modules/ssh
     ./modules/zen-browser
     ./modules/defaults
+    ./modules/libreoffice
   ];
 }
