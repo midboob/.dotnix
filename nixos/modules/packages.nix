@@ -5,9 +5,11 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
+    # Terminal
+    # kitty
+    ghostty
+    
     # Wayland
-    kitty
-
     hyprpicker
     grim
     grimblast
@@ -64,7 +66,6 @@
     fzf
     git
     killall
-    lazydocker
     docker
     lazygit
     ncdu
@@ -94,6 +95,11 @@
     tectonic-unwrapped
     ghostscript
     mermaid-cli
+
+    # LibreOffice
+    libreoffice
+    hunspell
+    hunspellDicts.en_US
 
     # Other
     gcc
