@@ -5,10 +5,6 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    # Terminal
-    # kitty
-    ghostty
-    
     # Wayland
     hyprpicker
     grim

@@ -12,6 +12,7 @@
     ./modules/terminals/ghostty
     ./modules/terminals/kitty
     ./modules/terminals/alacritty
+    ./modules/terminals/foot
 
     # Shell
     ./modules/tmux
