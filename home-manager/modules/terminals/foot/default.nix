@@ -8,9 +8,6 @@
 
   programs.foot = {
     enable = true;
-    enableFishIntegration = true;
-    enableBashIntegration = true;
-    enableZshIntegration = true;
 
     settings = {
       main = {
@@ -28,7 +25,7 @@
         system = "no";
       };
       colors = {
-        alpha = "0.8";
+        alpha = lib.mkForce "0.8";
       };
       csd = {
         preferred = "none";
