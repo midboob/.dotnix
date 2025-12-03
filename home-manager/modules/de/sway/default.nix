@@ -1,0 +1,41 @@
+{ pkgs, ... }: {
+
+	imports = [
+		./general.nix
+		./keybinds.nix
+		./env.nix
+		./windowrules.nix
+	];
+
+	stylix.targets.sway.enable = true;
+
+# sway
+	wayland.windowManager.sway = {
+    systemd.enable = true;
+		enable = true;
+    xwayland = true;
+	};
+
+	home.sessionVariables = {
+		NIXOS_OZONE_WL = "1";
+		MOZ_ENABLE_WAYLAND = "1";
+		XDG_CURRENT_DESKTOP = "sway";
+		XDG_SESSION_DESKTOP = "sway";
+		XDG_SESSION_TYPE = "wayland";
+		GDK_BACKEND = "wayland,x11";
+		QT_QPA_PLATFORM = "wayland;xcb";
+	};
+
+	xdg.portal = {
+		enable = true;
+		xdgOpenUsePortal = true;
+		config = {
+			common.default = [ "gtk" "wlr" ];
+			hyprland.default = [ "gtk" "wlr" ];
+		};
+		extraPortals = with pkgs; [
+			xdg-desktop-portal-gtk
+			xdg-desktop-portal-wlr
+		];
+	};
+}

@@ -1,22 +1,14 @@
-{pkgs, ...}: {
+{lib, ...}: {
   programs = {
     sway = {
       enable = true;
-      wrapperFeatures.gtk = true; # recommended on the wiki
+      wrapperFeatures.gtk = true;
+
+      extraOptions = [
+        "--unsupported-gpu"
+      ];
     };
-    xwayland.enable = true;
   };
 
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-    config = {
-      common.default = ["wlr" "gtk"];
-      sway.default = ["wlr" "gtk"];
-    };
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-wlr
-      xdg-desktop-portal-gtk
-    ];
-  };
+  xdg.portal.config.sway.default = lib.mkForce ["wlr" "gtk"];
 }

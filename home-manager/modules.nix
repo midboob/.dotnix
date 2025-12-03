@@ -6,6 +6,7 @@
 
     #DE
     ./modules/de/hyprland
+    ./modules/de/sway
 
     # Terminal
     ./modules/terminals/ghostty
