@@ -1,25 +1,31 @@
 {
   imports = [
+    # Other
     ./modules/theme
+    ./modules/defaults
 
-    ./modules/hyprland
-    # ./modules/waypaper
-    ./modules/waybar
-    ./modules/swaync
-    ./modules/swaylock
-    ./modules/rofi
-    ./modules/kitty
+    #DE
+    ./modules/de/hyprland
+
+    # Terminal
+    ./modules/terminals/ghostty
+    ./modules/terminals/kitty
+    ./modules/terminals/alacritty
+
+    # Shell
     ./modules/tmux
     ./modules/fish
     ./modules/zsh
-
-    ./modules/git
     ./modules/cli
+    ./modules/ssh
+
+    # Programs
+    ./modules/waybar
+    ./modules/swaync
+    ./modules/rofi
+    ./modules/git
     # ./modules/firefox
-
-    # ./modules/nvf
     ./modules/nixcats
-
     ./modules/nixcord
     ./modules/spicetify
     ./modules/yazi
@@ -29,15 +35,11 @@
     ./modules/ohmyposh
     ./modules/fastfetch
     ./modules/matugen
-    ./modules/ghostty
     ./modules/zathura
     ./modules/anki
     ./modules/wlogout
     # ./modules/hyprlock
-    # ./modules/obsidian
     ./modules/chromium
-    ./modules/ssh
     ./modules/zen-browser
-    ./modules/defaults
   ];
 }
