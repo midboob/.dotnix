@@ -1,21 +1,5 @@
 {pkgs, ...}: {
-  programs = {
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-      portalPackage = pkgs.xdg-desktop-portal-gtk;
-    };
-
-    sway = {
-      enable = true;
-    };
-
-    niri = {
-      enable = true;
-    };
-
-    xwayland.enable = true;
-  };
+  programs.xwayland.enable = true;
 
   environment.sessionVariables = {
     GSK_RENDERER = "ngl";

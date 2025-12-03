@@ -1,7 +1,9 @@
-{
-  services.gnome.gnome-keyring.enable = true;
-  services.upower.enable = true;
-  services.usbmuxd = {
-    enable = true;
+{pkgs, lib, config, ...}: {
+  services = {
+    gnome.gnome-keyring.enable = true;
+    upower.enable = true;
+    usbmuxd = {
+      enable = true;
+    };
   };
 }

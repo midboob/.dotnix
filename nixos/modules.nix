@@ -1,11 +1,15 @@
 {
   imports = [
-    # ./desktop
-    ./laptop
+    ./desktop
+    # ./laptop
+
+    ./de/niri.nix
+    ./de/sway.nix
+    ./de/hyprland.nix
 
     ./modules/packages.nix
-    ./modules/wayland.nix
     ./modules/bootloader.nix
+    ./modules/wayland.nix
     ./modules/audio.nix
     ./modules/shell.nix
     ./modules/user.nix
