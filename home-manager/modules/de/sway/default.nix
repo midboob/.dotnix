@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./general.nix
+    ./keybinds.nix
   ];
 
   stylix.targets.sway.enable = true;
