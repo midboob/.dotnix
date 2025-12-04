@@ -1,7 +1,7 @@
 {
   imports = [
-    # ./desktop
-    ./laptop
+    ./desktop
+    # ./laptop
 
     ./de/niri.nix
     ./de/sway.nix

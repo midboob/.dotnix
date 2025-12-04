@@ -21,8 +21,9 @@ if pgrep -x slurp >/dev/null 2>&1 || pgrep -x grimblast >/dev/null 2>&1; then
   exit 1
 fi
 
-if command -v grimblast >/dev/null 2>&1; then
-  # Hyprland-native freeze + select + copy + save
+# ---- Hyprland-specific path (grimblast) ----
+# Only use grimblast if we're actually in Hyprland
+if command -v grimblast >/dev/null 2>&1 && [ -n "${HYPRLAND_INSTANCE_SIGNATURE-}" ]; then
   if grimblast --freeze copysave area "$SAVE_PATH"; then
     notify "Saved: $SAVE_PATH (and copied)"
     exit 0

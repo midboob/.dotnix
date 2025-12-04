@@ -41,7 +41,7 @@
     localsend
     openrgb
     zoom-us
-    seahorse
+    # seahorse
     gnome-clocks
 
     # CLI

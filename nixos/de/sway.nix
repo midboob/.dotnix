@@ -2,7 +2,7 @@
   programs = {
     sway = {
       enable = true;
-      # wrapperFeatures.gtk = true;
+      wrapperFeatures.gtk = true;
 
       extraOptions = [
         "--unsupported-gpu"
@@ -10,5 +10,5 @@
     };
   };
 
-  # xdg.portal.config.sway.default = lib.mkForce ["wlr" "gtk"];
+  xdg.portal.config.sway.default = lib.mkForce ["wlr" "gtk"];
 }
