@@ -16,11 +16,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nvf = {
-      url = "github:notashelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nixCats = {
       url = "github:BirdeeHub/nixCats-nvim";
     };
@@ -44,18 +39,29 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    mango = {
+      url = "github:DreamMaoMao/mangowc";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
     nixpkgs,
     home-manager,
     stylix,
-    nvf,
     nixCats,
     nixcord,
     spicetify-nix,
     bunny-yazi,
     zen-browser,
+    niri,
+    mango,
     ...
   }: let
     system = "x86_64-linux";
@@ -72,6 +78,7 @@
           ./nixos/configuration.nix
           home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
+          inputs.mango.nixosModules.mango
         ];
 
         specialArgs = {
@@ -89,10 +96,10 @@
         modules = [
           ./home-manager/home.nix
           stylix.homeModules.stylix
-          nvf.homeManagerModules.default
           nixcord.homeModules.nixcord
           inputs.spicetify-nix.homeManagerModules.default
           inputs.zen-browser.homeModules.beta
+          inputs.mango.hmModules.mango
         ];
       };
     };
