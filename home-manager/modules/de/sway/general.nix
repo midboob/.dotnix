@@ -9,7 +9,7 @@
     defaultWorkspace = "workspace 1";
 
     output = {
-      DP-5 = {
+      "*" = {
         mode = "1920x1080@144.001Hz";
         pos = "0 0";
         scale = "1";

@@ -26,7 +26,7 @@
 				pictureInPicture.enable = true;
 				whoReacted.enable = true;
         biggerStreamPreview.enable = true;
-        clearURLs.enable = true;
+        clearUrLs.enable = true;
         fixImagesQuality.enable = true;
         fixSpotifyEmbeds = {
             enable = true;
