@@ -5,16 +5,18 @@
     ./modules/defaults
 
     #DE
-    ./modules/de/hyprland
-    ./modules/de/sway
-    ./modules/de/mango
-    ./modules/de/niri
+    ./modules/de
+    # ./modules/de/hyprland
+    # ./modules/de/sway
+    # ./modules/de/mango
+    # ./modules/de/niri
 
     # Terminal
-    ./modules/terminals/ghostty
-    ./modules/terminals/kitty
-    ./modules/terminals/alacritty
-    ./modules/terminals/foot
+    ./modules/terminals
+    # ./modules/terminals/ghostty
+    # ./modules/terminals/kitty
+    # ./modules/terminals/alacritty
+    # ./modules/terminals/foot
 
     # Shell
     ./modules/tmux

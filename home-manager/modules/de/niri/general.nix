@@ -6,7 +6,12 @@
 }: {
   programs.niri.settings = {
     outputs = {
-      "eDP-1" = {
+      "*" = {
+        mode = {
+          height = 1440;
+          width = 2560;
+          refresh = 180.002;
+        };
         position = {
           x = 0;
           y = 0;
@@ -15,7 +20,12 @@
       };
 
       "HDMI-A-2" = {
-        mode = "1920x1080@60";
+        mode = {
+          height = 1080;
+          width = 1920;
+          refresh = 60.0;
+        };
+
         position = {
           x = 2560;
           y = 0;
@@ -68,8 +78,8 @@
 
       border = {
         width = 2.0;
-        active-color = "#${config.stylix.base16Scheme.base0A}";
-        inactive-color = "#${config.stylix.base16Scheme.base01}";
+        # active = "#${config.stylix.base16Scheme.base0A}";
+        # inactive = "#${config.stylix.base16Scheme.base01}";
       };
 
       shadow = {
@@ -85,15 +95,13 @@
     };
 
     input = {
-      focus-follows-mouse = {
-        enable = true;
-      };
+      focus-follows-mouse.enable = true;
 
       keyboard.xkb.layout = "us";
 
-      keyboard."numlock-on".enable = true;
+      keyboard.numlock = true;
 
-      pointer = {
+      mouse = {
         "accel-profile" = "flat";
         "accel-speed" = 0.0;
       };

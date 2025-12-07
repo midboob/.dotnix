@@ -17,11 +17,10 @@ let
   editor    = "terminal -e nvim";
 
 in {
-  programs.niri = {
-    enable = true;
+  programs.niri.settings = {
 
     # This is the Nix-native representation of niri's KDL config.
-    settings.binds = {
+    binds = {
       ################################
       ## Basic window management
       ################################

@@ -1,9 +1,11 @@
-{ pkgs, ... }: {
+{pkgs, lib, config, ...}: {
+  imports = [
 
-	imports = [
-		./general.nix
-		./keybinds.nix
-		# ./env.nix
-		# ./windowrules.nix
-	];
+    ./general.nix
+    ./keybinds.nix
+    # ./env.nix
+    # ./windowrules.nix
+  ];
+
+  stylix.targets.niri.enable = true;
 }
