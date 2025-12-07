@@ -8,6 +8,7 @@
     ./modules/de/hyprland
     ./modules/de/sway
     ./modules/de/mango
+    ./modules/de/niri
 
     # Terminal
     ./modules/terminals/ghostty

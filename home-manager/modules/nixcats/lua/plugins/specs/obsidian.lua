@@ -138,8 +138,10 @@ return {
 					order = { " ", "x", "!", ">", "~" },
 				},
 
-				sort_by = "modified",
-				sort_reversed = true,
+				search = {
+					sort_by = "modified",
+					sort_reversed = true,
+				},
 
 				footer = { enabled = false },
 			})

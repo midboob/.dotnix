@@ -101,6 +101,7 @@
     gcc
     clang
     zig
+    typst
     home-manager
   ];
 
