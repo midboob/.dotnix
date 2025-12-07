@@ -1,26 +1,26 @@
 {config, ...}: {
   # Graphic Settings
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement = {
-      enable = false;
-      finegrained = false;
+  hardware = {
+    nvidia = {
+      modesetting.enable = true;
+      powerManagement = {
+        enable = false;
+        finegrained = false;
+      };
+      nvidiaSettings = true;
+      open = false;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
-    nvidiaSettings = true;
-    open = false;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
   };
 
   services.xserver = {
     enable = true;
     videoDrivers = ["nvidia"];
-  };
-
-  hardware = {
-    graphics = {
-      enable = true;
-      enable32Bit = true;
-    };
   };
 
   environment.sessionVariables = {

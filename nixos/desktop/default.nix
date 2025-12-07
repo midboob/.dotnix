@@ -6,5 +6,6 @@
     ./optimizations.nix
     ./polkit.nix
 		./services.nix
+    ./aoc-q27g3xmn.nix
   ];
 }
