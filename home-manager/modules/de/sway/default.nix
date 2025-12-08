@@ -4,7 +4,7 @@
     ./keybinds.nix
   ];
 
-  stylix.targets.sway.enable = true;
+  # stylix.targets.sway.enable = true;
 
   # sway
   wayland.windowManager.sway = {

@@ -138,6 +138,13 @@ output_path = "/mnt/Storage/Documents/notes/.obsidian/themes/Matugen/theme.css"
 # input_path = "~/.config/matugen/templates/matugen-heroic.css"
 # output_path = "~/.config/heroic/themes/matugen-heroic.css"
 
+# Sway
+[templates.sway]
+input_path = '~/.config/matugen/templates/matugen-sway.conf'
+output_path = '~/.config/sway/colors.conf'
+post_hook = 'swaymsg reload'
+
+# Ghostty
 [templates.ghostty]
 input_path = "~/.config/matugen/templates/matugen-ghostty.conf"
 output_path = "~/.config/ghostty/themes/matugen"

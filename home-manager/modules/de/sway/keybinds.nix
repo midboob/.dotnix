@@ -34,7 +34,7 @@
       "Mod4+Shift+N" = "exec ${pkgs.swaynotificationcenter}/bin/swaync-client -t -sw";
       "Mod4+Escape" = "exec wlogout";
       "Mod4+Shift+W" = "exec rofi-wallpaper";
-      "Mod4+Shift+R" = "exec ./reload.sh";
+      "Mod4+Shift+R" = "exec ${./reload.sh}";
 
       # Screenshots
       "Mod4+Shift+S" = "exec ${./screenshot.sh}";
