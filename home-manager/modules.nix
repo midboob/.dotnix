@@ -5,18 +5,16 @@
     ./modules/defaults
 
     #DE
-    ./modules/de
-    # ./modules/de/hyprland
-    # ./modules/de/sway
-    # ./modules/de/mango
-    # ./modules/de/niri
+    ./modules/de/hyprland
+    ./modules/de/sway
+    ./modules/de/mango
+    ./modules/de/niri
 
     # Terminal
-    ./modules/terminals
-    # ./modules/terminals/ghostty
-    # ./modules/terminals/kitty
-    # ./modules/terminals/alacritty
-    # ./modules/terminals/foot
+    ./modules/terminals/ghostty
+    ./modules/terminals/kitty
+    ./modules/terminals/alacritty
+    ./modules/terminals/foot
 
     # Shell
     ./modules/tmux
@@ -44,7 +42,6 @@
     ./modules/zathura
     ./modules/anki
     ./modules/wlogout
-    # ./modules/hyprlock
     ./modules/chromium
     ./modules/zen-browser
   ];

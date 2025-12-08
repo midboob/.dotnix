@@ -73,6 +73,9 @@
     layerrule = [
       "animation slide, rofi"
       "dimaround, rofi"
+
+      "blur, logout_dialog"
+      "xray 0, logout_dialog"
     ];
   };
 }
