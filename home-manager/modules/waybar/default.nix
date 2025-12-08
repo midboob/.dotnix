@@ -8,7 +8,9 @@
   # Install the actual config files from this directory
   xdg.configFile."waybar/hyprland.jsonc".source = ./hyprland.jsonc;
   xdg.configFile."waybar/niri.jsonc".source = ./niri.jsonc;
+  xdg.configFile."waybar/sway.jsonc".source = ./sway.jsonc;
   xdg.configFile."waybar/style.css".source = ./style.css;
+  xdg.configFile."waybar/sway.css".source = ./sway.css;
 
   # colors.css still needs Stylix interpolation, so we generate it from Nix
   xdg.configFile."waybar/colors.css".text = ''
