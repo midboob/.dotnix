@@ -5,6 +5,7 @@
   ...
 }: {
   wayland.windowManager.sway.config = {
+    bars = [];
 
     defaultWorkspace = "workspace 1";
 

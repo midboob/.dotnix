@@ -11,6 +11,7 @@
 
     settings = {
       main = {
+        font = lib.mkForce "Fira Code:size=12";
         pad = "10x10";
       };
       scrollback = {

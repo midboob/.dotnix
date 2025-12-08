@@ -35,7 +35,8 @@
     };
 
     spawn-at-startup = [
-      {command = ["swww-daemon"];}
+      {argv = ["swww-daemon"];}
+      {argv = ["${pkgs.waybar}/bin/waybar" "-c" "~/.config/waybar/niri.jsonc" "-s" "~/.config/waybar/style.css"];}
 
       {
         command = [
