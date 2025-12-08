@@ -39,7 +39,7 @@ swww img "$WALLPAPER" \
   notify-send "Wallpaper Changed" -i "$WALLPAPER" --app-name=swww
 
 # matugen or pywal/hellway
-# matugen image "$WALLPAPER"
+matugen image "$WALLPAPER"
 # pywal -i "$WALLPAPER"
 # hellwal -i "$WALLPAPER"
 

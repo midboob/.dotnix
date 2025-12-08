@@ -12,6 +12,9 @@
     enable = true;
     xwayland = true;
     extraOptions = ["--unsupported-gpu"];
+    extraConfig = ''
+      include colors.conf
+    '';
   };
 
   home.sessionVariables = {

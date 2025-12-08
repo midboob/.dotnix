@@ -6,132 +6,132 @@ input_path = '~/.config/matugen/templates/matugen-bat.tmTheme'
 output_path = '~/.config/bat/themes/matugen-bat.tmTheme'
 post_hook = 'bat cache --build'
 
-# Spicetify Comfy
-[templates.spicetify-comfy]
-input_path = '~/.config/matugen/templates/matugen-spotify-comfy.ini'
-output_path = '~/.config/spicetify/Themes/Comfy/color.ini'
-
-# Spicetify Text 
-[templates.spicetify-text]
-input_path = '~/.config/matugen/templates/matugen-spotify-text.ini'
-output_path = '~/.config/spicetify/Themes/text/color.ini'
-
-# Rofi
+# # Spicetify Comfy
+# [templates.spicetify-comfy]
+# input_path = '~/.config/matugen/templates/matugen-spotify-comfy.ini'
+# output_path = '~/.config/spicetify/Themes/Comfy/color.ini'
+#
+# # Spicetify Text 
+# [templates.spicetify-text]
+# input_path = '~/.config/matugen/templates/matugen-spotify-text.ini'
+# output_path = '~/.config/spicetify/Themes/text/color.ini'
+#
+# # Rofi
 [templates.rofi]
 input_path = '~/.config/matugen/templates/matugen-rofi.rasi'
-output_path = '~/.config/rofi/themes/matugen.rasi'
+output_path = '~/.config/rofi/theme.rasi'
 
-# Hyprland
-[templates.hyprland]
-input_path = '~/.config/matugen/templates/matugen-hyprland.conf'
-output_path = '~/.config/hypr/themes/matugen.conf'
-post_hook = 'hyprctl reload'
-
-# Zathura
-[templates.zathura]
-input_path = '~/.config/matugen/templates/matugen-zathura'
-output_path = '~/.config/zathura/zathurarc'
-
-# Yazi
-[templates.yazi]
-input_path = '~/.config/matugen/templates/matugen-yazi.toml'
-output_path = '~/.config/yazi/theme.toml'
-
-# # GTk3
-# [templates.gtk3]
-# input_path = '~/.config/matugen/templates/matugen-gtk.css'
-# output_path = '~/.config/gtk-3.0/gtk.css'
+# # Hyprland
+# [templates.hyprland]
+# input_path = '~/.config/matugen/templates/matugen-hyprland.conf'
+# output_path = '~/.config/hypr/themes/matugen.conf'
+# post_hook = 'hyprctl reload'
 #
-# # GTk4
-# [templates.gtk4]
-# input_path = '~/.config/matugen/templates/matugen-gtk.css'
-# output_path = '~/.config/gtk-4.0/gtk.css'
-
-# Qt5
-[templates.qt5]
-input_path = '~/.config/matugen/templates/matugen-qtct.conf'
-output_path = '~/.config/qt5ct/colors/matugen-qt5ct.conf'
-
-# Qt6
-[templates.qt6]
-input_path = '~/.config/matugen/templates/matugen-qtct.conf'
-output_path = '~/.config/qt6ct/colors/matugen-qt6ct.conf'
-
-# Discord
-[templates.midnight-discord]
-input_path = '~/.config/matugen/templates/matugen-discord.css'
-output_path = '~/.config/vesktop/themes/matugen.css'
-
-# Kitty
-[templates.kitty]
-input_path = '~/.config/matugen/templates/matugen-kitty.conf'
-output_path = '~/.config/kitty/themes/matugen.conf'
-post_hook = "kitty @ set-colors -a -c ~/.config/kitty/themes/matugen.conf"
+# # Zathura
+# [templates.zathura]
+# input_path = '~/.config/matugen/templates/matugen-zathura'
+# output_path = '~/.config/zathura/zathurarc'
+#
+# # Yazi
+# [templates.yazi]
+# input_path = '~/.config/matugen/templates/matugen-yazi.toml'
+# output_path = '~/.config/yazi/theme.toml'
+#
+# # # GTk3
+# # [templates.gtk3]
+# # input_path = '~/.config/matugen/templates/matugen-gtk.css'
+# # output_path = '~/.config/gtk-3.0/gtk.css'
+# #
+# # # GTk4
+# # [templates.gtk4]
+# # input_path = '~/.config/matugen/templates/matugen-gtk.css'
+# # output_path = '~/.config/gtk-4.0/gtk.css'
+#
+# # Qt5
+# [templates.qt5]
+# input_path = '~/.config/matugen/templates/matugen-qtct.conf'
+# output_path = '~/.config/qt5ct/colors/matugen-qt5ct.conf'
+#
+# # Qt6
+# [templates.qt6]
+# input_path = '~/.config/matugen/templates/matugen-qtct.conf'
+# output_path = '~/.config/qt6ct/colors/matugen-qt6ct.conf'
+#
+# # Discord
+# [templates.midnight-discord]
+# input_path = '~/.config/matugen/templates/matugen-discord.css'
+# output_path = '~/.config/vesktop/themes/matugen.css'
+#
+# # Kitty
+# [templates.kitty]
+# input_path = '~/.config/matugen/templates/matugen-kitty.conf'
+# output_path = '~/.config/kitty/themes/matugen.conf'
+# post_hook = "kitty @ set-colors -a -c ~/.config/kitty/themes/matugen.conf"
 
 # Waybar
 [templates.waybar]
 input_path = '~/.config/matugen/templates/matugen-waybar.css'
-output_path = '~/.config/waybar/themes/matugen-waybar.css'
+output_path = '~/.config/waybar/matugen-waybar.css'
 post_hook = 'pkill -SIGUSR2 waybar'
 
-# Swaync
-[templates.swaync]
-input_path = '~/.config/matugen/templates/matugen-swaync.css'
-output_path = '~/.config/swaync/themes/matugen-swaync.css'
-post_hook = 'swaync-client -rs'
-
-# Nvchad
-[templates.nvchad]
-input_path = '~/.config/matugen/templates/matugen-nvchad.lua'
-output_path = '~/.cache/wal/base46-dark.lua'
-
-[config.custom_colors.red]
-color = "#FF0000"
-blend = true
-
-[config.custom_colors.green]
-color = "#00FF00"
-blend = true
-
-[config.custom_colors.yellow]
-color = "#FFFF00"
-blend = true
-
-[config.custom_colors.blue]
-color = "#0000FF"
-blend = true
-
-[config.custom_colors.magenta]
-color = "#FF00FF"
-blend = true
-
-[config.custom_colors.cyan]
-color = "#00FFFF"
-blend = true
-
-[config.custom_colors.white]
-color = "#FFFFFF"
-blend = true
-
-# Neovim
-[templates.neovim]
-input_path = '~/.config/matugen/templates/matugen-nvim.vim'
-output_path = '~/.cache/wal/colors-wal.vim'
-
-# Kvantum
-[templates.kvantum]
-input_path = '~/.config/matugen/templates/matugen.kvconfig'
-output_path = '~/.config/Kvantum/themes/matugen.kvconfig'
-
-# Cava
-[templates.cava]
-input_path = '~/.config/matugen/templates/matugen-cava'
-output_path = '~/.config/cava/config'
-
-# Obsidian
-[templates.obsidian]
-input_path = "~/.config/matugen/templates/matugen-obsidian.css"
-output_path = "/mnt/Storage/Documents/notes/.obsidian/themes/Matugen/theme.css"
+# # Swaync
+# [templates.swaync]
+# input_path = '~/.config/matugen/templates/matugen-swaync.css'
+# output_path = '~/.config/swaync/themes/matugen-swaync.css'
+# post_hook = 'swaync-client -rs'
+#
+# # Nvchad
+# [templates.nvchad]
+# input_path = '~/.config/matugen/templates/matugen-nvchad.lua'
+# output_path = '~/.cache/wal/base46-dark.lua'
+#
+# [config.custom_colors.red]
+# color = "#FF0000"
+# blend = true
+#
+# [config.custom_colors.green]
+# color = "#00FF00"
+# blend = true
+#
+# [config.custom_colors.yellow]
+# color = "#FFFF00"
+# blend = true
+#
+# [config.custom_colors.blue]
+# color = "#0000FF"
+# blend = true
+#
+# [config.custom_colors.magenta]
+# color = "#FF00FF"
+# blend = true
+#
+# [config.custom_colors.cyan]
+# color = "#00FFFF"
+# blend = true
+#
+# [config.custom_colors.white]
+# color = "#FFFFFF"
+# blend = true
+#
+# # Neovim
+# [templates.neovim]
+# input_path = '~/.config/matugen/templates/matugen-nvim.vim'
+# output_path = '~/.cache/wal/colors-wal.vim'
+#
+# # Kvantum
+# [templates.kvantum]
+# input_path = '~/.config/matugen/templates/matugen.kvconfig'
+# output_path = '~/.config/Kvantum/themes/matugen.kvconfig'
+#
+# # Cava
+# [templates.cava]
+# input_path = '~/.config/matugen/templates/matugen-cava'
+# output_path = '~/.config/cava/config'
+#
+# # Obsidian
+# [templates.obsidian]
+# input_path = "~/.config/matugen/templates/matugen-obsidian.css"
+# output_path = "/mnt/Storage/Documents/notes/.obsidian/themes/Matugen/theme.css"
 
 # # Heroic Launcher
 # [templates.heroic]
@@ -150,7 +150,7 @@ input_path = "~/.config/matugen/templates/matugen-ghostty.conf"
 output_path = "~/.config/ghostty/themes/matugen"
 
 # Pywalfox
-[templates.pywalfox]
-input_path = '~/.config/matugen/templates/pywalfox-colors.json'
-output_path = '~/.cache/wal/colors.json'
-post_hook = 'pywalfox update'
+# [templates.pywalfox]
+# input_path = '~/.config/matugen/templates/pywalfox-colors.json'
+# output_path = '~/.cache/wal/colors.json'
+# post_hook = 'pywalfox update'
