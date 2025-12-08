@@ -2,7 +2,6 @@
   imports = [
     ./general.nix
     ./keybinds.nix
-    ./bar.nix
   ];
 
   stylix.targets.sway.enable = true;
