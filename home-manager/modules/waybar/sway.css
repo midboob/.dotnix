@@ -9,7 +9,14 @@
 /* Bar itself */
 window#waybar {
 	background: @background;
-	border: 2px solid @border;
+	border: none;          /* no border */
+	padding: 0;            /* no padding on the window */
+}
+
+/* Remove padding/borders from inner box if Waybar adds any */
+window#waybar > box {
+	margin: 0;
+	padding: 0;
 }
 
 /* Text colors */
@@ -40,11 +47,13 @@ window#waybar {
 /* Workspaces */
 
 #workspaces button {
-	padding: 0 4px 0 4px;
+	padding: 0;                    /* no padding */
 	border-radius: 0;
 	color: @ws-active-text;
 	min-width: 10px;
-	min-height: 10px
+	min-height: 10px;
+	border: none;                  /* no button border */
+	box-shadow: none;
 }
 
 #workspaces button:hover {
@@ -52,20 +61,26 @@ window#waybar {
 }
 
 #workspaces button.empty {
-	padding: 0 4px 0 4px;
+	padding: 0;                    /* no padding */
 	border-radius: 0;
 	color: @ws-persistent-text;
 }
 
 #workspaces button.focused {
-	padding: 1px 4px 0 4px;
-	border-bottom: 2px solid @ws-focused;
+	padding: 0;                    /* no padding */
+	/* border-bottom: 2px solid @ws-focused;  removed */
 	color: @ws-active-text;
 }
 
 #workspaces button.urgent {
-	padding: 1px 4px 0 4px;
-	border-bottom: 2px solid @ws-urgent;
+	padding: 0;                    /* no padding */
+	/* border-bottom: 2px solid @ws-urgent;   removed */
+}
+
+/* Optional: if you want zero borders *anywhere* in the bar */
+window#waybar * {
+	border: none;
+	box-shadow: none;
 }
 
 #custom-notification {
