@@ -1,6 +1,6 @@
 { pkgs, ...}: {
 
-	stylix.targets.fish.enable = true;
+	# stylix.targets.fish.enable = true;
 
 	programs.fish = {
 		enable = true;

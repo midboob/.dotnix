@@ -57,16 +57,16 @@ output_path = '~/.config/rofi/theme.rasi'
 # input_path = '~/.config/matugen/templates/matugen-qtct.conf'
 # output_path = '~/.config/qt6ct/colors/matugen-qt6ct.conf'
 #
-# # Discord
-# [templates.midnight-discord]
-# input_path = '~/.config/matugen/templates/matugen-discord.css'
-# output_path = '~/.config/vesktop/themes/matugen.css'
-#
-# # Kitty
-# [templates.kitty]
-# input_path = '~/.config/matugen/templates/matugen-kitty.conf'
-# output_path = '~/.config/kitty/themes/matugen.conf'
-# post_hook = "kitty @ set-colors -a -c ~/.config/kitty/themes/matugen.conf"
+# Discord
+[templates.midnight-discord]
+input_path = '~/.config/matugen/templates/matugen-discord.css'
+output_path = '~/.config/vesktop/themes/matugen.css'
+
+# Kitty
+[templates.kitty]
+input_path = '~/.config/matugen/templates/matugen-kitty.conf'
+output_path = '~/.config/kitty/matugen.conf'
+post_hook = "kitty @ set-colors -a -c ~/.config/kitty/themes/matugen.conf"
 
 # Waybar
 [templates.waybar]

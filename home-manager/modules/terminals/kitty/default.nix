@@ -4,10 +4,14 @@
   lib,
   ...
 }: {
-  stylix.targets.kitty.enable = true;
+  # stylix.targets.kitty.enable = true;
 
   programs.kitty = {
     enable = true;
+
+    extraConfig = ''
+      include matugen.conf
+    '';
 
     # font = {
     #   name = lib.mkForce "Geist Mono";

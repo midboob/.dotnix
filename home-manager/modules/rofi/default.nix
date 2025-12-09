@@ -3,7 +3,7 @@
   config,
   ...
 }: {
-  stylix.targets.rofi.enable = true;
+  # stylix.targets.rofi.enable = true;
   home.file.".config/rofi/config.rasi".source = ./config.rasi;
 
   home.file.".config/rofi/scripts/wallpaper.sh" = {

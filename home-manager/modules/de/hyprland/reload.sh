@@ -12,4 +12,4 @@ hyprctl reload
 
 # Restart SwayNC and Waybar
 swaync &
-waybar &
+waybar -c ~/.config/waybar/hyprland.jsonc -s ~/.config/waybar/hyprland.css&

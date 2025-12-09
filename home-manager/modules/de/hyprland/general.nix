@@ -13,7 +13,7 @@
     exec-once = [
       "swww-daemon"
       "${pkgs.openrgb}/bin/openrgb --profile ~/.config/OpenRGB/black.orp"
-      "${pkgs.waybar}/bin/waybar -c ~/.config/waybar/hyprland.jsonc -s ~/.config/waybar/style.css"
+      "${pkgs.waybar}/bin/waybar -c ~/.config/waybar/hyprland.jsonc -s ~/.config/waybar/hyprland.css"
 
       # Set volume to #100%
       "sleep 4 && ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 1"
