@@ -4,6 +4,8 @@ vim.g.maplocalleader = ' '
 
 vim.opt.termguicolors = true
 
+require("lazy").setup("plugins")
+
 -- Base46 cache dir (used when compiling highlights)
 vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46_cache/"
 

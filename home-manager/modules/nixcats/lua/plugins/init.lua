@@ -11,7 +11,7 @@ for _, x in ipairs(list) do table.insert(specs, x) end
 end
 
 
-extend(require('plugins.specs.ui'))
+-- extend(require('plugins.specs.ui'))
 extend(require('plugins.specs.treesitter'))
 extend(require('plugins.specs.cmp'))
 -- extend(require('plugins.specs.git'))
