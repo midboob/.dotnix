@@ -28,7 +28,8 @@ extend(require('plugins.specs.typst-preview'))
 extend(require('plugins.specs.mini'))
 extend(require('plugins.specs.fidget'))
 extend(require('plugins.specs.bullet'))
-extend(require('plugins.specs.nvconfig'))
+-- extend(require('plugins.specs.nvconfig'))
+extend(require('plugins.specs.chadrc'))
 
 
 require('lze').load(specs)

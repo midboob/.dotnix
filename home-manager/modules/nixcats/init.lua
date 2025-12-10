@@ -23,21 +23,18 @@ require('plugins')
 -- }
 --
 -- Base46: compile + apply theme (including chadwal)
-local ok_base46, base46 = pcall(require, "base46")
-if ok_base46 then
-  base46.load_all_highlights()
-end
+ for _, v in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
+   dofile(vim.g.base46_cache .. v)
+ end
 
 -- Pywal / Matugen watcher: runs in background and sends SIGUSR1 to nvim
 os.execute("python ~/.dotnix/home-manager/modules/nixcats/pywal/chadwal.py &> /dev/null &")
 
--- When the watcher sends SIGUSR1, re-run base46 so new colors apply
-vim.api.nvim_create_autocmd("Signal", {
+local autocmd = vim.api.nvim_create_autocmd
+
+autocmd("Signal", {
   pattern = "SIGUSR1",
   callback = function()
-    local ok, b46 = pcall(require, "base46")
-    if ok then
-      b46.load_all_highlights()
-    end
-  end,
+    require('nvchad.utils').reload()
+  end
 })
