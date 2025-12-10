@@ -1,9 +1,4 @@
 {config, ...}: {
-  stylix.targets.grub = {
-    enable = true;
-    useWallpaper = true;
-  };
-
   boot = {
     loader = {
       efi.canTouchEfiVariables = true;

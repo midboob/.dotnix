@@ -7,12 +7,13 @@
 		./windowrules.nix
 	];
 
-	stylix.targets.hyprland.enable = true;
+	# stylix.targets.hyprland.enable = true;
 
 # hyprland
 	wayland.windowManager.hyprland = {
     systemd.enable = true;
 		enable = true;
+    sourceFirst = true;
 	};
 
 	home.sessionVariables = {

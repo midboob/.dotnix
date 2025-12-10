@@ -48,4 +48,4 @@ vim.opt.termguicolors = true
 
 
 -- Colorscheme (set early so UIs can pick it up)
-vim.cmd.colorscheme('rose-pine')
+-- vim.cmd.colorscheme('matugen')

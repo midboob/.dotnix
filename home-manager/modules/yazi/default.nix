@@ -11,7 +11,7 @@ in
 
 {
 
-  stylix.targets.yazi.enable = true;
+  # stylix.targets.yazi.enable = true;
 
   programs.yazi = {
     enable = true;
@@ -115,6 +115,7 @@ in
           { key = "D", path = "~/Documents", desc = "Documents" },
           { key = "c", path = "~/.config", desc = "Config" },
           { key = "n", path = "~/.dotnix", desc = "Nix Config" },
+          { key = "p", path = "~/Pictures", desc = "Pictures" },
           { key = { "l", "s" }, path = "~/.local/share", desc = "Local share" },
           { key = { "l", "b" }, path = "~/.local/bin", desc = "Local bin" },
           { key = { "l", "t" }, path = "~/.local/state", desc = "Local state" },

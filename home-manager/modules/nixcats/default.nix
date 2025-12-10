@@ -118,6 +118,7 @@ in {
             nvim-dap-ui
             nvim-dap-virtual-text
             yazi-nvim
+            base16-nvim
           ];
           markdown = with pkgs.vimPlugins; [
             obsidian-nvim

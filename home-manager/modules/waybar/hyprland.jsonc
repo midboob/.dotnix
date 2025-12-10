@@ -122,3 +122,115 @@
     "escape": true
   }
 }
+
+
+
+  // {
+  // "name": "hyprland",
+  //
+  //   "layer": "top",
+  //   "position": "top",
+  //   "margin-top": -2,
+  //   "margin-bottom": -5,
+  //   "margin-left": -2,
+  //   "margin-right": -2,
+  //   "modules-left": [
+  //    "hyprland/workspaces",
+  //   ],
+  //   "modules-center": [
+  //     "clock"
+  //   ],
+  //   "modules-right": [
+  //     "tray",
+  //     "backlight",
+  //     "group/volume",
+  //     "group/background-apps",
+  //     "battery",
+  //   ],
+  //   "hyprland/workspaces": {
+  //     "all-outputs": true,
+  //     "format": "{name}",
+  //     "on-scroll-up": "hyprctl dispatch workspace e+1 1>/dev/null",
+  //     "on-scroll-down": "hyprctl dispatch workspace e-1 1>/dev/null",
+  //     "sort-by-number": true,
+  //     "active-only": false
+  //   },
+  //   "clock": {
+  //     "format": "  {:%a %b %e %I:%M}",
+  //     "tooltip-format": "<tt>{calendar}</tt>",
+  //     "calendar": {
+  //       "mode": "month"
+  //     }
+  //   },
+  //   "tray": {
+  //     "icon-size": 15,
+  //     "spacing": 10
+  //   },
+  //   "backlight": {
+  //     "format": "{icon} <b>{percent}%</b>",
+  //     "format-icons": [
+  //       "󰃞",
+  //       "󰃟",
+  //       "󰃠"
+  //     ],
+  //     "tooltip": false
+  //   },
+  //   "group/volume": {
+  //       "orientation": "horizontal",
+  //       "drawer": {
+  //         "transition-duration": 400,
+  //         "children-class": "not-power",
+  //         "transition-left-to-right": false
+  //       },
+  //       "modules": [
+  //           "pulseaudio",
+  //           "pulseaudio/slider"
+  //       ]
+  //   },
+  //   "pulseaudio": {
+  //     "format": "{icon} <b>{volume}%</b>",
+  //     "format-muted": " 󰝟 ",
+  //     "format-bluetooth": "{icon}  <b>{volume}%</b>",
+  //     "format-bluetooth-muted": "󰝟 ",
+  //     "format-icons": {
+  //       "headphone": "",
+  //       "hands-free": "",
+  //       "headset": "",
+  //       "phone": "",
+  //       "portable": "",
+  //       "car": "",
+  //       "default": [
+  //         "󰕿",
+  //         "󰖀",
+  //         "󰕾"
+  //       ]
+  //     },
+  //   },
+  //   "pulseaudio/slider": {
+  //       "min": 0,
+  //       "max": 100,
+  //       "rotate": 0,
+  //       "device": "pulseaudio",
+  //       "scroll-step": 1,
+  //   },
+  //   "battery": {
+  //     "format": "{icon} {capacity}%",
+  //     "format-plugged": " {capacity}%",
+  //     "format-icons": [
+  //       "",
+  //       "",
+  //       "",
+  //       "",
+  //       ""
+  //     ],
+  //     "max-length": 25,
+  //     "tooltip": true,
+  //     "interval": 5,
+  //     "states": {
+  //       "good": 70,
+  //       "warning": 30,
+  //       "critical": 15
+  //     },
+  //     "on-click": "~/.config/rofi/scripts/powermenu.sh"
+  //   }
+  // }

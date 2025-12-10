@@ -21,22 +21,22 @@ post_hook = 'bat cache --build'
 input_path = '~/.config/matugen/templates/matugen-rofi.rasi'
 output_path = '~/.config/rofi/theme.rasi'
 
-# # Hyprland
-# [templates.hyprland]
-# input_path = '~/.config/matugen/templates/matugen-hyprland.conf'
-# output_path = '~/.config/hypr/themes/matugen.conf'
-# post_hook = 'hyprctl reload'
-#
+# Hyprland
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/matugen-hyprland.conf'
+output_path = '~/.config/hypr/matugen.conf'
+post_hook = 'hyprctl reload'
+
 # # Zathura
 # [templates.zathura]
 # input_path = '~/.config/matugen/templates/matugen-zathura'
 # output_path = '~/.config/zathura/zathurarc'
 #
-# # Yazi
-# [templates.yazi]
-# input_path = '~/.config/matugen/templates/matugen-yazi.toml'
-# output_path = '~/.config/yazi/theme.toml'
-#
+# Yazi
+[templates.yazi]
+input_path = '~/.config/matugen/templates/matugen-yazi.toml'
+output_path = '~/.config/yazi/theme.toml'
+
 # # # GTk3
 # # [templates.gtk3]
 # # input_path = '~/.config/matugen/templates/matugen-gtk.css'
@@ -66,7 +66,7 @@ output_path = '~/.config/vesktop/themes/matugen.css'
 [templates.kitty]
 input_path = '~/.config/matugen/templates/matugen-kitty.conf'
 output_path = '~/.config/kitty/matugen.conf'
-post_hook = "kitty @ set-colors -a -c ~/.config/kitty/themes/matugen.conf"
+post_hook = "kitty @ set-colors -a -c ~/.config/kitty/matugen.conf"
 
 # Waybar
 [templates.waybar]
@@ -77,47 +77,14 @@ post_hook = 'pkill -SIGUSR2 waybar'
 # # Swaync
 # [templates.swaync]
 # input_path = '~/.config/matugen/templates/matugen-swaync.css'
-# output_path = '~/.config/swaync/themes/matugen-swaync.css'
+# output_path = '~/.config/swaync/matugen-swaync.css'
 # post_hook = 'swaync-client -rs'
-#
-# # Nvchad
-# [templates.nvchad]
-# input_path = '~/.config/matugen/templates/matugen-nvchad.lua'
-# output_path = '~/.cache/wal/base46-dark.lua'
-#
-# [config.custom_colors.red]
-# color = "#FF0000"
-# blend = true
-#
-# [config.custom_colors.green]
-# color = "#00FF00"
-# blend = true
-#
-# [config.custom_colors.yellow]
-# color = "#FFFF00"
-# blend = true
-#
-# [config.custom_colors.blue]
-# color = "#0000FF"
-# blend = true
-#
-# [config.custom_colors.magenta]
-# color = "#FF00FF"
-# blend = true
-#
-# [config.custom_colors.cyan]
-# color = "#00FFFF"
-# blend = true
-#
-# [config.custom_colors.white]
-# color = "#FFFFFF"
-# blend = true
-#
-# # Neovim
-# [templates.neovim]
-# input_path = '~/.config/matugen/templates/matugen-nvim.vim'
-# output_path = '~/.cache/wal/colors-wal.vim'
-#
+
+# Neovim
+[templates.neovim]
+input_path = '~/.config/matugen/templates/matugen-nvim.lua'
+output_path = '~/.config/matugen/generated/matugen-nvim.lua'
+
 # # Kvantum
 # [templates.kvantum]
 # input_path = '~/.config/matugen/templates/matugen.kvconfig'
