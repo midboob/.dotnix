@@ -89,7 +89,6 @@ in {
             snacks-nvim
             transparent-nvim
             # nvchad-ui
-            base46
             plenary-nvim
           ];
         };
@@ -120,6 +119,7 @@ in {
             nvim-dap-virtual-text
             yazi-nvim
             nvim-web-devicons
+            base46
           ];
           markdown = with pkgs.vimPlugins; [
             obsidian-nvim
