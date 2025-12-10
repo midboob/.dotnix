@@ -15,6 +15,13 @@ require('config.keymaps')
 -- Plugins (lze specs)
 require('plugins')
 
+-- package.loaded["nvconfig"] = {
+--   base46 = {
+--     theme = "chadwal",     -- this is now the source of truth
+--     transparency = true,
+--   },
+-- }
+--
 -- Base46: compile + apply theme (including chadwal)
 local ok_base46, base46 = pcall(require, "base46")
 if ok_base46 then
