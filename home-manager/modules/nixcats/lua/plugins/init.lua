@@ -29,6 +29,7 @@ extend(require('plugins.specs.mini'))
 extend(require('plugins.specs.fidget'))
 extend(require('plugins.specs.bullet'))
 extend(require('plugins.specs.base16'))
+extend(require('plugins.specs.matugen'))
 
 
 require('lze').load(specs)
