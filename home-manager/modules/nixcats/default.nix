@@ -87,9 +87,11 @@ in {
             lze
             lzextras
             snacks-nvim
-            # vim-sleuth
-            rose-pine
+            # base16-nvim
             transparent-nvim
+            # nvchad-ui
+            base46
+            # plenary-nvim
           ];
         };
 
@@ -118,7 +120,6 @@ in {
             nvim-dap-ui
             nvim-dap-virtual-text
             yazi-nvim
-            base16-nvim
           ];
           markdown = with pkgs.vimPlugins; [
             obsidian-nvim

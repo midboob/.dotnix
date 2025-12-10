@@ -4,5 +4,6 @@ return {
 	{
 		"base16-nvim",
 		enabled = nc("general") or false,
+    event = "DeferredUIEnter",
 	},
 }
