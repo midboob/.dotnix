@@ -1,6 +1,3 @@
--- lua/chadrc.lua
--- This is ONLY configuring base46; no nvchad-ui needed.
-
 local M = {}
 
 M.base46 = {
