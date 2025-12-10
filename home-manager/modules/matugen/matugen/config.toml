@@ -85,6 +85,11 @@ post_hook = 'pkill -SIGUSR2 waybar'
 input_path = '~/.config/matugen/templates/matugen-nvim.lua'
 output_path = '~/.config/matugen/generated/matugen-nvim.lua'
 
+# Nvchad
+[tempaltes.nvchad]
+input_path = '~/.config/matugen/templates/matugen-nvchad.lua'
+output_path = '~/.cache/wal/base46-dark.lua'
+
 # # Kvantum
 # [templates.kvantum]
 # input_path = '~/.config/matugen/templates/matugen.kvconfig'

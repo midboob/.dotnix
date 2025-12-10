@@ -44,7 +44,6 @@ vim.opt.signcolumn = 'yes'
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 vim.opt.completeopt = 'menu,preview,noselect'
-vim.opt.termguicolors = true
 
 
 -- Colorscheme (set early so UIs can pick it up)

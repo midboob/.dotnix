@@ -2,6 +2,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.opt.termguicolors = true
 
 -- Core config
 require('config.options')
@@ -52,10 +53,34 @@ require('plugins')
 -- auxiliary_function()
 
 -- nvchad-ui
- vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46_cache/"
+vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46_cache/"
 
+-- 2. Generate all highlight definitions into the cache
 pcall(function()
-  for _, file in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
-    dofile(vim.g.base46_cache .. file)
+  local base46 = require("base46")
+  base46.load_all_highlights()
+end)
+
+-- 3. Load the generated highlight lua files
+pcall(function()
+  local cache = vim.g.base46_cache
+  if cache and vim.fn.isdirectory(cache) == 1 then
+    for _, file in ipairs(vim.fn.readdir(cache)) do
+      local path = cache .. "/" .. file
+      if vim.fn.filereadable(path) == 1 then
+        dofile(path)
+      end
+    end
   end
 end)
+
+os.execute("python ~/.dotnix/home-manager/modules/nixcats/pywal/chadwal.py &> /dev/null &")
+
+local autocmd = vim.api.nvim_create_autocmd
+
+autocmd("Signal", {
+  pattern = "SIGUSR1",
+  callback = function()
+    require('nvchad.utils').reload()
+  end
+})
