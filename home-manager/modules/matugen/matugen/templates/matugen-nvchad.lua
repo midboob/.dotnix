@@ -1,4 +1,3 @@
-
 local M = {}
 
 local lighten = require("base46.colors").change_hex_lightness

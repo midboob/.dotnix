@@ -62,11 +62,11 @@ output_path = '~/.config/yazi/theme.toml'
 input_path = '~/.config/matugen/templates/matugen-discord.css'
 output_path = '~/.config/vesktop/themes/matugen.css'
 
-# Kitty
-[templates.kitty]
-input_path = '~/.config/matugen/templates/matugen-kitty.conf'
-output_path = '~/.config/kitty/matugen.conf'
-post_hook = "kitty @ set-colors -a -c ~/.config/kitty/matugen.conf"
+# # Kitty
+# [templates.kitty]
+# input_path = '~/.config/matugen/templates/matugen-kitty.conf'
+# output_path = '~/.config/kitty/matugen.conf'
+# post_hook = "kitty @ set-colors -a -c ~/.config/kitty/matugen.conf"
 
 # Waybar
 [templates.waybar]
@@ -89,6 +89,39 @@ output_path = '~/.config/matugen/generated/matugen-nvim.lua'
 [tempaltes.nvchad]
 input_path = '~/.config/matugen/templates/matugen-nvchad.lua'
 output_path = '~/.cache/wal/base46-dark.lua'
+
+# Pywal
+[templates.pywal]
+input_path = '~/.config/matugen/templates/matugen-waltemplate'
+output_path = '~/.cache/wal/colors'
+
+[config.custom_colors.red]
+color = "#FF0000"
+blend = true
+
+[config.custom_colors.green]
+color = "#00FF00"
+blend = true
+
+[config.custom_colors.yellow]
+color = "#FFFF00"
+blend = true
+
+[config.custom_colors.blue]
+color = "#0000FF"
+blend = true
+
+[config.custom_colors.magenta]
+color = "#FF00FF"
+blend = true
+
+[config.custom_colors.cyan]
+color = "#00FFFF"
+blend = true
+
+[config.custom_colors.white]
+color = "#FFFFFF"
+blend = true
 
 # # Kvantum
 # [templates.kvantum]

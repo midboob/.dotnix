@@ -92,6 +92,12 @@
     ghostscript
     mermaid-cli
 
+    # Python
+    (python313.withPackages (ps: [
+      ps.pywal
+      ps.watchdog
+    ]))
+
     # LibreOffice
     libreoffice
     hunspell
