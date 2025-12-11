@@ -64,24 +64,4 @@ return {
     enabled = false,
     event = "DeferredUIEnter",
   },
-  {
-    "nvchad-ui",
-    enabled = true,
-    lazy = false,       -- load on startup so statusline/tabline are ready
-    priority = 1000,    -- make sure it wins over other UI plugins
-    config = function()
-      require("nvchad") -- this reads lua/chadrc.lua and sets everything up
-    end,
-  },
-
-  -- Base46 theme plugin
-  {
-    "base46",
-    enabled = true,
-    lazy = true,
-    build = function()
-      -- this generates the compiled highlight files in vim.g.base46_cache
-      require("base46").load_all_highlights()
-    end,
-  },
 }

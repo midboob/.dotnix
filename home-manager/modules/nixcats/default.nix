@@ -88,9 +88,8 @@ in {
             lzextras
             snacks-nvim
             transparent-nvim
-            nvchad-ui
             plenary-nvim
-            base46
+            nvim-web-devicons
           ];
         };
 
@@ -119,7 +118,6 @@ in {
             nvim-dap-ui
             nvim-dap-virtual-text
             yazi-nvim
-            nvim-web-devicons
           ];
           markdown = with pkgs.vimPlugins; [
             obsidian-nvim
@@ -127,6 +125,10 @@ in {
             typst-preview-nvim
             markdown-preview-nvim
             bullets-vim
+          ];
+          nvchad = with pkgs.vimPlugins; [
+            base46
+            nvchad-ui
           ];
         };
 
@@ -193,6 +195,7 @@ in {
             nix = true;
             go = false;
             typst = true;
+            nvchad = true;
           };
           # anything else to pass and grab in lua with `nixCats.extra`
           extra = {
