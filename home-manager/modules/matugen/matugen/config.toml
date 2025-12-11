@@ -6,16 +6,16 @@ input_path = '~/.config/matugen/templates/matugen-bat.tmTheme'
 output_path = '~/.config/bat/themes/matugen-bat.tmTheme'
 post_hook = 'bat cache --build'
 
-# # Spicetify Comfy
-# [templates.spicetify-comfy]
-# input_path = '~/.config/matugen/templates/matugen-spotify-comfy.ini'
-# output_path = '~/.config/spicetify/Themes/Comfy/color.ini'
-#
-# # Spicetify Text 
-# [templates.spicetify-text]
-# input_path = '~/.config/matugen/templates/matugen-spotify-text.ini'
-# output_path = '~/.config/spicetify/Themes/text/color.ini'
-#
+# Spicetify Comfy
+[templates.spicetify-comfy]
+input_path = '~/.config/matugen/templates/matugen-spotify-comfy.ini'
+output_path = '~/.dotnix/home-manager/modules/spicetify/themes/Comfy/color.ini'
+
+# Spicetify Text 
+[templates.spicetify-text]
+input_path = '~/.config/matugen/templates/matugen-spotify-text.ini'
+output_path = '~/.dotnix/home-manager/modules/spicetify/themes/text/color.ini'
+
 # # Rofi
 [templates.rofi]
 input_path = '~/.config/matugen/templates/matugen-rofi.rasi'
@@ -89,6 +89,10 @@ output_path = '~/.config/matugen/generated/matugen-nvim.lua'
 [templates.nvchad]
 input_path = '~/.config/matugen/templates/matugen-nvchad.lua'
 output_path = '~/.cache/wal/base46-dark.lua'
+
+[templates.nvimlight]
+input_path  = '~/.config/matugen/templates/matugen-nvchad.lua'
+output_path = '~/.cache/wal/base46-light.lua'
 
 # Pywal
 [templates.pywal]

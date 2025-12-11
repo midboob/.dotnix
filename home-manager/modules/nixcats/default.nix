@@ -90,6 +90,7 @@ in {
             transparent-nvim
             plenary-nvim
             nvim-web-devicons
+            base46
           ];
         };
 
@@ -127,7 +128,6 @@ in {
             bullets-vim
           ];
           nvchad = with pkgs.vimPlugins; [
-            base46
             nvchad-ui
           ];
         };

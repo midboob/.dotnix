@@ -8,6 +8,7 @@ return {
 		on_require = "blink",
 		after = function()
 			require("blink.cmp").setup({
+
 				completion = {
 					menu = {
 						border = "rounded",
@@ -19,7 +20,9 @@ return {
 					},
 				},
 				keymap = { preset = "enter" },
-				appearance = { nerd_font_variant = "mono" },
+				appearance = {
+					nerd_font_variant = "mono",
+				},
 				signature = { enabled = true },
 				sources = { default = { "lsp", "path", "snippets", "buffer" } },
 			})

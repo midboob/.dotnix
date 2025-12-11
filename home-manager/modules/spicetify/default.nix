@@ -12,7 +12,14 @@
     enabledCustomApps = with spicePkgs.apps; [
       lyricsPlus
     ];
-		theme = spicePkgs.themes.text;
-		colorScheme = "RosePine";
+    theme = {
+      name = "text";                      # folder name / your choice
+      src = ./themes/text;      # path inside your config/dotfiles
+      injectCss = true;                       # typical for custom themes
+      injectThemeJs = true;                   # set to true if your theme has JS
+      replaceColors = true;                   # lets color.ini override Spotify colors
+      homeConfig = true;                      # use theme for home config too
+    };
+		colorScheme = "Spotify";
 	};
 }
