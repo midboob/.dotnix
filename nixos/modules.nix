@@ -19,5 +19,6 @@
     ./modules/games.nix
     ./modules/services.nix
     ./modules/chromium.nix
+    ./modules/seahorse.nix
   ];
 }

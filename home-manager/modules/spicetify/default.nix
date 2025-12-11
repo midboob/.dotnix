@@ -20,6 +20,5 @@
       replaceColors = true;                   # lets color.ini override Spotify colors
       homeConfig = true;                      # use theme for home config too
     };
-		colorScheme = "Spotify";
 	};
 }

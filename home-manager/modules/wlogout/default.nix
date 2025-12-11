@@ -51,6 +51,8 @@
 
     # CSS theme for wlogout
     style = ''
+      @import './../waybar/matugen-waybar.css';
+
       window {
           font-family: GeistMono Nerd Font Propo;
           font-size: 16pt;
