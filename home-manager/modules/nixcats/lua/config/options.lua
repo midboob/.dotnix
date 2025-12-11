@@ -47,4 +47,4 @@ vim.opt.completeopt = 'menu,preview,noselect'
 
 
 -- Colorscheme (set early so UIs can pick it up)
--- vim.cmd.colorscheme('matugen')
+vim.cmd.colorscheme('nvchad')

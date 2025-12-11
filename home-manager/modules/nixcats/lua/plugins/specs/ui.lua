@@ -26,42 +26,62 @@ end
 
 return {
   -- Lualine (statusline)
-  {
-    "lualine.nvim",
-    enabled = nc("general") or false,
-    event = "DeferredUIEnter",
-    load = function(name)
-      vim.cmd.packadd(name)
-      vim.cmd.packadd("lualine-lsp-progress")
-    end,
-    after = function()
-      require("lualine").setup({
-        options = {
-          icons_enabled = true,
-          theme = "base16",
-          component_separators = "|",
-          section_separators = "",
-        },
-        sections = {
-          lualine_c = { { "filename", path = 1, status = true } },
-          -- 👇 Add the formatter component here (or in any section you prefer)
-          lualine_x = { formatter_component, "filetype" },
-        },
-        inactive_sections = {
-          lualine_b = { { "filename", path = 3, status = true } },
-          lualine_x = { "filetype" },
-        },
-        tabline = {
-          lualine_a = { "buffers" },
-          lualine_b = { "lsp_progress" },
-          lualine_z = { "tabs" },
-        },
-      })
-    end,
-  },
+  -- {
+  --   "lualine.nvim",
+  --   enabled = nc("general") or false,
+  --   event = "DeferredUIEnter",
+  --   load = function(name)
+  --     vim.cmd.packadd(name)
+  --     vim.cmd.packadd("lualine-lsp-progress")
+  --   end,
+  --   after = function()
+  --     require("lualine").setup({
+  --       options = {
+  --         icons_enabled = true,
+  --         theme = "base16",
+  --         component_separators = "|",
+  --         section_separators = "",
+  --       },
+  --       sections = {
+  --         lualine_c = { { "filename", path = 1, status = true } },
+  --         -- 👇 Add the formatter component here (or in any section you prefer)
+  --         lualine_x = { formatter_component, "filetype" },
+  --       },
+  --       inactive_sections = {
+  --         lualine_b = { { "filename", path = 3, status = true } },
+  --         lualine_x = { "filetype" },
+  --       },
+  --       tabline = {
+  --         lualine_a = { "buffers" },
+  --         lualine_b = { "lsp_progress" },
+  --         lualine_z = { "tabs" },
+  --       },
+  --     })
+  --   end,
+  -- },
   {
     "transparent.nvim",
-    enabled = nc("general") or false,
+    enabled = false,
     event = "DeferredUIEnter",
+  },
+  {
+    "nvchad-ui",
+    enabled = true,
+    lazy = false,       -- load on startup so statusline/tabline are ready
+    priority = 1000,    -- make sure it wins over other UI plugins
+    config = function()
+      require("nvchad") -- this reads lua/chadrc.lua and sets everything up
+    end,
+  },
+
+  -- Base46 theme plugin
+  {
+    "base46",
+    enabled = true,
+    lazy = true,
+    build = function()
+      -- this generates the compiled highlight files in vim.g.base46_cache
+      require("base46").load_all_highlights()
+    end,
   },
 }
