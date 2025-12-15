@@ -79,8 +79,6 @@
     sl
     chntpw
     spotdl
-    hellwal
-    matugen
     nix-prefetch-git
     yt-dlp
     usbmuxd
@@ -91,6 +89,7 @@
     tectonic-unwrapped
     ghostscript
     mermaid-cli
+    ventoy-full-gtk
 
     # Python
     (python313.withPackages (ps: [
@@ -109,6 +108,10 @@
     zig
     typst
     home-manager
+  ];
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "ventoy-gtk3-1.1.07"
   ];
 
   fonts.packages =

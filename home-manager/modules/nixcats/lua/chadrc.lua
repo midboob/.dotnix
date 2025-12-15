@@ -1,7 +1,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "vscode_dark",
+	theme = "onedark",
 	transparency = false,
 }
 

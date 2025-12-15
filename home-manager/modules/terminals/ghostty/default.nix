@@ -1,5 +1,5 @@
 { lib, pkgs, config, ... }: {
-# stylix.targets.ghostty.enable = true;
+stylix.targets.ghostty.enable = true;
 
   programs.ghostty = {
     enable = true;
@@ -9,7 +9,7 @@
       font-family = "Geist Mono";
       font-size = 12;
 
-      theme = "matugen";
+      # theme = "matugen";
 
       window-decoration = true;
       window-padding-balance = true;

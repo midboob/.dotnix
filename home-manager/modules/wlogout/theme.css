@@ -1,5 +1,5 @@
 /* Importing matugen colors */
-@import '../../.config/waybar/themes/matugen-waybar.css';
+@import './../waybar/colors.css';
 
 
 window {

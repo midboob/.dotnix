@@ -9,7 +9,8 @@
       # themeLinks = [
       # 	"https://raw.githubusercontent.com/mafien0/system24/refs/heads/main/theme/flavors/system24-rose-pine.theme.css"
       # ];
-      enabledThemes = ["matugen.css"];
+      # enabledThemes = ["matugen.css"];
+      enabledThemes = ["discord-colors.css"];
 
       plugins = {
         experiments.enable = true;

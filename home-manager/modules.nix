@@ -38,7 +38,6 @@
     ./modules/mpv
     ./modules/ohmyposh
     ./modules/fastfetch
-    ./modules/matugen
     ./modules/zathura
     ./modules/anki
     ./modules/wlogout

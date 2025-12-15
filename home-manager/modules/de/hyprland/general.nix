@@ -6,11 +6,9 @@
 }: {
   wayland.windowManager.hyprland.settings = {
 
-    source = ["matugen.conf"];
-
     monitor = [
       ",highrr,0x0,1"
-      # "HDMI-A-2,1920x1080@70,1920x0,1"
+      "HDMI-A-2,1920x1080@70,1920x0,1"
     ];
 
     exec-once = [
@@ -34,8 +32,8 @@
 
       "border_size" = 2;
 
-      "col.active_border" = lib.mkForce "$inverse_primary";
-      "col.inactive_border" = lib.mkForce "$background";
+      "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base0A})";
+      "col.inactive_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base01})";
 
       "layout" = "dwindle";
     };
