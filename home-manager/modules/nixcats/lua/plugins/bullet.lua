@@ -1,5 +1,5 @@
 return {
-		"bullets.vim",
+		"bullets-vim/bullets.vim",
 		enabled = true,
 		ft = {"markdown", "text", "scratch", "gitcommit"},
     init = function()
