@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       logo = {
-        source = "${./patience.txt}";
+        source = "${./ascii/charizard.txt}";
         # type = "kitty";
         type = "file";
         height = 10;
