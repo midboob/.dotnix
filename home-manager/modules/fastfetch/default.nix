@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       logo = {
-        source = "${./ascii/cat.txt}";
+        source = "${./ascii/hello-kitty.txt}";
         # type = "kitty";
         type = "file";
         height = 10;
