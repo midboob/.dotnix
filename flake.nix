@@ -45,9 +45,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    mango = {
-      url = "github:DreamMaoMao/mangowc";
-      inputs.nixpkgs.follows = "nixpkgs";
+    elephant.url = "github:abenz1267/elephant";
+
+    walker = {
+      url = "github:abenz1267/walker";
+      inputs.elephant.follows = "elephant";
     };
   };
 
@@ -61,7 +63,6 @@
     bunny-yazi,
     zen-browser,
     niri,
-    mango,
     ...
   }: let
     system = "x86_64-linux";
@@ -78,7 +79,7 @@
           ./nixos/configuration.nix
           home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
-          inputs.mango.nixosModules.mango
+          # inputs.mango.nixosModules.mango
         ];
 
         specialArgs = {
@@ -99,7 +100,7 @@
           nixcord.homeModules.nixcord
           inputs.spicetify-nix.homeManagerModules.default
           inputs.zen-browser.homeModules.beta
-          inputs.mango.hmModules.mango
+          # inputs.mango.hmModules.mango
           niri.homeModules.config
           niri.homeModules.stylix
         ];

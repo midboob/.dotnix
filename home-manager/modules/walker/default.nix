@@ -1,13 +1,7 @@
-{
-  pkgs,
-  config,
-  lib,
-  ...
-}: {
-  home.packages = [
-  walker
-  ];
-  services.walker = {
+{inputs, ...}: {
+  imports = [inputs.walker.homeManagerModules.default];
+
+  programs.walker = {
     enable = true;
   };
 }

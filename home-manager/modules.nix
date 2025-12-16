@@ -7,7 +7,7 @@
     #DE
     ./modules/de/hyprland
     ./modules/de/sway
-    ./modules/de/mango
+    # ./modules/de/mango
     ./modules/de/niri
 
     # Terminal

@@ -8,7 +8,7 @@ pkill swaync
 pkill rofi
 
 # Reload Hyprland configuration
-hyprctl reload
+swaymsg reload
 
 # Restart SwayNC and Waybar
 swaync &

@@ -43,7 +43,7 @@
     ];
 
     window = {
-      border = 1;
+      border = 2;
       titlebar = false;
     };
 
