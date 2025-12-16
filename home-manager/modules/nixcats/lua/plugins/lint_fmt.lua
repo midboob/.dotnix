@@ -2,6 +2,7 @@ return {
   {
     "mfussenegger/nvim-lint",
     enabled = true,
+    lazy = true,
     config = function()
       local lint = require("lint")
 
@@ -20,6 +21,7 @@ return {
   {
     "stevearc/conform.nvim",
     enabled = true,
+    lazy = true,
     config = function()
       local conform = require("conform")
 

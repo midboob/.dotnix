@@ -1,6 +1,7 @@
 return {
 		"bullets-vim/bullets.vim",
 		enabled = true,
+    event = "VeryLazy",
 		ft = {"markdown", "text", "scratch", "gitcommit"},
     init = function()
       -- Limit bullets.vim to these filetypes (matches your ft list)
