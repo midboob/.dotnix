@@ -1,13 +1,12 @@
 return {
   {
     "mfussenegger/nvim-lint",
-    enabled = nc("general") or false,
-    event = "FileType",
+    enabled = true,
     config = function()
       local lint = require("lint")
 
       lint.linters_by_ft = {
-        go = nc("go") and { "golangcilint" } or {},
+        go = { "golangcilint" },
       }
 
       vim.api.nvim_create_autocmd("BufWritePost", {
@@ -20,16 +19,15 @@ return {
 
   {
     "stevearc/conform.nvim",
-    enabled = nc("general") or false,
-    event = "BufReadPre",
+    enabled = true,
     config = function()
       local conform = require("conform")
 
       conform.setup({
         formatters_by_ft = {
-          lua = nc("lua") and { "stylua" } or {},
-          go = nc("go") and { "gofmt" } or {},
-          nix = nc("nix") and { "alejandra" } or {},
+          lua = { "stylua" },
+          go = { "gofmt" },
+          nix = { "alejandra" },
         },
       })
 
