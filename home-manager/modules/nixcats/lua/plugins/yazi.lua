@@ -1,5 +1,4 @@
 return {
-  {
   "mikavilpas/yazi.nvim",
   event = "VeryLazy",
   dependencies = {
@@ -33,5 +32,4 @@ return {
   init = function()
     vim.g.loaded_netrwPlugin = 1
   end,
-},
 }
