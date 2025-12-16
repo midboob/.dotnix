@@ -1,8 +1,8 @@
 return {
+  -- nvim-lint: runs on write
   {
     "mfussenegger/nvim-lint",
-    enabled = true,
-    lazy = true,
+    event = { "BufReadPost", "BufNewFile" }, -- makes sense with defaults.lazy = true
     config = function()
       local lint = require("lint")
 
@@ -10,7 +10,10 @@ return {
         go = { "golangcilint" },
       }
 
-      vim.api.nvim_create_autocmd("BufWritePost", {
+      local grp = vim.api.nvim_create_augroup("UserLspLint", { clear = true })
+
+      vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave", "BufReadPost" }, {
+        group = grp,
         callback = function()
           lint.try_lint()
         end,
@@ -18,24 +21,33 @@ return {
     end,
   },
 
+  -- conform.nvim: formatter with keybinding
   {
     "stevearc/conform.nvim",
-    enabled = true,
-    lazy = true,
-    config = function()
-      local conform = require("conform")
-
-      conform.setup({
-        formatters_by_ft = {
-          lua = { "stylua" },
-          go = { "gofmt" },
-          nix = { "alejandra" },
-        },
-      })
-
-      vim.keymap.set({ "n", "v" }, "<leader>FF", function()
-        conform.format({ lsp_fallback = true, async = false, timeout_ms = 1000 })
-      end, { desc = "[F]ormat [F]ile" })
+    event = { "BufReadPost", "BufNewFile" },
+    keys = {
+      {
+        "<leader>FF",
+        function()
+          require("conform").format({
+            lsp_fallback = true,
+            async = false,
+            timeout_ms = 1000,
+          })
+        end,
+        mode = { "n", "v" },
+        desc = "[F]ormat [F]ile",
+      },
+    },
+    opts = {
+      formatters_by_ft = {
+        lua = { "stylua" },
+        go = { "gofmt" },
+        nix = { "alejandra" },
+      },
+    },
+    config = function(_, opts)
+      require("conform").setup(opts)
     end,
   },
 }
