@@ -3,9 +3,10 @@
     enable = true;
     settings = {
       logo = {
-        source = "${./png/5.png}";
-        type = "kitty"; # or file
-        height = 20;
+        source = "${./patience.txt}";
+        # type = "kitty";
+        type = "file";
+        height = 10;
         padding = {
           top = 1;
           bottom = 0;

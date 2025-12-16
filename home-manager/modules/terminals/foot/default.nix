@@ -26,7 +26,7 @@
         system = "no";
       };
       colors = {
-        alpha = lib.mkForce "0.8";
+        alpha = lib.mkForce "1.0";
       };
       csd = {
         preferred = "none";
