@@ -10,23 +10,27 @@ return {
 		enabled = true,
 		version = false,
 		event = "VeryLazy",
+    opts = {},
 	},
 	{
 		"nvim-mini/mini.icons",
 		enabled = true,
 		version = false,
 		event = "VeryLazy",
+    opts = {},
 	},
 	{
 		"nvim-mini/mini.pairs",
-		enabled = true,
+		enabled = false,
 		version = false,
 		event = "VeryLazy",
+    opts = {},
 	},
 	{
 		"nvim-mini/mini.surround",
 		enabled = true,
 		version = false,
 		event = "VeryLazy",
+    opts = {},
 	},
 }

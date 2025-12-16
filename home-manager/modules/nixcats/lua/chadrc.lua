@@ -1,8 +1,8 @@
 local M = {}
 
 M.base46 = {
-	theme = "onedark",
-	transparency = false,
+	theme = "tundra",
+	transparency = true,
 }
 
 M.ui = {
