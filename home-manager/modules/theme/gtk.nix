@@ -6,7 +6,7 @@
 	gtk.iconTheme = {
 		name = "Papirus-Dark";
 		package = pkgs.papirus-icon-theme.override {
-			color = "violet";
+			color = "black";
 		};
 	};
 }
