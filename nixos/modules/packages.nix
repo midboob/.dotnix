@@ -90,6 +90,7 @@
     ghostscript
     mermaid-cli
     ventoy-full-gtk
+    matugen
 
     # Python
     (python313.withPackages (ps: [

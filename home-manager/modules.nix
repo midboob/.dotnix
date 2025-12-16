@@ -43,5 +43,6 @@
     ./modules/wlogout
     ./modules/chromium
     ./modules/zen-browser
+    ./modules/matugen
   ];
 }

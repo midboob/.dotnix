@@ -84,7 +84,8 @@ in {
           general = with pkgs.vimPlugins; [
             # lazy loading isnt required with a config this small
             # but as a demo, we do it anyway.
-            lazy-nvim
+            lze
+            lzextras
             snacks-nvim
             transparent-nvim
             plenary-nvim
