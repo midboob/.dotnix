@@ -90,6 +90,7 @@ in {
             plenary-nvim
             nvim-web-devicons
             base46
+            nvchad-ui
           ];
         };
 
@@ -103,7 +104,6 @@ in {
             lazydev-nvim
           ];
           general = with pkgs.vimPlugins; [
-            mini-nvim
             nvim-lspconfig
             vim-startuptime
             blink-cmp
@@ -118,6 +118,9 @@ in {
             nvim-dap-ui
             nvim-dap-virtual-text
             yazi-nvim
+            luasnip
+            friendly-snippets
+            auto-pairs
           ];
           markdown = with pkgs.vimPlugins; [
             obsidian-nvim
@@ -126,8 +129,11 @@ in {
             markdown-preview-nvim
             bullets-vim
           ];
-          nvchad = with pkgs.vimPlugins; [
-            nvchad-ui
+          mini = with pkgs.vimPlugins; [
+            mini-ai
+            mini-icons
+            # mini-pair
+            mini-surround
           ];
         };
 
@@ -194,7 +200,6 @@ in {
             nix = true;
             go = false;
             typst = true;
-            nvchad = true;
           };
           # anything else to pass and grab in lua with `nixCats.extra`
           extra = {

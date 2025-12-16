@@ -1,21 +1,24 @@
 return {
-	{
-		"nvim-web-devicons",
-	},
+  { "nvim-tree/nvim-web-devicons", lazy = true },
 
-	{
-		"nvchad-ui",
-		lazy = false,
-		config = function()
-			require("nvchad")
-		end,
-	},
+  {
+    "nvchad/base46",
+    lazy = false,        -- load at startup
+    priority = 1000,     -- make sure it runs before most UI stuff
+    config = function()
+      require("base46").load_all_highlights()
+    end,
+  },
 
-	{
-		"base46",
-		lazy = true,
-		build = function()
-			require("base46").load_all_highlights()
-		end,
-	},
+  {
+    "nvchad/ui",
+    lazy = false,        -- UI available immediately
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+      "nvchad/base46",
+    },
+    config = function()
+      require("nvchad")
+    end,
+  },
 }
