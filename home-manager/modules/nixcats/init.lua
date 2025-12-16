@@ -1,16 +1,12 @@
+require("nixCatsUtils").setup {
+  non_nix_value = true,
+}
+
 -- Must be set before plugins
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 vim.opt.termguicolors = true
-
-vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46_cache/"
-vim.fn.mkdir(vim.g.base46_cache, "p")
-
--- nixCats utils (lets config also work outside Nix if you ever do that)
-require("nixCatsUtils").setup {
-  non_nix_value = true,  -- can be left as-is
-}
 
 -- Core config
 require("config.options")
@@ -38,8 +34,3 @@ require("nixCatsUtils.lazyCat").setup(
     },
   }
 )
-
--- base46 highlight cache
-for _, v in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
-  dofile(vim.g.base46_cache .. v)
-end
