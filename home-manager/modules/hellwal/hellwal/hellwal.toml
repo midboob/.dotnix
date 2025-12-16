@@ -1,2 +1,0 @@
-[general]
-post_hook = "cp ~/.cache/hellwal/discord-colors.css ~/.config/vesktop/themes/discord-colors.css"

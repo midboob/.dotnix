@@ -2,6 +2,10 @@
 vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46_cache/"
 vim.fn.mkdir(vim.g.base46_cache, "p")  -- ensure directory exists
 
+-- run pywal/matugen generator *before* base46 loads
+-- NOTE: no trailing '&' – we want this to finish before lazy/base46 runs
+os.execute("python ~/.dotnix/home-manager/modules/nixcats/pywal/chadwal.py > /dev/null 2>&1")
+
 require("nixCatsUtils").setup({
   non_nix_value = true,
 })
@@ -34,11 +38,14 @@ require("nixCatsUtils.lazyCat").setup(
 )
 
 -- after lazy setup: load cached base46 highlights
--- (method 1 from nvchad/ui docs)
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
--- if you prefer your old "load everything" method, you can do:
--- for _, v in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
---   dofile(vim.g.base46_cache .. v)
--- end
+-- reload NvChad UI when you send SIGUSR1 (optional but fine)
+local autocmd = vim.api.nvim_create_autocmd
+autocmd("Signal", {
+  pattern = "SIGUSR1",
+  callback = function()
+    require("nvchad.utils").reload()
+  end,
+})
