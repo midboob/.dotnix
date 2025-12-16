@@ -1,8 +1,6 @@
 return {
 		"saghen/blink.cmp",
 		enabled = true,
-		event = "DeferredUIEnter",
-		on_require = "blink",
     opts = {
 				completion = {
 					menu = {
