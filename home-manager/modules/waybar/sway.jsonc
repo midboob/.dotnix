@@ -4,15 +4,15 @@
   "layer": "top",
   "height": 20,
   "spacing": 4,
-  "margin-top": 5,
-  "margin-right": 5,
-  "margin-left": 5,
+  "margin-top": 0,
+  "margin-right": 0,
+  "margin-left": 0,
+
   "modules-left": [
-    // removed "custom/rofi" so it no longer appears
     "sway/workspaces",
-    "sway/window",
     "sway/mode"
   ],
+
   "modules-right": [
     "tray",
     "network",
@@ -26,112 +26,26 @@
     "clock"
   ],
 
-  // removed "custom/rofi" module config entirely
-
-  // Modules configuration
+  // workspaces
   "sway/workspaces": {
     "disable-scroll": true,
     "active-only": false,
     "all-outputs": true,
     "warp-on-scroll": false,
-    // use numbers instead of icons
     "format": "{index}"
-    // "format-icons" removed since we no longer use icons
   },
 
-  "sway/window": {
-    "format": "<span color='#d3869b'>[󰣆]</span> {app_id}",
-    "separate-outputs": true,
-    "icon": false,
-    "tooltip": false
-  },
   "sway/mode": {
     "format": " {}",
     "max-length": 50
   },
+
   "tray": {
     "icon-size": 14,
     "spacing": 8
   },
-  "disk": {
-    "format": "<span color='#ea6962'>[]</span> {free}",
-    "interval": 20
-  },
-  "cpu": {
-    "format": "<span color='#e78a4e'>[]</span> {usage}%",
-    "tooltip": false,
-    "interval": 1
-  },
-  "custom/cpu_temp": {
-    "exec": "~/.config/waybar/scripts/waybarTemp.sh",
-    "return-type": "json",
-    "interval": 2,
-    "format": "{}",
-    "tooltip": false
-  },
-  "backlight": {
-    // "device": "acpi_video1",
-    "format": "<span color='#f6c657'>[󰞏]</span> {percent}%",
-    "tooltip": false,
-    "on-click-right": "~/.config/waybar/scripts/wlsunset.sh"
-  },
-  "custom/memory": {
-    "exec": "~/.config/waybar/scripts/memory_usage.sh",
-    "interval": 2,
-    "return-type": "json",
-    "format": "<span color='#458588'>[]</span> {}"
-  },
-  "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
-    "format": "<span color='#83a598'>[]</span> {volume}%",
-    "format-muted": "<span color='#ea6962'>[]</span> {volume}%",
-    "format-bluetooth": "<span color='#83a598'>[󰂰]</span> {volume}%",
-    "format-bluetooth-muted": "<span color='#ea6962'>[󰂲]</span> {volume}%",
-    "format-source": "{volume}% ",
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "on-click-right": "blueman-manager",
-    "tooltip": false,
-    "max-volume": 130
-  },
-  "battery#bat2": {
-    "bat": "BAT2"
-  },
-  "battery": {
-    "interval": 1,
-    "states": {
-      "good": 99,
-      "warning": 30,
-      "critical": 20
-    },
-    "format-icons": [
-      "󰂎",
-      "󰁺",
-      "󰁻",
-      "󰁽",
-      "󰁾",
-      "󰁿",
-      "󰂀",
-      "󰂁",
-      "󰂂",
-      "󰁹"
-    ],
-    "format": "<span color='#689d6a'>[{icon}]</span> {capacity}%",
-    "format-critical": "<span color='#cc241d'>[{icon}]</span> {capacity}%!!",
-    "format-warning": "<span color='#e78a4e'>[{icon}]</span> {capacity}%",
-    "format-full": "<span color='#689d6a'>[{icon}]</span> {capacity}%",
-    "format-charging": "<span color='#689d6a'>[󰂅]</span> {capacity}%",
-    "format-charging-warning": "<span color='#e78a4e'>[󰢝]</span> {capacity}%",
-    "format-charging-critical": "<span color='#cc241d'>[󰢜]</span> {capacity}%",
-    "format-plugged": "<span color='#689d6a'>[󰂅]</span> {capacity}%",
-    "format-alt": "<span color='#689d6a'>[󱧥]</span> {time}",
-    "tooltip": false
-  },
-  "clock": {
-    // "timezone": "America/New_York",
-    "format": "<span color='#8ec07c'>[]</span> {:%a %d | %H:%M}",
-    "tooltip": false,
-    "interval": 1
-  },
+
+  // network – icon colored, text neutral
   "network": {
     "interval": 2,
     "format": "<span color='#d3869b'>[󱘖]</span> {bandwidthDownBits}",
@@ -148,5 +62,134 @@
     "states": {
       "normal": 25
     }
+  },
+
+"disk": {
+  "format": "[] {free}",
+  "interval": 20
+},
+"cpu": {
+  "format": "[] {usage}%",
+  "tooltip": false,
+  "interval": 1
+},
+"custom/cpu_temp": {
+  "exec": "~/.config/waybar/scripts/waybarTemp.sh",
+  "return-type": "json",
+  "interval": 2,
+  "format": "{}",
+  "tooltip": false
+},
+"backlight": {
+  "format": "[󰞏] {percent}%",
+  "tooltip": false,
+  "on-click-right": "~/.config/waybar/scripts/wlsunset.sh"
+},
+"custom/memory": {
+  "exec": "~/.config/waybar/scripts/memory_usage.sh",
+  "interval": 2,
+  "return-type": "json",
+  "format": "[] {}"
+},
+"pulseaudio": {
+  "format": "[] {volume}%",
+  "format-muted": "[] {volume}%",
+  "format-bluetooth": "[󰂰] {volume}%",
+  "format-bluetooth-muted": "[󰂲] {volume}%",
+  "format-source": "{volume}% ",
+  "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+  "on-click-right": "blueman-manager",
+  "tooltip": false,
+  "max-volume": 130
+},
+"battery#bat2": {
+  "bat": "BAT2"
+},
+"battery": {
+  "interval": 1,
+  "states": {
+    "good": 99,
+    "warning": 30,
+    "critical": 20
+  },
+  "format-icons": [
+    "󰂎",
+    "󰁺",
+    "󰁻",
+    "󰁽",
+    "󰁾",
+    "󰁿",
+    "󰂀",
+    "󰂁",
+    "󰂂",
+    "󰁹"
+  ],
+  "format": "[{icon}] {capacity}%",
+  "format-critical": "[{icon}] {capacity}%!!",
+  "format-warning": "[{icon}] {capacity}%",
+  "format-full": "[{icon}] {capacity}%",
+  "format-charging": "[󰂅] {capacity}%",
+  "format-charging-warning": "[󰢝] {capacity}%",
+  "format-charging-critical": "[󰢜] {capacity}%",
+  "format-plugged": "[󰂅] {capacity}%",
+  "format-alt": "[󱧥] {time}",
+  "tooltip": false
+},
+"clock": {
+  "format": "[] {:%a %d | %I:%M %p}",
+  "tooltip": false,
+  "interval": 1
+},
+"network": {
+  "interval": 2,
+  "format": "[󱘖] {bandwidthDownBits}",
+  "format-wifi": "[{icon}] {bandwidthDownBits}",
+  "format-ethernet": "[󰈀] {bandwidthDownBits}",
+  "format-icons": [
+    "󰤫",
+    "󰤟",
+    "󰤢",
+    "󰤥",
+    "󰤨"
+  ],
+  "tooltip": false,
+  "states": {
+    "normal": 25
+  }
+}
+    },
+    "format-icons": [
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
+
+    "format": "<span color='#689d6a'>[{icon}]</span> {capacity}%",
+    "format-full": "<span color='#689d6a'>[{icon}]</span> {capacity}%",
+    "format-plugged": "<span color='#689d6a'>[󰂅]</span> {capacity}%",
+    "format-charging": "<span color='#689d6a'>[󰂅]</span> {capacity}%",
+
+    "format-warning": "<span color='#e78a4e'>[{icon}]</span> {capacity}%",
+    "format-charging-warning": "<span color='#e78a4e'>[󰢝]</span> {capacity}%",
+
+    "format-critical": "<span color='#cc241d'>[{icon}]</span> {capacity}%!!",
+    "format-charging-critical": "<span color='#cc241d'>[󰢜]</span> {capacity}%",
+
+    "format-alt": "<span color='#689d6a'>[󱧥]</span> {time}",
+    "tooltip": false
+  },
+
+  // clock (12h with AM/PM)
+  "clock": {
+    "format": "<span color='#8ec07c'>[]</span> {:%a %d | %I:%M %p}",
+    "tooltip": false,
+    "interval": 1
   }
 }

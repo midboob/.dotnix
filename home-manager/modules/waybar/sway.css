@@ -10,7 +10,7 @@
   box-shadow: none;
 }
 
-/* removed #custom-rofi here */
+/* modules padding */
 #window,
 #disk,
 #cpu,
@@ -29,10 +29,10 @@
 }
 
 window#waybar {
-  color: #fff4d2;
-  background: #222222;
+  color: @text;
+  background: @background;
   font-family: IosevkaTerm Nerd Font Propo;
-  font-size: 12pt;
+  font-size: 11pt;
   font-weight: 900;
 }
 
@@ -42,18 +42,17 @@ window#waybar {
   padding: 3pt;
 }
 
+/* workspaces */
+
 #workspaces button {
-  color: #fff4d2;
-  border: 2pt solid #fff4d2;
+  color: @ws-persistent-text;
+  border: 2pt solid @ws-persistent-text;
   margin-right: 3pt;
 
-  /* make the box a bit more narrow */
   min-width: 12pt;
   padding: 0 2.5pt;
-
-  /* ensure same font look as system modules (RAM, CPU, etc.) */
   font-family: IosevkaTerm Nerd Font Propo;
-  font-size: 12pt;
+  font-size: 11pt;
   font-weight: 900;
 }
 
@@ -62,104 +61,138 @@ window#waybar {
 }
 
 #workspaces button:hover {
-  color: #d3869b;
-  border-color: #d3869b;
+  color: @ws-focused;
+  border-color: @ws-focused;
 }
 
+/* any workspace visible on some output */
 #workspaces button.visible,
 #workspaces button.visible:hover {
-  color: #8ec07c;
-  border-color: #8ec07c;
+  color: @ws-active-text;
+  border-color: @ws-active-text;
 }
 
+/* urgent workspace */
 #workspaces button.urgent {
-  color: #ea6962;
-  border-color: #ea6962;
+  color: @ws-urgent;
+  border-color: @ws-urgent;
 }
 
-/* removed #custom-rofi block entirely */
+/* focused workspace */
+#workspaces button.focused,
+#workspaces button.focused.visible {
+  color: @ws-focused;
+  border-color: @ws-focused;
+}
 
+/* modules */
+
+/* ...everything above unchanged... */
+
+/* window title */
 #window {
-  border-bottom: 2pt solid #d3869b;
+  border-bottom: 2pt solid @window-border;
+  color: @window-border;
 }
 
+/* tray */
 #tray {
-  border-bottom: 2pt solid #686868;
-  background: #383838;
+  border-bottom: 2pt solid @tray-border;
+  background: @tray-bg;
   padding: 0 6pt;
+  color: @tray-border;
 }
 
+/* disk */
 #disk {
-  border-bottom: 2pt solid #ea6962;
+  border-bottom: 2pt solid @disk-border;
+  color: @disk-border;
 }
 
+/* cpu */
 #cpu {
-  border-bottom: 2pt solid #e78a4e;
+  border-bottom: 2pt solid @cpu-border;
+  color: @cpu-border;
 }
 
+/* cpu temp */
 #custom-cpu_temp {
-  border-bottom: 2pt solid #d8a657;
+  border-bottom: 2pt solid @temp-border;
+  color: @temp-border;
 }
 
 #custom-cpu_temp.critical {
-  color: #cc241d;
-  border-bottom: 2pt solid #cc241d;
+  color: @critical;
+  border-bottom: 2pt solid @critical;
 }
 
 #custom-cpu_temp.unknown {
-  color: #555555;
-  border-bottom: 2pt solid #555555;
+  color: @muted;
+  border-bottom: 2pt solid @muted;
 }
 
+/* backlight */
 #backlight {
-  border-bottom: 2pt solid #f6c657;
+  border-bottom: 2pt solid @backlight-border;
+  color: @backlight-border;
 }
 
+/* memory */
 #custom-memory {
-  border-bottom: 2pt solid #458588;
+  border-bottom: 2pt solid @memory-border;
+  color: @memory-border;
 }
 
+/* audio */
 #pulseaudio {
-  border-bottom: 2pt solid #83a598;
+  border-bottom: 2pt solid @audio-border;
+  color: @audio-border;
 }
 
 #pulseaudio.muted {
-  color: #ea6962;
-  border-bottom: 2pt solid #ea6962;
+  color: @critical;
+  border-bottom: 2pt solid @critical;
 }
 
+/* battery */
 #battery {
-  border-bottom: 2pt solid #689d68;
+  border-bottom: 2pt solid @battery-border;
+  color: @battery-border;
 }
 
 #battery.critical {
-  color: #cc241d;
-  border-bottom: 2pt solid #cc241d;
+  color: @critical;
+  border-bottom: 2pt solid @critical;
 }
 
 #battery.critical,
 #battery.charging.critical {
-  color: #cc241d;
-  border-bottom: 2pt solid #cc241d;
+  color: @critical;
+  border-bottom: 2pt solid @critical;
 }
 
 #battery.warning,
 #battery.charging.warning {
-  color: #e78a4e;
-  border-bottom: 2pt solid #e78a4e;
+  color: @warning;
+  border-bottom: 2pt solid @warning;
 }
 
+/* clock */
 #clock {
-  border-bottom: 2pt solid #8ec07c;
+  border-bottom: 2pt solid @clock-border;
+  color: @clock-border;
 }
 
+/* network */
 #network {
-  border-bottom: 2pt solid #d3869b;
+  border-bottom: 2pt solid @network-border;
+  color: @network-border;
 }
 
+/* mode indicator */
 #mode {
-  color: #222222;
-  border: 2pt solid #458588;
-  background: #83a598;
+  color: @mode-text;
+  border: 2pt solid @mode-border;
+  background: @mode-bg;
   padding: 0 4.5pt;
 }
