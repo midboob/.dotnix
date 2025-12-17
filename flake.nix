@@ -90,7 +90,7 @@
       t480s = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./configs/hosts/desktop/default.nix
+          ./configs/hosts/t480s/default.nix
           home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
           # inputs.mango.nixosModules.mango
@@ -109,7 +109,7 @@
           inherit inputs system;
         };
         modules = [
-          ./home-manager/home.nix
+          ./configs/home-manager/home.nix
           stylix.homeModules.stylix
           nixcord.homeModules.nixcord
           inputs.spicetify-nix.homeManagerModules.default

@@ -4,10 +4,10 @@
 {
   imports = [
     ../../system/configuration.nix
-    ../../system/modules.nix
+    # ../../system/modules.nix
 
     ./hardware-configuration.nix
-    ./laptop.nix
+    ./system
   ];
 
   networking = {

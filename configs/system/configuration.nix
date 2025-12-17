@@ -4,10 +4,10 @@
   lib,
   ...
 }: {
-  # imports = [
-  #   /etc/nixos/hardware-configuration.nix
-  #   ./modules.nix
-  # ];
+  imports = [
+    # /etc/nixos/hardware-configuration.nix
+    ./modules.nix
+  ];
   i18n.defaultLocale = "en_US.UTF-8";
 
   programs.nh = {
