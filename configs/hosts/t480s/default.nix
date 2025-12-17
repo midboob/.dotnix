@@ -7,6 +7,7 @@
     ../../system/modules.nix
 
     ./hardware-configuration.nix
+    ./laptop.nix
   ];
 
   networking = {
