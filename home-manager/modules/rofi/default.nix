@@ -3,7 +3,7 @@
   config,
   ...
 }: {
-  # stylix.targets.rofi.enable = true;
+  stylix.targets.rofi.enable = true;
   home.file.".config/rofi/config.rasi".source = ./config.rasi;
   # home.file.".config/rofi/theme.rasi".source = ./theme.rasi;
 
@@ -11,11 +11,13 @@
     source = ./wallpaper/wallpaper.sh; # keep your repo path here
     executable = true;
   };
+  home.file.".config/rofi/themes/wallpaper.rasi".source = ./wallpaper/wallpaper.rasi;
 
   home.file.".config/rofi/scripts/powermenu.sh" = {
-    source = ./powermenu.sh; # <-- your repo path
+    source = ./powermenu/powermenu.sh; # <-- your repo path
     executable = true;
   };
+  home.file.".config/rofi/themes/powermenu.rasi".source = ./powermenu/powermenu.rasi;
 
   home.file.".config/rofi/theme.rasi".text = ''
     * {

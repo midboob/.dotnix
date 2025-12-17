@@ -23,7 +23,7 @@
         "network",
         "disk",
         "cpu",
-        "custom/cpu_temp",
+        // "custom/cpu_temp",
         "backlight",
         "custom/memory",
         "pulseaudio",
