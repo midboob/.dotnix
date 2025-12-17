@@ -92,6 +92,7 @@
     ventoy-full-gtk
     matugen
     wlsunset
+    blueman
 
     # Python
     (python313.withPackages (ps: [

@@ -21,5 +21,6 @@
     ./modules/chromium.nix
     ./modules/seahorse.nix
     ./modules/localsend.nix
+    ./modules/minecraft.nix
   ];
 }

@@ -1,11 +1,14 @@
 {
   inputs,
   pkgs,
+  lib,
   ...
-}: {
-  programs.spicetify = let
-    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-  in {
+}: let
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+in {
+  # stylix.targets.spicetify.enable = true;
+
+  programs.spicetify = {
     enable = true;
     enabledExtensions = with spicePkgs.extensions; [
       adblock
@@ -25,6 +28,7 @@
     #   homeConfig = true;                      # use theme for home config too
     # };
     theme = spicePkgs.themes.text;
-    colorScheme = "RosePine";
+    # colorScheme = "RosePine";
+    colorScheme = "Gruvbox";
   };
 }

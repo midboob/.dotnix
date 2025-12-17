@@ -58,7 +58,8 @@
       "󰃟",
       "󰃠"
     ],
-    "tooltip": false
+    "tooltip": false,
+    "on-click-right": "~/.config/waybar/scripts/wlsunset.sh"
   },
 
   "tray": {

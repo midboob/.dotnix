@@ -21,6 +21,8 @@
 
   home.file.".config/rofi/theme.rasi".text = ''
     * {
+      font: "JetBrainsMono Nerd Font 11";
+
       /* Base colors from Stylix/base16 */
       background:        #${config.stylix.base16Scheme.base00};
       background-alt:    #${config.stylix.base16Scheme.base01};

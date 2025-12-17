@@ -1,88 +1,153 @@
 {
-	services.swaync.settings = {
+  services.swaync.settings = {
+    # --- Position / layers / CSS priority ---
+    positionX = "right";
+    positionY = "top";
 
-		positionX = "right";
-		positionY = "top";
-		layer = "overlay";
-		control-center-layer = "top";
-		layer-shell = true;
-		layer-shell-cover-screen = true;
-		cssPriority = "application";
-		control-center-margin-top = 0;
-		control-center-margin-bottom = 0;
-		control-center-margin-right = 0;
-		control-center-margin-left = 0;
-		notification-2fa-action = true;
-		notification-inline-replies = false;
-		notification-icon-size = 64;
-		notification-body-image-height = 100;
-		notification-body-image-width = 200;
-		timeout = 10;
-		timeout-low = 5;
-		timeout-critical = 0;
-		fit-to-screen = true;
-		relative-timestamps = true;
-		control-center-width = 500;
-		control-center-height = 600;
-		notification-window-width = 500;
-		keyboard-shortcuts = true;
-		image-visibility = "when-available";
-		transition-time = 200;
-		hide-on-clear = false;
-		hide-on-action = true;
-		text-empty = "No Notifications";
-		script-fail-notify = true;
-		scripts = {
-			example-script = {
-				exec = "echo 'Do something...'";
-				urgency = "Normal";
-			};
-		};
+    cssPriority = "user";
 
-		widgets = [
-			"inhibitors"
-			"title"
-			"dnd"
-			"notifications"
-		];
+    layer = "overlay";
+    control-center-layer = "top";
+    layer-shell = true;
+    layer-shell-cover-screen = true;
 
-		widget-config = {
-			inhibitors = {
-				text = "Inhibitors";
-				button-text = "Clear All";
-				clear-all-button = true;
-			};
+    # --- Control center geometry / margins ---
+    control-center-width = 400;
+    control-center-height = 900;
 
-			title = {
-				text = "Notifications";
-				clear-all-button = true;
-				button-text = "Clear All";
-			};
+    control-center-margin-top = 10;
+    control-center-margin-bottom = 10;
+    control-center-margin-right = 10;
+    control-center-margin-left = 0;
 
-			dnd = {
-				text = "Do Not Disturb";
-			};
+    # --- Notification window geometry ---
+    notification-window-width = 380;
+    notification-icon-size = 50;
+    notification-body-image-height = 200;
+    notification-body-image-width = 200;
 
-			label = {
-				max-lines = 5;
-				text = "Label Text";
-			};
+    # --- Timeouts ---
+    timeout = 8;
+    timeout-low = 6;
+    timeout-critical = 0;
 
-			mpris = {
-				image-size = 96;
-				image-radius = 12;
-				blacklist = [ "Spotify" "playerctld" ];
-			};
+    # --- Behavior / misc ---
+    fit-to-screen = false;
+    keyboard-shortcuts = true;
+    image-visibility = "when-available";
+    transition-time = 200;
+    hide-on-clear = false;
+    hide-on-action = true;
+    text-empty = "No Notifications";
+    script-fail-notify = true;
+    relative-timestamps = true;
+    notification-2fa-action = true;
+    notification-inline-replies = false;
 
-			buttons-grid = {
-				actions = [{
-					label = "直";
-					type = "toggle";
-					active = true;
-					command = "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'";
-					update-command = "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'";
-				}];
-			};
-		};
-	};
+    # Example script kept from your original config (optional)
+    scripts = {
+      example-script = {
+        exec = "echo 'Do something...'";
+        urgency = "Normal";
+      };
+    };
+
+    # --- Notification visibility rules (from JSON) ---
+    notification-visibility = {
+      example-name = {
+        state = "muted";
+        urgency = "Low";
+        app-name = "Spotify";
+      };
+    };
+
+    # --- Widgets (order matches your JSON config) ---
+    widgets = [
+      "buttons-grid"
+      "mpris"
+      "volume"
+      "backlight"
+      "dnd"
+      "title"
+      "notifications"
+    ];
+
+    widget-config = {
+      # MPRIS widget
+      mpris = {
+        image-size = 60;
+        image-radius = 0;
+        # you had a blacklist in your old config; you can re-add if you want:
+        # blacklist = [ "Spotify" "playerctld" ];
+      };
+
+      # Volume widget
+      volume = {
+        label = "  󰕾 ";
+        expand-button-label = " ";
+        collapse-button-label = " ";
+        show-per-app = true;
+        show-per-app-icon = false;
+        show-per-app-label = true;
+      };
+
+      # Backlight widget
+      backlight = {
+        label = " 󰃟 ";
+      };
+
+      # DND widget
+      dnd = {
+        text = "Do Not Disturb";
+      };
+
+      # Title widget
+      title = {
+        text = "Notifications Center";
+        clear-all-button = true;
+        button-text = " 󰆴 ";
+      };
+
+      # Buttons grid widget – 4 actions from your JSON config
+      buttons-grid = {
+        actions = [
+          # Wi-Fi toggle
+          {
+            label = "直"; # or "󰤨" etc
+            type = "toggle";
+            active = true;
+            command = "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'";
+            update-command = "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'";
+          }
+
+          # Bluetooth toggle
+          {
+            label = "";
+            type = "toggle";
+            active = true;
+            command = "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && rfkill unblock bluetooth || rfkill block bluetooth'";
+            update-command = "sh -c 'rfkill list bluetooth | grep -q \"Soft blocked: no\" && echo true || echo false'";
+          }
+
+          # Mic mute toggle
+          {
+            label = " ";
+            type = "toggle";
+            active = false;
+            command = "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && pactl set-source-mute @DEFAULT_SOURCE@ 1 || pactl set-source-mute @DEFAULT_SOURCE@ 0'";
+            update-command = "sh -c '[[ $(pactl get-source-mute @DEFAULT_SOURCE@) == *yes* ]] && echo true || echo false'";
+          }
+
+          # Speaker mute toggle
+          {
+            label = " ";
+            type = "toggle";
+            active = false;
+            command = "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && pactl set-sink-mute @DEFAULT_SINK@ 1 || pactl set-sink-mute @DEFAULT_SINK@ 0'";
+            update-command = "sh -c '[[ $(pactl get-sink-mute @DEFAULT_SINK@) == *yes* ]] && echo true || echo false'";
+          }
+        ];
+      };
+    };
+  };
 }

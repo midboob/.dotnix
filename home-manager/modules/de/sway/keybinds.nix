@@ -20,7 +20,7 @@
       # Basic
       "Mod4+Q" = "kill";
       "Mod4+V" = "floating toggle";
-      "Mod4+F" = "maximize toggle";
+      "Mod4+F" = "fullscreen toggle";
 
       # Apps
       "Mod4+Return" = "exec ${pkgs.foot}/bin/foot";
@@ -32,7 +32,7 @@
       "Mod4+N" = "exec ${pkgs.foot}/bin/foot -e nvim";
       "Mod4+Shift+B" = "exec ${pkgs.foot}/bin/foot -e bluetui";
       "Mod4+Shift+N" = "exec ${pkgs.swaynotificationcenter}/bin/swaync-client -t -sw";
-      "Mod4+Escape" = "exec wlogout";
+      "Mod4+Escape" = "exec rofi-power";
       "Mod4+Shift+W" = "exec rofi-wallpaper";
       "Mod4+Shift+R" = "exec ${./reload.sh}";
 

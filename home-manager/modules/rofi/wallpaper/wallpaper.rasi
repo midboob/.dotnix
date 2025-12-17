@@ -3,5 +3,5 @@
 // Window
 window {
   width:                       900px;
-  height:                      547px;
+  height:                      600px;
 }
