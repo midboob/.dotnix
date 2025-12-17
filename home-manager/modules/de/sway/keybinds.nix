@@ -20,7 +20,7 @@
       # Basic
       "Mod4+Q" = "kill";
       "Mod4+V" = "floating toggle";
-      "Mod4+F" = "fullscreen toggle";
+      "Mod4+F" = "maximize toggle";
 
       # Apps
       "Mod4+Return" = "exec ${pkgs.foot}/bin/foot";

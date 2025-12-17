@@ -1,73 +1,165 @@
-@import "./matugen-waybar.css";
+@import "./colors.css";
 
 * {
-	font-family: Fira Code;
-	font-weight: bold;
-	font-size: 9pt;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  min-height: 0;
+  text-shadow: none;
+  transition: none;
+  box-shadow: none;
 }
 
-/* Bar itself */
-window#waybar {
-	background: @background;
-	border: none;
-}
-
-/* Text colors */
+/* removed #custom-rofi here */
 #window,
-#language,
+#disk,
 #cpu,
-#memory,
-#custom-notification,
+#custom-cpu_temp,
+#custom-cpu_temp.critical,
+#backlight,
+#custom-memory,
 #pulseaudio,
-#custom-spacer,
+#pulseaudio.muted,
+#battery,
+#battery.critical,
+#battery.warning,
+#network,
 #clock {
-	color: @text;
+  padding-right: 3pt;
 }
 
-/* Apply margin to first and last module */
-#workspaces {
-	margin-left: 15px;
-}
-#clock {
-	margin-right: 0px;
-}
-
-/* Spacer */
-#custom-spacer {
-	margin: 0 3px 0 3px;
+window#waybar {
+  color: #fff4d2;
+  background: #222222;
+  font-family: IosevkaTerm Nerd Font Propo;
+  font-size: 12pt;
+  font-weight: 900;
 }
 
-/* Workspaces */
+.modules-left,
+.modules-center,
+.modules-right {
+  padding: 3pt;
+}
 
 #workspaces button {
-	padding: 0 4px 0 4px;
-	border-radius: 0;
-	color: @ws-active-text;
-	min-width: 10px;
-	min-height: 10px
+  color: #fff4d2;
+  border: 2pt solid #fff4d2;
+  margin-right: 3pt;
+
+  /* make the box a bit more narrow */
+  min-width: 12pt;
+  padding: 0 2.5pt;
+
+  /* ensure same font look as system modules (RAM, CPU, etc.) */
+  font-family: IosevkaTerm Nerd Font Propo;
+  font-size: 12pt;
+  font-weight: 900;
+}
+
+#workspaces button:last-child {
+  margin-right: 0;
 }
 
 #workspaces button:hover {
-	color: @ws-active-text;
+  color: #d3869b;
+  border-color: #d3869b;
 }
 
-#workspaces button.empty {
-	padding: 0 4px 0 4px;
-	border-radius: 0;
-	color: @ws-persistent-text;
-}
-
-#workspaces button.focused {
-	padding: 1px 4px 0 4px;
-	border-bottom: 2px solid @ws-focused;
-	color: @ws-active-text;
+#workspaces button.visible,
+#workspaces button.visible:hover {
+  color: #8ec07c;
+  border-color: #8ec07c;
 }
 
 #workspaces button.urgent {
-	padding: 1px 4px 0 4px;
-	border-bottom: 2px solid @ws-urgent;
+  color: #ea6962;
+  border-color: #ea6962;
 }
 
-#custom-notification {
-	margin-right: 15px;
+/* removed #custom-rofi block entirely */
+
+#window {
+  border-bottom: 2pt solid #d3869b;
+}
+
+#tray {
+  border-bottom: 2pt solid #686868;
+  background: #383838;
+  padding: 0 6pt;
+}
+
+#disk {
+  border-bottom: 2pt solid #ea6962;
+}
+
+#cpu {
+  border-bottom: 2pt solid #e78a4e;
+}
+
+#custom-cpu_temp {
+  border-bottom: 2pt solid #d8a657;
+}
+
+#custom-cpu_temp.critical {
+  color: #cc241d;
+  border-bottom: 2pt solid #cc241d;
+}
+
+#custom-cpu_temp.unknown {
+  color: #555555;
+  border-bottom: 2pt solid #555555;
+}
+
+#backlight {
+  border-bottom: 2pt solid #f6c657;
+}
+
+#custom-memory {
+  border-bottom: 2pt solid #458588;
+}
+
+#pulseaudio {
+  border-bottom: 2pt solid #83a598;
+}
+
+#pulseaudio.muted {
+  color: #ea6962;
+  border-bottom: 2pt solid #ea6962;
+}
+
+#battery {
+  border-bottom: 2pt solid #689d68;
+}
+
+#battery.critical {
+  color: #cc241d;
+  border-bottom: 2pt solid #cc241d;
+}
+
+#battery.critical,
+#battery.charging.critical {
+  color: #cc241d;
+  border-bottom: 2pt solid #cc241d;
+}
+
+#battery.warning,
+#battery.charging.warning {
+  color: #e78a4e;
+  border-bottom: 2pt solid #e78a4e;
+}
+
+#clock {
+  border-bottom: 2pt solid #8ec07c;
+}
+
+#network {
+  border-bottom: 2pt solid #d3869b;
+}
+
+#mode {
+  color: #222222;
+  border: 2pt solid #458588;
+  background: #83a598;
+  padding: 0 4.5pt;
 }

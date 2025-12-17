@@ -11,6 +11,7 @@
     systemd.enable = true;
     enable = true;
     xwayland = true;
+    checkConfig = false;
     extraOptions = ["--unsupported-gpu"];
   };
 
