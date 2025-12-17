@@ -6,7 +6,7 @@
     ../../system/configuration.nix
     # ../../system/modules.nix
 
-    ./hardware-configuration.nix
+    # ./hardware-configuration.nix
     ./system
   ];
 
