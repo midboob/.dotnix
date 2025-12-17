@@ -73,10 +73,24 @@
     };
   in {
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      desktop = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./nixos/configuration.nix
+          ./configs/hosts/desktop/default.nix
+          home-manager.nixosModules.home-manager
+          stylix.nixosModules.stylix
+          # inputs.mango.nixosModules.mango
+        ];
+
+        specialArgs = {
+          inherit inputs system;
+        };
+      };
+
+      t480s = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./configs/hosts/desktop/default.nix
           home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
           # inputs.mango.nixosModules.mango
