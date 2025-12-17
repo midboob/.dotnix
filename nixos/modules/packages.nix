@@ -91,6 +91,7 @@
     mermaid-cli
     ventoy-full-gtk
     matugen
+    wlsunset
 
     # Python
     (python313.withPackages (ps: [

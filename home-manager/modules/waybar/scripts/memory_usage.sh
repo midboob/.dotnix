@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Read values from /proc/meminfo
 while read -r key value _; do

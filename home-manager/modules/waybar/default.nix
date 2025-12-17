@@ -13,6 +13,11 @@
   xdg.configFile."waybar/niri.css".source = ./niri.css;
   xdg.configFile."waybar/sway.css".source = ./sway.css;
 
+  xdg.configFile."scripts" = {
+    source = ./scripts;
+    recursive = true;
+  };
+
   # colors.css still needs Stylix interpolation, so we generate it from Nix
   xdg.configFile."waybar/colors.css".text = ''
     @define-color background                  #${config.stylix.base16Scheme.base00};

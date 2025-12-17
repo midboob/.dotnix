@@ -73,7 +73,7 @@
     // "device": "acpi_video1",
     "format": "<span color='#f6c657'>[󰞏]</span> {percent}%",
     "tooltip": false,
-    "on-click-right": "~/.config/custom_scripts/wlsunset.sh"
+    "on-click-right": "~/.config/waybar/scripts/wlsunset.sh"
   },
   "custom/memory": {
     "exec": "~/.config/waybar/scripts/memory_usage.sh",
