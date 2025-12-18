@@ -8,6 +8,8 @@
 
     ./hardware-configuration.nix
     ./system
+
+    ./programs/fish
   ];
 
   networking = {
