@@ -79,7 +79,7 @@ in {
       ];
 
       # $mod, ESCAPE, exec, wlogout
-      "Mod+Escape".action.spawn = "${pkgs.wlogout}/bin/wlogout";
+      "Mod+Escape".action.spawn = "rofi-power";
 
       # $mod, Z, exec, $colorPicker
       "Mod+Z".action.spawn = [

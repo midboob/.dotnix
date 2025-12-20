@@ -28,7 +28,7 @@
 
         position = {
           x = 0;
-          y = 1080;
+          y = -1080;
         };
         scale = 1.0;
       };
@@ -49,10 +49,18 @@
 
     spawn-at-startup = [
       {argv = ["swww-daemon"];}
-      {argv = ["${pkgs.waybar}/bin/waybar" "-c" "~/.config/waybar/niri.jsonc" "-s" "~/.config/waybar/niri.css"];}
+      {
+        argv = [
+          "waybar"
+          "-c"
+          "~/.config/waybar/niri.jsonc"
+          "-s"
+          "~/.config/waybar/niri.css"
+        ];
+      }
 
       {
-        command = [
+        argv = [
           "${pkgs.openrgb}/bin/openrgb"
           "--profile"
           "${config.home.homeDirectory}/.config/OpenRGB/black.orp"
@@ -60,23 +68,23 @@
       }
 
       {
-        command = [
+        argv = [
           "${pkgs.bash}/bin/bash"
           "-lc"
           "sleep 4 && ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 1"
         ];
       }
       {
-        command = [
+        argv = [
           "${pkgs.bash}/bin/bash"
           "-lc"
           "sleep 5 && ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 1"
         ];
       }
 
-      {command = ["${pkgs.cliphist}/bin/cliphist" "wipe"];}
+      {argv = ["${pkgs.cliphist}/bin/cliphist" "wipe"];}
       {
-        command = [
+        argv = [
           "${pkgs.wl-clipboard}/bin/wl-paste"
           "--type"
           "text"
