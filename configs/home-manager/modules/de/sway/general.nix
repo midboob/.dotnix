@@ -66,7 +66,7 @@
     };
 
     extraConfig = ''
-      corner_radius 10
+      default_dim_inactive 0.2
     '';
   };
 }

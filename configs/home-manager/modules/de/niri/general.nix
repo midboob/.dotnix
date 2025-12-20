@@ -27,7 +27,20 @@
         };
 
         position = {
-          x = 2560;
+          x = 0;
+          y = 1080;
+        };
+        scale = 1.0;
+      };
+
+      "eDP-1" = {
+        mode = {
+          height = 1080;
+          width = 1920;
+          refresh = 60.031;
+        };
+        position = {
+          x = 0;
           y = 0;
         };
         scale = 1.0;
@@ -36,7 +49,7 @@
 
     spawn-at-startup = [
       {argv = ["swww-daemon"];}
-      {argv = ["${pkgs.waybar}/bin/waybar" "-c" "~/.config/waybar/niri.jsonc" "-s" "~/.config/waybar/style.css"];}
+      {argv = ["${pkgs.waybar}/bin/waybar" "-c" "~/.config/waybar/niri.jsonc" "-s" "~/.config/waybar/niri.css"];}
 
       {
         command = [

@@ -113,7 +113,7 @@
         actions = [
           # Wi-Fi toggle
           {
-            label = "直"; # or "󰤨" etc
+            label = "󰤨"; # or "直" etc
             type = "toggle";
             active = true;
             command = "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'";

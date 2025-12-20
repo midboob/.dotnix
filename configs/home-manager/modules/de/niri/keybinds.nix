@@ -90,6 +90,8 @@ in {
       # $mod SHIFT, W, exec, rofi-wallpaper
       "Mod+Shift+W".action.spawn = "rofi-wallpaper";
 
+      "Mod+Shift+R".action.spawn = "${./reload.sh}";
+
       ################################
       ## Screenshots
       ################################
