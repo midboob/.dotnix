@@ -65,8 +65,8 @@
       };
     };
 
-    extraConfig = ''
-      default_dim_inactive 0.2
-    '';
+    # extraConfig = ''
+    #   default_dim_inactive 0.2
+    # '';
   };
 }

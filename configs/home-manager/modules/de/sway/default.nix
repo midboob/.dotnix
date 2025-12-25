@@ -10,7 +10,7 @@
   wayland.windowManager.sway = {
     systemd.enable = true;
     enable = true;
-    package = pkgs.swayfx;
+    # package = pkgs.swayfx;
     xwayland = true;
     checkConfig = false;
     extraOptions = ["--unsupported-gpu"];

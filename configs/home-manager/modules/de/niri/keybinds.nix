@@ -25,6 +25,40 @@
       "Mod+Shift+F".action.fullscreen-window = [];
 
       ################################
+      ## Niri default column controls
+      ################################
+
+      # Insert column left / right
+      "Mod+BracketLeft".action.insert-column-left = [];
+      "Mod+BracketRight".action.insert-column-right = [];
+
+      # Center the focused column
+      "Mod+C".action.center-column = [];
+
+      ################################
+      ## Niri workspace navigation
+      ################################
+
+      "Mod+PageUp".action.focus-workspace-up = [];
+      "Mod+PageDown".action.focus-workspace-down = [];
+
+      ################################
+      ## Monitor focus & move (Niri defaults)
+      ################################
+
+      # Focus monitor
+      "Mod+Shift+H".action.focus-monitor-left = [];
+      "Mod+Shift+L".action.focus-monitor-right = [];
+      "Mod+Shift+J".action.focus-monitor-down = [];
+      "Mod+Shift+K".action.focus-monitor-up = [];
+
+      # Move column to monitor
+      "Mod+Ctrl+Shift+H".action.move-column-to-monitor-left = [];
+      "Mod+Ctrl+Shift+L".action.move-column-to-monitor-right = [];
+      "Mod+Ctrl+Shift+J".action.move-column-to-monitor-down = [];
+      "Mod+Ctrl+Shift+K".action.move-column-to-monitor-up = [];
+
+      ################################
       ## App launches
       ################################
 
@@ -122,6 +156,12 @@
       "Mod+Ctrl+K".action.move-window-up = [];
 
       ################################
+      ## Niri help overlay
+      ################################
+
+      "Mod+Shift+Slash".action.show-hotkeys-overlay = [];
+
+      ################################
       ## Workspaces
       ################################
 
@@ -154,13 +194,10 @@
       ## Resize (approximate your binde)
       ################################
 
-      # $mod SHIFT, H/L, resizeactive, ±50 0
-      "Mod+Shift+H".action.set-column-width = "-10%";
-      "Mod+Shift+L".action.set-column-width = "+10%";
-
-      # $mod SHIFT, J/K, resizeactive, 0 ±50
-      "Mod+Shift+J".action.set-window-height = "-10%";
-      "Mod+Shift+K".action.set-window-height = "+10%";
+      "Alt+Shift+H".action.set-column-width = "-10%";
+      "Alt+Shift+L".action.set-column-width = "+10%";
+      "Alt+Shift+J".action.set-window-height = "-10%";
+      "Alt+Shift+K".action.set-window-height = "+10%";
 
       ################################
       ## Volume / mic / brightness (bindel)
