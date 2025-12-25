@@ -51,11 +51,11 @@
       {argv = ["swww-daemon"];}
       {
         argv = [
-          "waybar"
+          "${pkgs.waybar}/bin/waybar"
           "-c"
-          "~/.config/waybar/niri.jsonc"
+          "${config.home.homeDirectory}/.config/waybar/niri.jsonc"
           "-s"
-          "~/.config/waybar/niri.css"
+          "${config.home.homeDirectory}/.config/waybar/niri.css"
         ];
       }
 

@@ -308,20 +308,6 @@ return {
 				desc = "Help Pages",
 			},
 			{
-				"<leader>sj",
-				function()
-					require("snacks").picker.jumps()
-				end,
-				desc = "Jumps",
-			},
-			{
-				"<leader>sk",
-				function()
-					require("snacks").picker.keymaps()
-				end,
-				desc = "Keymaps",
-			},
-			{
 				"<leader>sl",
 				function()
 					require("snacks").picker.loclist()

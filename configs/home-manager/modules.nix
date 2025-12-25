@@ -3,6 +3,7 @@
     # Other
     ./modules/theme
     ./modules/defaults
+    ./modules/gnome-keyring
 
     #DE
     ./modules/de/hyprland

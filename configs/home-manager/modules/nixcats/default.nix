@@ -133,8 +133,8 @@ in {
           mini = with pkgs.vimPlugins; [
             mini-ai
             mini-icons
-            # mini-pair
             mini-surround
+            mini-splitjoin
           ];
         };
 

@@ -90,7 +90,6 @@
     ghostscript
     mermaid-cli
     ventoy-full-gtk
-    matugen
     wlsunset
     blueman
 

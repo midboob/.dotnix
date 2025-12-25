@@ -28,7 +28,7 @@ in {
     #   homeConfig = true;                      # use theme for home config too
     # };
     theme = spicePkgs.themes.text;
-    # colorScheme = "RosePine";
-    colorScheme = "Gruvbox";
+    colorScheme = "RosePine";
+    # colorScheme = "Gruvbox";
   };
 }

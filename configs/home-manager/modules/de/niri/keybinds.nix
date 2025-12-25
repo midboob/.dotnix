@@ -1,24 +1,5 @@
-{ pkgs, ... }:
-
-let
-  # Commands (rough equivalents of your Hyprland variables)
-  terminal  = "${pkgs.ghostty}/bin/ghostty";
-  browser   = "${pkgs.brave}/bin/brave";
-  menu      = "${pkgs.rofi}/bin/rofi";
-
-  explorer1 = "terminal -e ${pkgs.yazi}/bin/yazi";
-
-  explorer2 = "${pkgs.nautilus}/bin/nautilus";
-  notes     = "${pkgs.obsidian}/bin/obsidian";
-  emoji     = "${pkgs.bemoji}/bin/bemoji";
-
-  bluetooth = "terminal -e ${pkgs.bluetui}/bin/bluetui";
-
-  editor    = "terminal -e nvim";
-
-in {
+{pkgs, ...}: {
   programs.niri.settings = {
-
     # This is the Nix-native representation of niri's KDL config.
     binds = {
       ################################
@@ -26,7 +7,7 @@ in {
       ################################
 
       # $mod, Q, killactive,
-      "Mod+Q".action.close-window = [ ];
+      "Mod+Q".action.close-window = [];
 
       # There is no direct “force kill” like your
       # `hyprctl activewindow | ... | xargs kill` line.
@@ -35,41 +16,41 @@ in {
       # it here with spawn-sh.
 
       # $mod, V, togglefloating,
-      "Mod+V".action.toggle-window-floating = [ ];
+      "Mod+V".action.toggle-window-floating = [];
 
       # $mod, F, fullscreen, 1
       # $mod SHIFT, F, fullscreen, 0
       # Mapped to niri’s maximize & fullscreen.
-      "Mod+F".action.maximize-column   = [ ];
-      "Mod+Shift+F".action.fullscreen-window = [ ];
+      "Mod+F".action.maximize-column = [];
+      "Mod+Shift+F".action.fullscreen-window = [];
 
       ################################
       ## App launches
       ################################
 
       # $mod, return, exec, $terminal
-      "Mod+Return".action.spawn = terminal;
+      "Mod+Return".action.spawn = "${pkgs.ghostty}/bin/ghostty";
 
       # $mod, B, exec, $browser
-      "Mod+B".action.spawn = browser;
+      "Mod+B".action.spawn = "${pkgs.brave}/bin/brave";
 
       # $mod, E, exec, $explorer1
-      "Mod+E".action.spawn = explorer1;
+      "Mod+E".action.spawn = "${pkgs.ghostty}/bin/ghostty -e ${pkgs.yazi}/bin/yazi";
 
       # $mod SHIFT, E, exec, $explorer2
-      "Mod+Shift+E".action.spawn = explorer2;
+      "Mod+Shift+E".action.spawn = "${pkgs.nautilus}/bin/nautilus";
 
       # $mod, M, exec, spotify
       "Mod+M".action.spawn = "spotify";
 
       # $mod, O, exec, $notes
-      "Mod+O".action.spawn = notes;
+      "Mod+O".action.spawn = "${pkgs.obsidian}/bin/obsidian";
 
       # $mod, N, exec, $editor
-      "Mod+N".action.spawn = editor;
+      "Mod+N".action.spawn = "${pkgs.ghostty}/bin/ghostty -e nvim";
 
       # $mod SHIFT, B, exec, $bluetooth
-      "Mod+Shift+B".action.spawn = bluetooth;
+      "Mod+Shift+B".action.spawn = "${pkgs.ghostty}/bin/ghostty -e ${pkgs.bluetui}/bin/bluetui";
 
       # $mod SHIFT, N, exec, $noti-center
       "Mod+Shift+N".action.spawn = [
@@ -100,8 +81,7 @@ in {
       "Mod+Shift+S".action.spawn = "${./screenshot.sh}";
 
       # , Print, exec, grim | wl-clipboard | save file
-      "Print".action.spawn-sh =
-        "${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy && ${pkgs.wl-clipboard}/bin/wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png";
+      "Print".action.spawn-sh = "${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy && ${pkgs.wl-clipboard}/bin/wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png";
 
       ################################
       ## Rofi / emoji / clipboard
@@ -109,27 +89,26 @@ in {
 
       # $mod, Space, exec, $menu -show drun
       "Mod+Space".action.spawn = [
-        menu
+        "${pkgs.rofi}/bin/rofi"
         "-show"
         "drun"
       ];
 
       # $mod, U, exec, $emoji
-      "Mod+U".action.spawn = emoji;
+      "Mod+U".action.spawn = "${pkgs.bemoji}/bin/bemoji";
 
       # $mod, Y, exec, cliphist list | rofi -dmenu | ...
-      "Mod+Y".action.spawn-sh =
-        "cliphist list | ${menu} -dmenu | cliphist decode | wl-copy";
+      "Mod+Y".action.spawn-sh = "cliphist list | ${pkgs.rofi}/bin/rofi -dmenu | cliphist decode | wl-copy";
 
       ################################
       ## Focus movement (H J K L)
       ################################
 
       # $mod, H/L/J/K, movefocus, l/r/d/u
-      "Mod+H".action.focus-column-left  = [ ];
-      "Mod+L".action.focus-column-right = [ ];
-      "Mod+J".action.focus-window-down  = [ ];
-      "Mod+K".action.focus-window-up    = [ ];
+      "Mod+H".action.focus-column-left = [];
+      "Mod+L".action.focus-column-right = [];
+      "Mod+J".action.focus-window-down = [];
+      "Mod+K".action.focus-window-up = [];
 
       ################################
       ## Move windows / columns (Mod+Ctrl+HJKL)
@@ -137,10 +116,10 @@ in {
 
       # $mod CTRL, H/L/J/K, movewindow, l/r/d/u
       # Horizontal moves are mapped to move-column-* (closest niri primitive).
-      "Mod+Ctrl+H".action.move-column-left  = [ ];
-      "Mod+Ctrl+L".action.move-column-right = [ ];
-      "Mod+Ctrl+J".action.move-window-down  = [ ];
-      "Mod+Ctrl+K".action.move-window-up    = [ ];
+      "Mod+Ctrl+H".action.move-column-left = [];
+      "Mod+Ctrl+L".action.move-column-right = [];
+      "Mod+Ctrl+J".action.move-window-down = [];
+      "Mod+Ctrl+K".action.move-window-up = [];
 
       ################################
       ## Workspaces
@@ -188,20 +167,16 @@ in {
       ################################
 
       # ,XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-      "XF86AudioLowerVolume".action.spawn-sh =
-        "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+      "XF86AudioLowerVolume".action.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
 
       # ,XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
-      "XF86AudioRaiseVolume".action.spawn-sh =
-        "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
+      "XF86AudioRaiseVolume".action.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
 
       # ,XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-      "XF86AudioMute".action.spawn-sh =
-        "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+      "XF86AudioMute".action.spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
 
       # ,XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
-      "XF86AudioMicMute".action.spawn-sh =
-        "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+      "XF86AudioMicMute".action.spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
 
       # ,XF86MonBrightnessUp, exec, brightnessctl set 5%+
       "XF86MonBrightnessUp".action.spawn = [
