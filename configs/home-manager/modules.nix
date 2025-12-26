@@ -4,6 +4,7 @@
     ./modules/theme
     ./modules/defaults
     ./modules/gnome-keyring
+    ./modules/latex
 
     #DE
     ./modules/de/hyprland
