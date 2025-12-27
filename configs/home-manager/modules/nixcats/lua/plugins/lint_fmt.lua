@@ -1,53 +1,79 @@
 return {
-  -- nvim-lint: runs on write
-  {
-    "mfussenegger/nvim-lint",
-    event = { "BufReadPost", "BufNewFile" }, -- makes sense with defaults.lazy = true
-    config = function()
-      local lint = require("lint")
+	-- nvim-lint: runs on write
+	{
+		"mfussenegger/nvim-lint",
+		event = { "BufReadPost", "BufNewFile" }, -- makes sense with defaults.lazy = true
+		config = function()
+			local lint = require("lint")
 
-      lint.linters_by_ft = {
-        go = { "golangcilint" },
-      }
+			lint.linters_by_ft = {
+				go = { "golangcilint" },
+			}
 
-      local grp = vim.api.nvim_create_augroup("UserLspLint", { clear = true })
+			local grp = vim.api.nvim_create_augroup("UserLspLint", { clear = true })
 
-      vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave", "BufReadPost" }, {
-        group = grp,
-        callback = function()
-          lint.try_lint()
-        end,
-      })
-    end,
-  },
+			vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave", "BufReadPost" }, {
+				group = grp,
+				callback = function()
+					lint.try_lint()
+				end,
+			})
+		end,
+	},
+	{
+		"stevearc/conform.nvim",
+		event = { "BufReadPost", "BufNewFile" },
+		keys = {
+			{
+				"<leader>FF",
+				function()
+					require("conform").format({
+						lsp_fallback = true,
+						async = false,
+						timeout_ms = 1000,
+					})
+				end,
+				mode = { "n", "v" },
+				desc = "[F]ormat [F]ile",
+			},
+		},
+		opts = {
+			formatters_by_ft = {
+				-- Lua
+				lua = { "stylua" },
 
-  -- conform.nvim: formatter with keybinding
-  {
-    "stevearc/conform.nvim",
-    event = { "BufReadPost", "BufNewFile" },
-    keys = {
-      {
-        "<leader>FF",
-        function()
-          require("conform").format({
-            lsp_fallback = true,
-            async = false,
-            timeout_ms = 1000,
-          })
-        end,
-        mode = { "n", "v" },
-        desc = "[F]ormat [F]ile",
-      },
-    },
-    opts = {
-      formatters_by_ft = {
-        lua = { "stylua" },
-        go = { "gofmt" },
-        nix = { "alejandra" },
-      },
-    },
-    config = function(_, opts)
-      require("conform").setup(opts)
-    end,
-  },
+				-- Python
+				python = { "black" },
+
+				-- Go
+				go = { "gofmt" },
+
+				-- TypeScript / JavaScript
+				javascript = { "prettier" },
+				typescript = { "prettier" },
+				javascriptreact = { "prettier" },
+				typescriptreact = { "prettier" },
+
+				-- C / C++
+				c = { "clang_format" },
+				cpp = { "clang_format" },
+
+				-- Bash / Shell
+				sh = { "shfmt" },
+				bash = { "shfmt" },
+
+				-- Nix
+				nix = { "alejandra" },
+
+				-- Typst
+				typst = { "typstfmt" },
+
+				-- LaTeX
+				tex = { "latexindent" },
+			},
+		},
+		config = function(_, opts)
+			require("conform").setup(opts)
+		end,
+	},
 }

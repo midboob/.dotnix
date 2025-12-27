@@ -7,8 +7,6 @@ return {
   },
 
   config = function()
-    local lspconfig = require("lspconfig")
-
     -- =========================
     -- Capabilities (blink.cmp)
     -- =========================
@@ -57,44 +55,34 @@ return {
     })
 
     -- =========================
-    -- LSP servers
+    -- LSP servers (NEW API)
     -- =========================
 
-    -- Lua (Neovim)
-    lspconfig.lua_ls.setup({
-      on_attach = on_attach,
+    vim.lsp.config("lua_ls", {
       capabilities = capabilities,
+      on_attach = on_attach,
       settings = {
         Lua = {
-          diagnostics = {
-            globals = { "vim" },
-          },
-          workspace = {
-            checkThirdParty = false,
-          },
-          telemetry = {
-            enable = false,
-          },
+          diagnostics = { globals = { "vim" } },
+          workspace = { checkThirdParty = false },
+          telemetry = { enable = false },
         },
       },
     })
 
-    -- Python
-    lspconfig.pyright.setup({
-      on_attach = on_attach,
+    vim.lsp.config("pyright", {
       capabilities = capabilities,
+      on_attach = on_attach,
     })
 
-    -- TypeScript / JavaScript
-    lspconfig.ts_ls.setup({
-      on_attach = on_attach,
+    vim.lsp.config("ts_ls", {
       capabilities = capabilities,
+      on_attach = on_attach,
     })
 
-    -- C / C++
-    lspconfig.clangd.setup({
-      on_attach = on_attach,
+    vim.lsp.config("clangd", {
       capabilities = capabilities,
+      on_attach = on_attach,
       cmd = {
         "clangd",
         "--background-index",
@@ -103,16 +91,14 @@ return {
       },
     })
 
-    -- Bash
-    lspconfig.bashls.setup({
-      on_attach = on_attach,
+    vim.lsp.config("bashls", {
       capabilities = capabilities,
+      on_attach = on_attach,
     })
 
-    -- Nix
-    lspconfig.nil_ls.setup({
-      on_attach = on_attach,
+    vim.lsp.config("nil_ls", {
       capabilities = capabilities,
+      on_attach = on_attach,
       settings = {
         ["nil"] = {
           formatting = {
@@ -122,24 +108,20 @@ return {
       },
     })
 
-    -- Typst (Tinymist)
-    lspconfig.tinymist.setup({
-      on_attach = on_attach,
+    vim.lsp.config("tinymist", {
       capabilities = capabilities,
+      on_attach = on_attach,
       settings = {
         exportPdf = "onSave",
       },
     })
 
-    -- LaTeX
-    lspconfig.texlab.setup({
-      on_attach = on_attach,
+    vim.lsp.config("texlab", {
       capabilities = capabilities,
+      on_attach = on_attach,
       settings = {
         texlab = {
-          build = {
-            onSave = false,
-          },
+          build = { onSave = false },
           forwardSearch = {
             executable = "zathura",
             args = {
