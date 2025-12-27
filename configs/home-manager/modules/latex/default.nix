@@ -11,19 +11,18 @@
         latexmk
         amsmath
         amsfonts
-        amssymb
         geometry
-        graphicx
         hyperref
         biblatex
         xcolor
         fontspec
         ;
     })
+    texliveFull
   ];
 
   programs.texlive = {
     enable = true;
-    pakage = pkgs.texliveFull;
+    # package = pkgs.texliveFull;
   };
 }
