@@ -77,6 +77,18 @@ in {
           typst = with pkgs; [
             tinymist
           ];
+          latex = with pkgs; [
+            texlab
+          ];
+          cpp = with pkgs; [
+            clang
+          ];
+          python = with pkgs; [
+            pyright
+          ];
+          bash = with pkgs; [
+            bash-language-server
+          ];
         };
 
         # This is for plugins that will load at startup without using packadd:
@@ -135,6 +147,9 @@ in {
             mini-icons
             mini-surround
             mini-splitjoin
+          ];
+          latex = with pkgs.vimPlugins; [
+            vimtex
           ];
         };
 
@@ -201,6 +216,10 @@ in {
             nix = true;
             go = false;
             typst = true;
+            latex = true;
+            cpp = true;
+            python = true;
+            bash = true;
           };
           # anything else to pass and grab in lua with `nixCats.extra`
           extra = {

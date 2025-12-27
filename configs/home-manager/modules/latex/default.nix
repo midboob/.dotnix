@@ -5,24 +5,8 @@
   ...
 }: {
   home.packages = with pkgs; [
-    (texlive.combine {
-      inherit
-        (texlive)
-        latexmk
-        amsmath
-        amsfonts
-        geometry
-        hyperref
-        biblatex
-        xcolor
-        fontspec
-        ;
-    })
     texliveFull
+    latexrun
+    texlivePackages.latexmk
   ];
-
-  programs.texlive = {
-    enable = true;
-    # package = pkgs.texliveFull;
-  };
 }
