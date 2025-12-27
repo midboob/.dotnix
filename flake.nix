@@ -113,7 +113,6 @@
           stylix.homeModules.stylix
           nixcord.homeModules.nixcord
           inputs.spicetify-nix.homeManagerModules.default
-          inputs.zen-browser.homeModules.beta
           # inputs.mango.hmModules.mango
           niri.homeModules.config
           niri.homeModules.stylix
