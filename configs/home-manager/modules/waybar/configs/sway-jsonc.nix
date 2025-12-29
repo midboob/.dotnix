@@ -91,7 +91,7 @@
         "format-bluetooth-muted": "<span color='#${config.stylix.base16Scheme.base08}'>[󰂲]</span> {volume}%",
         "format-source": "{volume}% ",
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-right": "blueman-manager",
+        "on-click-right": "pulseaudio",
         "tooltip": false,
         "max-volume": 130
       },

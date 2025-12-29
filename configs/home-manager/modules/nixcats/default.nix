@@ -88,6 +88,10 @@ in {
           ];
           bash = with pkgs; [
             bash-language-server
+            shfmt
+          ];
+          javascript = with pkgs; [
+            prettier
           ];
         };
 
