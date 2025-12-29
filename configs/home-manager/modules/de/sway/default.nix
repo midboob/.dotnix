@@ -2,8 +2,6 @@
   imports = [
     ./general.nix
     ./keybinds.nix
-
-    ./swaylock
   ];
 
   stylix.targets.sway.enable = true;

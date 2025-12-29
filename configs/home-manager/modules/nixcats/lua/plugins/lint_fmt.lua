@@ -1,8 +1,7 @@
 return {
-	-- nvim-lint: runs on write
 	{
 		"mfussenegger/nvim-lint",
-		event = { "BufReadPost", "BufNewFile" }, -- makes sense with defaults.lazy = true
+		event = { "BufReadPost", "BufNewFile" },
 		config = function()
 			local lint = require("lint")
 
@@ -10,7 +9,7 @@ return {
 				go = { "golangcilint" },
 			}
 
-			local grp = vim.api.nvim_create_augroup("UserLspLint", { clear = true })
+			local grp = vim.api.nvim_create_augroup("UserLint", { clear = true })
 
 			vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave", "BufReadPost" }, {
 				group = grp,
@@ -20,6 +19,7 @@ return {
 			})
 		end,
 	},
+
 	{
 		"stevearc/conform.nvim",
 		event = { "BufReadPost", "BufNewFile" },
@@ -48,7 +48,7 @@ return {
 				-- Go
 				go = { "gofmt" },
 
-				-- TypeScript / JavaScript
+				-- JavaScript / TypeScript
 				javascript = { "prettier" },
 				typescript = { "prettier" },
 				javascriptreact = { "prettier" },
@@ -58,7 +58,7 @@ return {
 				c = { "clang_format" },
 				cpp = { "clang_format" },
 
-				-- Bash / Shell
+				-- Shell
 				sh = { "shfmt" },
 				bash = { "shfmt" },
 
@@ -66,7 +66,7 @@ return {
 				nix = { "alejandra" },
 
 				-- Typst
-				typst = { "typstfmt" },
+				typst = { "typstyle" },
 
 				-- LaTeX
 				tex = { "latexindent" },

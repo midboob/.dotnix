@@ -14,9 +14,13 @@ return {
 		end
 
 		-- =========================
-		-- on_attach (keymaps)
+		-- on_attach
 		-- =========================
-		local on_attach = function(_, bufnr)
+		local on_attach = function(client, bufnr)
+			-- 🔒 Disable ALL LSP formatting
+			client.server_capabilities.documentFormattingProvider = false
+			client.server_capabilities.documentRangeFormattingProvider = false
+
 			local map = function(mode, lhs, rhs, desc)
 				vim.keymap.set(mode, lhs, rhs, {
 					buffer = bufnr,
@@ -34,8 +38,13 @@ return {
 			map("n", "<leader>rn", vim.lsp.buf.rename, "Rename symbol")
 			map("n", "<leader>ca", vim.lsp.buf.code_action, "Code action")
 
+			-- Formatting is handled ONLY by conform.nvim
 			map("n", "<leader>f", function()
-				vim.lsp.buf.format({ async = true })
+				require("conform").format({
+					lsp_fallback = true,
+					async = true,
+					timeout_ms = 1000,
+				})
 			end, "Format buffer")
 		end
 
@@ -51,7 +60,7 @@ return {
 		})
 
 		-- =========================
-		-- LSP servers (NEW API)
+		-- LSP servers
 		-- =========================
 
 		vim.lsp.config("lua_ls", {
@@ -92,16 +101,10 @@ return {
 			on_attach = on_attach,
 		})
 
+		-- ❌ No formatting here — conform owns it
 		vim.lsp.config("nil_ls", {
 			capabilities = capabilities,
 			on_attach = on_attach,
-			settings = {
-				["nil"] = {
-					formatting = {
-						command = { "nixpkgs-fmt" },
-					},
-				},
-			},
 		})
 
 		vim.lsp.config("tinymist", {

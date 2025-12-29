@@ -55,15 +55,15 @@ in {
         lspsAndRuntimeDeps = {
           general = with pkgs; [
             lazygit
+            nodejs
           ];
           lua = with pkgs; [
             lua-language-server
             stylua
           ];
           nix = with pkgs; [
-            nixd
+            nil
             alejandra
-            nixfmt
           ];
           go = with pkgs; [
             gopls
@@ -76,21 +76,26 @@ in {
           ];
           typst = with pkgs; [
             tinymist
+            typstyle
           ];
           latex = with pkgs; [
             texlab
+            texlivePackages.latexindent
           ];
           cpp = with pkgs; [
             clang
+            clang-tools
           ];
           python = with pkgs; [
             pyright
+            black
           ];
           bash = with pkgs; [
             bash-language-server
             shfmt
           ];
           javascript = with pkgs; [
+            typescript-language-server
             prettier
           ];
         };
@@ -218,7 +223,7 @@ in {
             markdown = true;
             lua = true;
             nix = true;
-            go = false;
+            go = true;
             typst = true;
             latex = true;
             cpp = true;
