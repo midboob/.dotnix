@@ -1,4 +1,6 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+
+let
   lockAndDpmsOff = pkgs.writeShellScript "lock-and-dpms-off" ''
     #!/usr/bin/env sh
     set -e
@@ -38,7 +40,8 @@
         ;;
     esac
   '';
-in {
+in
+{
   home.packages = with pkgs; [
     swayidle
     swaylock
@@ -52,6 +55,7 @@ in {
       {
         timeout = 300; # 5 min
         command = "${lockAndDpmsOff}";
+        resumeCommand = "${dpmsOn}";
       }
       {
         timeout = 900; # 15 min
@@ -59,15 +63,8 @@ in {
       }
     ];
 
-    events = [
-      {
-        event = "before-sleep";
-        command = "${lockAndDpmsOff}";
-      }
-      {
-        event = "resume";
-        command = "${dpmsOn}";
-      }
-    ];
+    events = {
+      before-sleep = "${lockAndDpmsOff}";
+    };
   };
 }

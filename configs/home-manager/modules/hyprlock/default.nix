@@ -1,8 +1,4 @@
 {
-  pkgs,
-  config,
-  lib,
-}: {
   stylix.targets.hyprlock.enable = true;
 
   programs.hyprlock = {

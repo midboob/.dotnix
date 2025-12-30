@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   programs.niri.settings = {
-    # This is the Nix-native representation of niri's KDL config.
+    input.mod-key = "Super";
     binds = {
       ################################
       ## Basic window management
@@ -9,11 +9,12 @@
       # $mod, Q, killactive,
       "Mod+Q".action.close-window = [];
 
-      # There is no direct “force kill” like your
-      # `hyprctl activewindow | ... | xargs kill` line.
-      # If you really want it, write a small script that uses
-      # `niri msg action focused-window-info` + `kill` and bind
-      # it here with spawn-sh.
+      # Focus outputs
+      "Mod+comma".action.focus-monitor-left = [];
+      "Mod+period".action.focus-monitor-right = [];
+
+      "Mod+Shift+comma".action.move-column-to-monitor-left = [];
+      "Mod+Shift+period".action.move-column-to-monitor-right = [];
 
       # $mod, V, togglefloating,
       "Mod+V".action.toggle-window-floating = [];
@@ -74,14 +75,17 @@
       "Mod+Shift+R".action.spawn = "${./reload.sh}";
 
       ################################
-      ## Screenshots
+      ## Screenshots (niri-native)
       ################################
 
-      # $mod SHIFT, S, exec, ./screenshot.sh
-      "Mod+Shift+S".action.spawn = "${./screenshot.sh}";
+      # Mod+Shift+S → interactive area selection
+      "Mod+Shift+S".action.screenshot = [];
 
-      # , Print, exec, grim | wl-clipboard | save file
-      "Print".action.spawn-sh = "${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy && ${pkgs.wl-clipboard}/bin/wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png";
+      # Print → full screen (current monitor)
+      "Print".action.screenshot-screen = [];
+
+      # Shift+Print → focused window
+      "Shift+Print".action.screenshot-window = [];
 
       ################################
       ## Rofi / emoji / clipboard

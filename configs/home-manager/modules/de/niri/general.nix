@@ -1,11 +1,13 @@
 {
   pkgs,
   config,
-  lib,
   ...
 }: {
   programs.niri.settings = {
     hotkey-overlay.skip-at-startup = true;
+    prefer-no-csd = true;
+
+    screenshot-path = "~/Pictures/Screenshots/Screenshot-%Y-%m-%d_%H-%M-%S.png";
 
     outputs = {
       "*" = {
@@ -99,6 +101,10 @@
 
     layout = {
       gaps = 5;
+
+      default-column-width = {
+        proportion = 0.5;
+      };
 
       border = {
         width = 2.0;
