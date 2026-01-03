@@ -1,11 +1,9 @@
 return {
 	{
-		-- if Nix plugin name is `snacks-nvim`, this repo string is still fine
 		"folke/snacks.nvim",
 		enabled = true,
 		event = "VeryLazy",
 
-		-- all your Snacks configuration goes into opts
 		opts = {
 			animate = { enabled = true },
 
@@ -116,7 +114,6 @@ return {
 			image = {
 				enabled = true,
 				resolve = function(file, src)
-					-- Clean link from "image\" to "image"
 					local clean_src = src:match("^(.-)\\") or src
 
 					local image_dirs = {
@@ -196,13 +193,11 @@ return {
 			},
 		},
 
-		-- apply opts
 		config = function(_, opts)
 			local Snacks = require("snacks")
 			Snacks.setup(opts)
 		end,
 
-		-- lazy-style keymaps
 		keys = {
 			{
 				"<leader>n",

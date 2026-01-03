@@ -113,9 +113,10 @@
           stylix.homeModules.stylix
           nixcord.homeModules.nixcord
           inputs.spicetify-nix.homeManagerModules.default
-          # inputs.mango.hmModules.mango
           niri.homeModules.config
           niri.homeModules.stylix
+
+          # inputs.mango.hmModules.mango
         ];
       };
     };

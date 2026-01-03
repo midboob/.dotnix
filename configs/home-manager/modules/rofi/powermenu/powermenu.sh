@@ -133,10 +133,10 @@ case "$chosen" in
   run_cmd --reboot
   ;;
 "$lock")
-  if [[ -x '/usr/bin/betterlockscreen' ]]; then
-    betterlockscreen -l
-  elif [[ -x '/usr/bin/i3lock' ]]; then
-    i3lock
+  if command -v hyprlock >/dev/null; then
+    hyprlock
+  else
+    notify-send "Lock failed" "hyprlock not found"
   fi
   ;;
 "$suspend")

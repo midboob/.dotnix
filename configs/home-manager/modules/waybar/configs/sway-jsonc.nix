@@ -139,6 +139,8 @@
       "clock": {
         "format": "<span color='#${config.stylix.base16Scheme.base0A}'>[]</span> {:%a %d | %I:%M %p}",
         "tooltip": false,
+        "on-click": "swaync-client -t -sw",
+        "escape": true,
         "interval": 1
       },
 

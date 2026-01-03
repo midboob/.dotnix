@@ -1,7 +1,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "rosepine",
+	theme = "catppuccin", --catppuccin, rosepine
 	transparency = true,
 }
 

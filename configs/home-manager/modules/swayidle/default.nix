@@ -5,17 +5,17 @@ let
     #!/usr/bin/env sh
     set -e
 
+    # Always lock with hyprlock
+    ${pkgs.hyprlock}/bin/hyprlock &
+
     case "$XDG_CURRENT_DESKTOP" in
       Hyprland)
-        ${pkgs.hyprlock}/bin/hyprlock
         ${pkgs.hyprland}/bin/hyprctl dispatch dpms off
         ;;
       sway)
-        ${pkgs.swaylock}/bin/swaylock -f
         ${pkgs.sway}/bin/swaymsg "output * power off"
         ;;
       niri)
-        ${pkgs.swaylock}/bin/swaylock -f
         ${pkgs.niri}/bin/niri msg action power-off-monitors
         ;;
       *)
@@ -44,7 +44,6 @@ in
 {
   home.packages = with pkgs; [
     swayidle
-    swaylock
     hyprlock
   ];
 
@@ -63,8 +62,6 @@ in
       }
     ];
 
-    events = {
-      before-sleep = "${lockAndDpmsOff}";
-    };
+    events.before-sleep = "${lockAndDpmsOff}";
   };
 }

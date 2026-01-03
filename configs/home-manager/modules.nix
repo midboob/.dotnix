@@ -6,7 +6,7 @@
     ./modules/gnome-keyring
     ./modules/latex
     ./modules/hyprlock
-    ./modules/swayidle
+    # ./modules/swayidle
 
     #DE
     ./modules/de/hyprland
