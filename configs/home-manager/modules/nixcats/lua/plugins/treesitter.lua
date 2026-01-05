@@ -2,11 +2,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		enabled = true,
-
-		-- load when you actually open files
 		event = { "BufReadPost", "BufNewFile" },
-
-		-- optional: fine if you're using Nix; lazy will just run the command
 		build = ":TSUpdate",
 
 		dependencies = {

@@ -38,12 +38,13 @@ vim.opt.smartcase = true
 vim.opt.smartindent = true
 vim.opt.smoothscroll = true
 vim.opt.spelllang = {"en"}
+vim.opt.spellsuggest = { "best", 9 }
 vim.opt.signcolumn = 'yes'
 
 
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
-vim.opt.completeopt = 'menu,preview,noselect'
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 
 -- Colorscheme (set early so UIs can pick it up)
