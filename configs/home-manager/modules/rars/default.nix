@@ -12,7 +12,7 @@ in {
 xdg.desktopEntries.myapp = {
   name = "RARS 1.55";
   comment = "My Java application";
-  exec = "myapp";
+  exec = "RARS";
   terminal = false;
   categories = [ "Utility" ];
 };
