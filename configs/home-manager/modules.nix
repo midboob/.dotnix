@@ -7,6 +7,7 @@
     ./modules/latex
     ./modules/hyprlock
     # ./modules/swayidle
+    ./modules/rars
 
     #DE
     ./modules/de/hyprland
