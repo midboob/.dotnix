@@ -18,6 +18,7 @@
     cliphist
     wl-clipboard
 
+    xdg-utils
     xdg-desktop-portal
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
