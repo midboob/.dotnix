@@ -1,9 +1,4 @@
-{
-  inputs,
-  config,
-  lib,
-  ...
-}: {
+{inputs, ...}: {
   imports = [
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t480s
   ];
@@ -20,9 +15,11 @@
       settings = {
         CPU_SCALING_GOVERNOR_ON_AC = "performance";
         CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+        CPU_SCALING_GOVERNOR_ON_SAV = "powersave";
 
         CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-        CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+        CPU_ENERGY_PERF_POLICY_ON_BAT = "default";
+        CPU_ENERGY_PERF_POLICY_ON_SAV = "power";
 
         CPU_BOOST_ON_AC = 1;
         CPU_BOOST_ON_BAT = 1;

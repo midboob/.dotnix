@@ -1,12 +1,10 @@
 {
   pkgs,
-  config,
-  lib,
   ...
 }: {
   wayland.windowManager.sway.config = {
     modifier = "Mod4";
-    terminal = "${pkgs.ghostty}/bin/ghostty";
+    terminal = "${pkgs.kitty}/bin/kitty";
     menu = "${pkgs.rofi}/bin/rofi -show drun";
 
     floating.modifier = "Mod4";
@@ -23,14 +21,14 @@
       "Mod4+F" = "fullscreen toggle";
 
       # Apps
-      "Mod4+Return" = "exec ${pkgs.ghostty}/bin/ghostty";
+      "Mod4+Return" = "exec ${pkgs.kitty}/bin/kitty";
       "Mod4+B" = "exec ${pkgs.brave}/bin/brave";
-      "Mod4+E" = "exec ${pkgs.ghostty}/bin/ghostty -e ${pkgs.yazi}/bin/yazi";
+      "Mod4+E" = "exec ${pkgs.kitty}/bin/kitty -e ${pkgs.yazi}/bin/yazi";
       "Mod4+Shift+E" = "exec ${pkgs.nautilus}/bin/nautilus";
       "Mod4+M" = "exec spotify";
       "Mod4+O" = "exec ${pkgs.obsidian}/bin/obsidian";
-      "Mod4+N" = "exec ${pkgs.ghostty}/bin/ghostty -e nvim";
-      "Mod4+Shift+B" = "exec ${pkgs.ghostty}/bin/ghostty -e bluetui";
+      "Mod4+N" = "exec ${pkgs.kitty}/bin/kitty -e nvim";
+      "Mod4+Shift+B" = "exec ${pkgs.kitty}/bin/kitty -e bluetui";
       "Mod4+Shift+N" = "exec ${pkgs.swaynotificationcenter}/bin/swaync-client -t -sw";
       "Mod4+Escape" = "exec rofi-power";
       "Mod4+Shift+W" = "exec rofi-wallpaper";
