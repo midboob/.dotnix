@@ -20,8 +20,8 @@
       fabric = {
         enable = true;
         autoStart = true;
+        openFirewall = true;
         jvmOpts = "-Xmx8G -Xms2G";
-
         package = pkgs.fabricServers.fabric-1_21_11.override {
           loaderVersion = "0.18.4";
         };
@@ -36,18 +36,19 @@
         };
 
         serverProperties = {
-          server-port = 25566;
+          server-port = 12345;
           difficulty = 3;
           gamemode = 1;
           max-players = 20;
           motd = "fabric";
-          level-name = "poopy buthole";
+          level-name = "fabric";
         };
       };
 
       vanilla = {
         enable = true;
         autoStart = true;
+        openFirewall = true;
         jvmOpts = "-Xmx8G -Xms2G";
         package = pkgs.vanillaServers.vanilla-1_21_11;
 
@@ -56,7 +57,7 @@
         };
 
         symlinks = {
-          datapacks = ./datapacks;
+          "world/datapacks" = ./datapacks;
         };
 
         serverProperties = {
@@ -64,8 +65,8 @@
           difficulty = 3;
           gamemode = 1;
           max-players = 20;
-          motd = "vanilla";
-          level-name = "12324";
+          motd = "vanilla new";
+          level-name = "vanilla";
         };
       };
     };
