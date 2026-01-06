@@ -1,0 +1,16 @@
+filename = 'shulkerdropstwo-1.21.10-3.6.jar'
+name = 'Shulker Drops Two'
+side = 'server'
+x-prismlauncher-loaders = [ 'neoforge', 'forge', 'quilt', 'fabric' ]
+x-prismlauncher-mc-versions = [ '1.21.10' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'c0d6c18c8f1b1044c0416157ba96f9c3f2762d12968c87e69065b563b7aa4691ee729b066aed2ea81c45bed1d4fe71bd45cdf91c138d8d734b43129f9d191b71'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/UjXIyw47/versions/1ERVbRKh/shulkerdropstwo-1.21.10-3.6.jar'
+
+[update.modrinth]
+mod-id = 'UjXIyw47'
+version = '1ERVbRKh'

@@ -1,0 +1,16 @@
+filename = 'oreharvester-1.21.10-1.5.jar'
+name = 'Ore Harvester'
+side = 'server'
+x-prismlauncher-loaders = [ 'neoforge', 'forge', 'quilt', 'fabric' ]
+x-prismlauncher-mc-versions = [ '1.21.10' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '8f3a5aa6763e6e5fd8b25a8be63d37c6b78c1b8b11d8cc4a80230db8956ffa951f0efc58ba71fb6c6f654415e5cf97c9959e7b60443531f099116fcaaa28eeaf'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/Xiv4r347/versions/Fd8hhPwd/oreharvester-1.21.10-1.5.jar'
+
+[update.modrinth]
+mod-id = 'Xiv4r347'
+version = 'Fd8hhPwd'

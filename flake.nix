@@ -51,6 +51,11 @@
       url = "github:abenz1267/walker";
       inputs.elephant.follows = "elephant";
     };
+
+    nix-minecraft = {
+      url = "github:Infinidoge/nix-minecraft";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -63,6 +68,8 @@
     bunny-yazi,
     zen-browser,
     niri,
+    walker,
+    nix-minecraft,
     ...
   }: let
     system = "x86_64-linux";

@@ -1,0 +1,16 @@
+filename = 'infinitetrading-1.21.10-4.6.jar'
+name = 'Infinite Trading'
+side = 'server'
+x-prismlauncher-loaders = [ 'neoforge', 'forge', 'quilt', 'fabric' ]
+x-prismlauncher-mc-versions = [ '1.21.10' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '8fbe9c8d2a9361c587438dab5a7540f7f4603de572c10993bd7df89e1d4fba8727541773b3245080fc0532bd3f7e982eb87c72d37ae0fb85709066c2ada89af6'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/U3eoZT3o/versions/HcXyoavq/infinitetrading-1.21.10-4.6.jar'
+
+[update.modrinth]
+mod-id = 'U3eoZT3o'
+version = 'HcXyoavq'

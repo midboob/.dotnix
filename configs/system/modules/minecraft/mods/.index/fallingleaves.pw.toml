@@ -1,0 +1,16 @@
+filename = 'fallingleaves-2.0.2+1.21.9.jar'
+name = 'Falling Leaves'
+side = 'client'
+x-prismlauncher-loaders = [ 'fabric' ]
+x-prismlauncher-mc-versions = [ '1.21.10', '1.21.9' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'd19f22d3ec2c3624bc920df8baf40a17d60e7849ab08c8b2062c431334eff13f7b3505d2f98bd9bdd0c18a92379d31e941cfc3fd70949c250fc464e92960438a'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/WhbRG4iK/versions/otYjflTL/fallingleaves-2.0.2%2B1.21.9.jar'
+
+[update.modrinth]
+mod-id = 'WhbRG4iK'
+version = 'otYjflTL'

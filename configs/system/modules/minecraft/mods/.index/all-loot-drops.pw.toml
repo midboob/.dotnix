@@ -1,0 +1,16 @@
+filename = 'alllootdrops-1.21.10-3.6.jar'
+name = 'All Loot Drops'
+side = 'server'
+x-prismlauncher-loaders = [ 'neoforge', 'forge', 'quilt', 'fabric' ]
+x-prismlauncher-mc-versions = [ '1.21.10' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '40cbe75985881da936d174c79414841c19a6828add3ba120487b35681eaf6669d2bca1d9896f6ea4a0dd1f88678cd416bebe651716dce899c5e5f4b1e8364614'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/n7PBO6pb/versions/2DdBKns9/alllootdrops-1.21.10-3.6.jar'
+
+[update.modrinth]
+mod-id = 'n7PBO6pb'
+version = '2DdBKns9'
