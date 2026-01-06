@@ -22,12 +22,13 @@
         autoStart = true;
         jvmOpts = "-Xmx12G -Xms2G";
 
-        package = pkgs.fabricServers.fabric-1_21_10.override {
+        package = pkgs.fabricServers.fabric-1_21_11.override {
           loaderVersion = "0.18.4";
         };
 
         symlinks = {
           mods = ./mods;
+          datapacks = ./datapacks;
         };
 
         operators = {
