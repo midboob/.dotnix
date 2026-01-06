@@ -16,21 +16,52 @@
     enable = true;
     eula = true;
     openFirewall = true;
-    servers.fabric = {
-      enable = true;
-      package = pkgs.fabricServers.fabric-1_21_10.override {
-        loaderVersion = "0.18.4";
-      }; 
-      symlinks = {
-        mods = ./mods;
-      };
-    };
-    servers.vanilla = {
-      enable = false;
-      jvmOpts = "-Xmx12G -Xms2G";
+    servers = {
+      fabric = {
+        enable = true;
+        autoStart = true;
+        jvmOpts = "-Xmx12G -Xms2G";
 
-      # Specify the custom minecraft server package
-      package = pkgs.minecraftServers.vanilla-1_21_11;
+        package = pkgs.fabricServers.fabric-1_21_10.override {
+          loaderVersion = "0.18.4";
+        };
+
+        symlinks = {
+          mods = ./mods;
+        };
+
+        operators = {
+          blangebob = "4a3ae14d-62aa-4b6e-b381-0ebb0708569a";
+        };
+
+        serverProperties = {
+          server-port = 12345;
+          difficulty = 3;
+          gamemode = 1;
+          max-players = 20;
+          motd = "poopy buthole";
+          level-name = "poopy buthole";
+        };
+      };
+      vanilla = {
+        enable = true;
+        autoStart = true;
+        jvmOpts = "-Xmx12G -Xms2G";
+        package = pkgs.minecraftServers.vanilla-1_21_11;
+
+        operators = {
+          blangebob = "4a3ae14d-62aa-4b6e-b381-0ebb0708569a";
+        };
+
+        serverProperties = {
+          server-port = 25565;
+          difficulty = 3;
+          gamemode = 1;
+          max-players = 20;
+          motd = "poopy buthole 67";
+          level-name = "12324";
+        };
+      };
     };
   };
 }
