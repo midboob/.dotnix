@@ -102,6 +102,13 @@
     layout = {
       gaps = 5;
 
+      # struts = {
+      #   top = 1;
+      #   bottom = 1;
+      #   left = 1;
+      #   right = 1;
+      # };
+
       default-column-width = {
         proportion = 0.5;
       };

@@ -12,4 +12,4 @@ niri msg reload
 
 # Restart SwayNC and Waybar
 swaync &
-waybar -c ~/.config/waybar/sway.jsonc -s ~/.config/waybar/sway.css&
+waybar -c ~/.config/waybar/niri.jsonc -s ~/.config/waybar/niri.css&

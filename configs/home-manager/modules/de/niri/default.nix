@@ -4,7 +4,7 @@
     ./general.nix
     ./keybinds.nix
     # ./env.nix
-    # ./windowrules.nix
+    ./windowrules.nix
   ];
 
   stylix.targets.niri.enable = true;
