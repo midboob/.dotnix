@@ -13,22 +13,20 @@
   ];
 
   services.minecraft-servers = {
-    enable = true;
+    enable = false;
     eula = true;
     openFirewall = true;
     servers = {
       fabric = {
-        enable = true;
-        autoStart = true;
+        enable = false;
         openFirewall = true;
-        jvmOpts = "-Xmx8G -Xms2G";
+        jvmOpts = "-Xmx12G -Xms2G";
         package = pkgs.fabricServers.fabric-1_21_11.override {
           loaderVersion = "0.18.4";
         };
 
         symlinks = {
           mods = ./mods;
-          datapacks = ./datapacks;
         };
 
         operators = {
@@ -41,13 +39,11 @@
           gamemode = 1;
           max-players = 20;
           motd = "fabric";
-          level-name = "fabric";
         };
       };
 
       vanilla = {
         enable = true;
-        autoStart = true;
         openFirewall = true;
         jvmOpts = "-Xmx8G -Xms2G";
         package = pkgs.vanillaServers.vanilla-1_21_11;
@@ -66,7 +62,7 @@
           gamemode = 1;
           max-players = 20;
           motd = "vanilla new";
-          level-name = "vanilla";
+          level-name = "world";
         };
       };
     };
