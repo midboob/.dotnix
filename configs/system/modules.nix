@@ -23,5 +23,6 @@
     ./modules/localsend.nix
     ./modules/minecraft
     ./modules/eagle.nix
+    ./modules/freecad.nix
   ];
 }

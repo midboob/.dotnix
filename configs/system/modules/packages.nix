@@ -94,7 +94,6 @@
     wlsunset
     blueman
 
-    freecad
 
     # Python
     (python313.withPackages (ps: [
@@ -117,7 +116,6 @@
 
   nixpkgs.config.permittedInsecurePackages = [
     "ventoy-gtk3-1.1.07"
-    "qtwebengine-5.15.19"
   ];
 
   fonts.packages =
