@@ -7,7 +7,6 @@
   nixpkgs.overlays = [inputs.nix-minecraft.overlay];
 
   environment.systemPackages = with pkgs; [
-    prismlauncher
     jdk8
     jdk21
   ];

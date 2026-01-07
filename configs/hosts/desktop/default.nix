@@ -1,6 +1,3 @@
-
-{ config, pkgs, lib, ... }:
-
 {
   imports = [
     ../../system/configuration.nix
@@ -8,6 +5,7 @@
 
     ./hardware-configuration.nix
     ./system
+    ./minecraft
 
     ./programs/fish
   ];

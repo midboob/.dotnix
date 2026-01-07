@@ -1,5 +1,7 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    freecad
+    prismlauncher
+    jdk8
+    jdk21
   ];
 }
