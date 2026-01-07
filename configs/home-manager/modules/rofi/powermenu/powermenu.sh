@@ -14,8 +14,6 @@ reboot=' Reboot'
 lock=' Lock'
 suspend=' Suspend'
 logout='󰍃 Logout'
-yes=' Yes'
-no=' No'
 
 # Rofi CMD
 rofi_cmd() {
@@ -30,24 +28,6 @@ rofi_cmd() {
   # p = poweroff, r = reboot, s = suspend, l = logout
 }
 
-# Confirmation CMD
-confirm_cmd() {
-  rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 250px;}' \
-    -theme-str 'mainbox {children: [ "message", "listview" ];}' \
-    -theme-str 'listview {columns: 2; lines: 1;}' \
-    -theme-str 'element-text {horizontal-align: 0.5;}' \
-    -theme-str 'textbox {horizontal-align: 0.5;}' \
-    -dmenu \
-    -p 'Confirmation' \
-    -mesg 'Are you Sure?' \
-    -theme "${dir}/${theme}.rasi"
-}
-
-# Ask for confirmation
-confirm_exit() {
-  printf '%s\n%s\n' "$yes" "$no" | confirm_cmd
-}
-
 # Pass variables to rofi dmenu
 run_rofi() {
   printf '%s\n%s\n%s\n%s\n%s\n' \
@@ -55,26 +35,26 @@ run_rofi() {
   return $?
 }
 
-# Execute Command
+# Execute Command (no confirmation)
 run_cmd() {
-  selected="$(confirm_exit)"
-  if [[ "$selected" == "$yes" ]]; then
-    if [[ $1 == '--shutdown' ]]; then
+  case "$1" in
+    --shutdown)
       systemctl poweroff
-    elif [[ $1 == '--reboot' ]]; then
+      ;;
+    --reboot)
       systemctl reboot
-    elif [[ $1 == '--suspend' ]]; then
+      ;;
+    --suspend)
       mpc -q pause 2>/dev/null || true
       amixer set Master mute 2>/dev/null || true
       systemctl suspend
-    elif [[ $1 == '--logout' ]]; then
+      ;;
+    --logout)
       # Wayland compositors
       if [[ -n "$SWAYSOCK" ]] && command -v swaymsg >/dev/null; then
         swaymsg exit
-
       elif [[ -n "$HYPRLAND_INSTANCE_SIGNATURE" ]] && command -v hyprctl >/dev/null; then
         hyprctl dispatch exit
-
       elif command -v niri >/dev/null && niri msg --help >/dev/null 2>&1; then
         niri msg exit
 
@@ -90,48 +70,26 @@ run_cmd() {
       else
         notify-send "Logout failed" "No supported compositor/session detected"
       fi
-    fi
-  else
-    exit 0
-  fi
+      ;;
+  esac
 }
 
 # Actions
 chosen="$(run_rofi)"
 rofi_exit=$?
 
-# Handle custom keybindings:
-#   custom-1 -> exit code 10
-#   custom-2 -> 11
-#   custom-3 -> 12
-#   custom-4 -> 13
+# Handle custom keybindings
 case "$rofi_exit" in
-10)
-  run_cmd --shutdown
-  exit 0
-  ;;
-11)
-  run_cmd --reboot
-  exit 0
-  ;;
-12)
-  run_cmd --suspend
-  exit 0
-  ;;
-13)
-  run_cmd --logout
-  exit 0
-  ;;
+10) run_cmd --shutdown ;;
+11) run_cmd --reboot ;;
+12) run_cmd --suspend ;;
+13) run_cmd --logout ;;
 esac
 
 # Normal selection (Enter / mouse)
 case "$chosen" in
-"$shutdown")
-  run_cmd --shutdown
-  ;;
-"$reboot")
-  run_cmd --reboot
-  ;;
+"$shutdown") run_cmd --shutdown ;;
+"$reboot")   run_cmd --reboot ;;
 "$lock")
   if command -v hyprlock >/dev/null; then
     hyprlock
@@ -139,10 +97,6 @@ case "$chosen" in
     notify-send "Lock failed" "hyprlock not found"
   fi
   ;;
-"$suspend")
-  run_cmd --suspend
-  ;;
-"$logout")
-  run_cmd --logout
-  ;;
+"$suspend")  run_cmd --suspend ;;
+"$logout")   run_cmd --logout ;;
 esac

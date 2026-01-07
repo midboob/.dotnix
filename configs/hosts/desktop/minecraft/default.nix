@@ -12,7 +12,7 @@
   ];
 
   services.minecraft-servers = {
-    enable = false;
+    enable = true;
     eula = true;
     openFirewall = true;
     servers = {
@@ -43,6 +43,7 @@
 
       vanilla = {
         enable = true;
+        autoStart = true;
         openFirewall = true;
         jvmOpts = "-Xmx8G -Xms2G";
         package = pkgs.vanillaServers.vanilla-1_21_11;
@@ -52,7 +53,7 @@
         };
 
         symlinks = {
-          "world/datapacks" = ./datapacks;
+          # "world/datapacks" = ./datapacks;
         };
 
         serverProperties = {
@@ -61,7 +62,7 @@
           gamemode = 1;
           max-players = 20;
           motd = "vanilla new";
-          level-name = "world";
+          # level-name = "world";
         };
       };
     };
