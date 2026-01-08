@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   environment.systemPackages = with pkgs; [
@@ -93,7 +94,7 @@
     ventoy-full-gtk
     wlsunset
     blueman
-
+    inputs.ltspice.packages.${pkgs.system}.default
 
     # Python
     (python313.withPackages (ps: [

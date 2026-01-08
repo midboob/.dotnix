@@ -56,6 +56,8 @@
       url = "github:Infinidoge/nix-minecraft";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    ltspice.url = "git+https://codeberg.org/pilonsi/flake-ltspice";
   };
 
   outputs = inputs @ {
@@ -70,6 +72,7 @@
     niri,
     walker,
     nix-minecraft,
+    ltspice,
     ...
   }: let
     system = "x86_64-linux";

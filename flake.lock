@@ -282,6 +282,37 @@
         "type": "github"
       }
     },
+    "ltspice": {
+      "inputs": {
+        "ltspiceInstaller": "ltspiceInstaller",
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1767296196,
+        "narHash": "sha256-0lE/WYZ8SYQGoIcU4GoYfjIHjMLhCq/G46yW/EWfRw4=",
+        "ref": "refs/heads/main",
+        "rev": "8f9100a3ba4a825affe384d0c1899ee3cc343541",
+        "revCount": 3,
+        "type": "git",
+        "url": "https://codeberg.org/pilonsi/flake-ltspice"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/pilonsi/flake-ltspice"
+      }
+    },
+    "ltspiceInstaller": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-beHjWlAMOTDOBVbBZmMe5cSd+7LtiLDrEXWG9iLwi6U=",
+        "type": "file",
+        "url": "https://LTspice.analog.com/download/26.0.1/LTspice64.msi"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://LTspice.analog.com/download/26.0.1/LTspice64.msi"
+      }
+    },
     "niri": {
       "inputs": {
         "niri-stable": "niri-stable",
@@ -463,6 +494,22 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1767799921,
+        "narHash": "sha256-r4GVX+FToWVE2My8VVZH4V0pTIpnu2ZE8/Z4uxGEMBE=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "d351d0653aeb7877273920cd3e823994e7579b0b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-25.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1766070988,
         "narHash": "sha256-G/WVghka6c4bAzMhTwT2vjLccg/awmHkdKSd2JrycLc=",
         "owner": "nixos",
@@ -477,7 +524,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1757068644,
         "narHash": "sha256-NOrUtIhTkIIumj1E/Rsv1J37Yi3xGStISEo8tZm3KW4=",
@@ -523,12 +570,13 @@
         "bunny-yazi": "bunny-yazi",
         "elephant": "elephant",
         "home-manager": "home-manager",
+        "ltspice": "ltspice",
         "niri": "niri",
         "nix-minecraft": "nix-minecraft",
         "nixCats": "nixCats",
         "nixcord": "nixcord",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs_3",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix",
         "walker": "walker",
@@ -751,7 +799,7 @@
         "elephant": [
           "elephant"
         ],
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_4",
         "systems": "systems_5"
       },
       "locked": {
