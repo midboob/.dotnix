@@ -33,7 +33,6 @@
       window_padding_width = "10";
       hide_window_decorations = "yes";
       # background_opacity = lib.mkForce "0.8";
-      background_opacity = "1";
       dynamic_background_opacity = "yes";
       confirm_os_window_close = "0";
       selection_foreground = "none";
