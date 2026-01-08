@@ -98,6 +98,13 @@ in {
             typescript-language-server
             prettier
           ];
+          ardiono = with pkgs; [
+            arduino-language-server
+          ];
+          assembly = with pkgs; [
+            asm-lsp
+            asmfmt
+          ];
         };
 
         # This is for plugins that will load at startup without using packadd:
@@ -229,6 +236,8 @@ in {
             cpp = true;
             python = true;
             bash = true;
+            arduino = true;
+            assembly = true;
           };
           # anything else to pass and grab in lua with `nixCats.extra`
           extra = {

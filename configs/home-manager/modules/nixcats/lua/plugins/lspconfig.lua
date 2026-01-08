@@ -112,6 +112,8 @@ return {
 			on_attach = on_attach,
 			settings = {
 				exportPdf = "onSave",
+				semanticTokens = "enable",
+				formatterMode = "typestyle",
 			},
 		})
 
@@ -142,6 +144,17 @@ return {
 			},
 		})
 
+		vim.lsp.config("arduino-language-server", {
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		vim.lsp.config("asm_lsp", {
+			capabilities = capabilities,
+			on_attach = on_attach,
+			filetypes = { "asm", "nasm", "masm", "gas", "s", "S" },
+		})
+
 		vim.lsp.enable({
 			"lua_ls",
 			"pyright",
@@ -151,6 +164,8 @@ return {
 			"nil_ls",
 			"tinymist",
 			"texlab",
+			"arduino-language-server",
+			"asm_lsp",
 		})
 	end,
 }

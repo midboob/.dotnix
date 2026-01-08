@@ -70,6 +70,12 @@ return {
 
 				-- LaTeX
 				tex = { "latexindent" },
+
+        -- Assembly
+        asm = {"asmfmt"},
+
+        -- Arduino
+        arduino = {"clang_format"},
 			},
 		},
 		config = function(_, opts)
