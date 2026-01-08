@@ -102,11 +102,9 @@
     layout = {
       gaps = 5;
 
-      # struts = {
-      #   top = 1;
-      #   bottom = 1;
-      #   left = 1;
-      #   right = 1;
+      # focus-ring = {
+      #   enable = true;
+      #   width = 3;
       # };
 
       default-column-width = {
@@ -114,6 +112,7 @@
       };
 
       border = {
+        enable = true;
         width = 2.0;
         # active = "#${config.stylix.base16Scheme.base0A}";
         # inactive = "#${config.stylix.base16Scheme.base01}";
