@@ -23,7 +23,6 @@ return {
       { "<leader>r", group = "[r]ename" },
       { "<leader>f", group = "[f]ind" },
       { "<leader>s", group = "[s]earch" },
-      { "<leader>t", group = "[t]oggles" },
       { "<leader>w", group = "[w]orkspace" },
     })
   end,

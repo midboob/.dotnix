@@ -3,11 +3,11 @@ local prefix = "<leader>o"
 return {
 	{
 		"obsidian-nvim/obsidian.nvim",
-		enabled = enabled,
+		enabled = true,
 		ft = { "markdown" },
 
 		keys = {
-			{ prefix, "<Nop>", desc = "obsidian" },
+			{ prefix, "<Nop>", desc = "[o]bsidian" },
 			{ prefix .. "o", "<cmd>Obsidian open<CR>", desc = "Open on App" },
 			{ prefix .. "g", "<cmd>Obsidian search<CR>", desc = "Grep" },
 			{ prefix .. "n", "<cmd>Obsidian new<CR>", desc = "New Note" },

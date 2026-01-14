@@ -111,7 +111,7 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			settings = {
-				exportPdf = "onSave",
+				exportPdf = "onType",
 				semanticTokens = "enable",
 				formatterMode = "typestyle",
 			},

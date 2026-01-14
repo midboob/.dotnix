@@ -31,8 +31,6 @@
     bleachbit
     gimp
     obsidian
-    zathura
-    zathuraPkgs.zathura_pdf_poppler
     mpv
     qbittorrent
     brave

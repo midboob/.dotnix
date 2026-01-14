@@ -1,7 +1,7 @@
 return {
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
-		enabled = enabled,
+		enabled = true,
 		ft = { "markdown" },
 		opts = {
 			checkbox = {
@@ -11,13 +11,18 @@ return {
 						raw = "[~]",
 						rendered = "󰥔 ",
 						highlight = "RenderMarkdownTodo",
-						scope_highlight = nil,
 					},
 					important = {
 						raw = "[s]",
 						rendered = "󰓎 ",
 						highlight = "DiagnosticWarn",
 					},
+          strikethrough = {
+            raw = "[/]",
+            rendered = " ",
+            highlight = "DiagnosticError",
+            scope_highlight = "@markup.strikethrough",
+          },
 				},
 			},
 			latex = { enabled = false },
